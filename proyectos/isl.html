@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>ISL · Gráfica Institucional 8M</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f7f3ee;
+      color: #2b2420;
+      margin: 0;
+    }
+
+    a {
+      color: #c89b5f;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    .wrapper {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 48px 20px 80px;
+    }
+
+    h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 2.4rem;
+      margin: 20px 0 12px;
+    }
+
+    h2 {
+      font-family: Georgia, serif;
+      font-size: 1.8rem;
+      margin-bottom: 12px;
+    }
+
+    p {
+      color: #6a5c52;
+      line-height: 1.7;
+      font-size: 0.95rem;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 24px;
+    }
+
+    /* ---------- HERO ---------- */
+
+    .hero-image-wrapper {
+      max-width: 760px;
+      margin: 48px auto 64px;
+    }
+
+    .hero-img {
+      width: 100%;
+      display: block;
+      border-radius: 22px;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.08);
+    }
+
+    /* ---------- SECCIONES ---------- */
+
+    section {
+      margin-top: 80px;
+    }
+
+    .section-kicker {
+      font-size: 0.75rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: #6a5c52;
+      margin-bottom: 8px;
+    }
+
+    /* ---------- APLICACIÓN REAL ---------- */
+
+    .real-application {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      gap: 36px;
+      align-items: center;
+    }
+
+    /* ---------- GALERÍA ---------- */
+
+    .gallery {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 24px;
+      margin-top: 32px;
+      align-items: start;
+    }
+
+    .calendar-column {
+      display: grid;
+      gap: 24px;
+    }
+
+    /* ---------- EFECTO IMÁGENES (Museo / Turquía) ---------- */
+
+    .image-box {
+      overflow: hidden;
+      border-radius: 22px;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.08);
+    }
+
+    .image-box img {
+      width: 100%;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+
+    .image-box:hover img {
+      transform: scale(1.06);
+    }
+
+    /* ---------- ANIMACIÓN SCROLL ---------- */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.9s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ---------- FOOTER ---------- */
+
+    footer {
+      margin-top: 100px;
+      font-size: 0.8rem;
+      color: #6a5c52;
+      border-top: 1px solid rgba(0,0,0,0.08);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    /* ---------- RESPONSIVE ---------- */
+
+    @media (max-width: 820px) {
+      .real-application {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="wrapper">
+
+    <a href="../index.html" class="back-link">← Volver al portafolio</a>
+
+    <h1>Gráfica Institucional 8M · ISL</h1>
+
+    <p>
+      Diseño conmemorativo desarrollado para el Día Internacional de la Mujer (8M)
+      para el Instituto de Seguridad Laboral. La propuesta comunica valores de
+      equidad de género, seguridad social y compromiso institucional.
+    </p>
+
+    <!-- HERO / MOCKUP -->
+    <div class="hero-image-wrapper reveal">
+      <img src="../lienzo/mockup-lienzo.jpg.png"
+           alt="Mockup lienzo institucional ISL 8M"
+           class="hero-img">
+    </div>
+
+    <!-- APLICACIÓN REAL -->
+    <section class="reveal">
+      <span class="section-kicker">Aplicación real</span>
+      <h2>Lienzo institucional en fachada</h2>
+
+      <div class="real-application">
+        <div>
+          <p>
+            El diseño fue implementado en gran formato sobre tela MESH,
+            instalado en la fachada del edificio institucional del ISL.
+            La pieza refuerza visualmente el mensaje de equidad de género
+            en un contexto urbano real y visible.
+          </p>
+
+          <p>
+            <strong>Formato:</strong> Lienzo en tela MESH (16 × 5 m)<br>
+            <strong>Ubicación:</strong> Fachada edificio ISL<br>
+            <strong>Rol:</strong> Diseño gráfico completo
+          </p>
+        </div>
+
+        <div class="image-box">
+          <img src="../lienzo/lienzo-real.jpg.jpeg"
+               alt="Lienzo ISL instalado en edificio">
+        </div>
+      </div>
+    </section>
+
+    <!-- GALERÍA -->
+    <section>
+      <span class="section-kicker">Aplicaciones</span>
+      <h2>Piezas impresas y digitales</h2>
+
+      <p>
+        El sistema gráfico fue adaptado a distintos soportes institucionales,
+        manteniendo coherencia visual y claridad comunicacional.
+      </p>
+
+      <div class="gallery">
+
+        <div class="image-box reveal">
+          <img src="../lienzo/pendon.jpg.jpeg" alt="Pendón institucional ISL">
+        </div>
+
+        <div class="image-box reveal">
+          <img src="../lienzo/pulseras.jpg.jpg" alt="Pulseras conmemorativas ISL">
+        </div>
+
+        <div class="calendar-column">
+          <div class="image-box reveal">
+            <img src="../lienzo/calendario.jpg.jpg" alt="Calendario corporativo ISL">
+          </div>
+          <div class="image-box reveal">
+            <img src="../lienzo/calendario%202.jpg" alt="Calendario corporativo ISL">
+          </div>
+        </div>
+
+      </div>
+    </section>
+      
+      <div class="back-portfolio">
+  <a href="../index.html">← Volver al portafolio</a>
+</div>
+
+
+    <footer>
+      <span>© Portafolio de Daniela Pasmiño Díaz</span>
+      <span>Identidad visual · Gráfica institucional</span>
+    </footer>
+
+  </div>
+
+  <!-- SCRIPT ANIMACIÓN SCROLL -->
+  <script>
+    const reveals = document.querySelectorAll('.reveal');
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    reveals.forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
