@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Portafolio – Daniela Pasmiño Díaz</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Portafolio de diseño gráfico de Daniela Pasmiño Díaz: identidad visual, diseño editorial, packaging y diseño UI & UX." />
+
+  <!-- Tipografías sugeridas (puedes activarlas con Google Fonts si quieres) -->
+  <style>
+    :root {
+      --bg: #f7f3ee;
+      --bg-soft: #f0e6da;
+      --text: #2b2420;
+      --text-soft: #6a5c52;
+      --accent: #c89b5f;      /* tono miel / dorado */
+      --accent-soft: #f4b940; /* secundario cálido */
+      --border-soft: rgba(0,0,0,0.07);
+
+      --max-width: 1080px;
+      --radius-xl: 24px;
+      --radius-lg: 18px;
+      --shadow-soft: 0 18px 40px rgba(0,0,0,0.06);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* Layout base */
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(10px);
+      background: linear-gradient(to bottom, rgba(247,243,238,0.95), rgba(247,243,238,0.7));
+      border-bottom: 1px solid var(--border-soft);
+    }
+
+    .nav {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .nav-mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      border: 1px solid var(--border-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .nav-title {
+      font-size: 0.9rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-soft);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a {
+      position: relative;
+      padding-bottom: 3px;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 1px;
+      background: var(--accent);
+      transition: width 0.25s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-pill {
+      border-radius: 999px;
+      border: 1px solid var(--border-soft);
+      padding: 6px 14px;
+      font-size: 0.85rem;
+      background: white;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+    }
+
+    main {
+      flex: 1;
+    }
+
+    .wrapper {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 40px 20px 80px;
+    }
+
+    /* HERO */
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.4fr);
+      gap: 40px;
+      align-items: center;
+      padding: 40px 0 60px;
+    }
+
+    .hero-title-kicker {
+      font-size: 0.8rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--text-soft);
+      margin-bottom: 12px;
+    }
+
+    .hero h1 {
+      font-family: "Georgia", "Times New Roman", serif;
+      font-size: clamp(2.4rem, 4vw, 3.2rem);
+      line-height: 1.1;
+      margin-bottom: 14px;
+    }
+
+    .hero h1 span {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .hero-subtitle {
+      font-size: 1.05rem;
+      color: var(--text-soft);
+      margin-bottom: 18px;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+
+    .tag {
+      font-size: 0.8rem;
+      padding: 5px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border-soft);
+      background: #fff;
+    }
+
+    .hero-small {
+      font-size: 0.85rem;
+      color: var(--text-soft);
+    }
+
+    .hero-card {
+      background: radial-gradient(circle at top left, #fdf6ea, #f3e6d8);
+      border-radius: var(--radius-xl);
+      padding: 24px 22px;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid #f1e1cf;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card-badge {
+      position: absolute;
+      top: 16px;
+      right: 18px;
+      font-size: 0.85rem;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(0,0,0,0.05);
+      background: rgba(255,255,255,0.8);
+      backdrop-filter: blur(4px);
+    }
+
+    .hero-card-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--text-soft);
+      margin-bottom: 6px;
+    }
+
+    .hero-quote {
+      font-family: "Georgia", "Times New Roman", serif;
+      font-size: 0.98rem;
+    }
+
+    .hero-quote span {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 0.8rem;
+      color: var(--text-soft);
+    }
+
+    .hero-meta-block span {
+      display: block;
+    }
+
+    .hero-meta-label {
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.7rem;
+      margin-bottom: 2px;
+    }
+
+    /* Secciones */
+
+    section {
+      margin-bottom: 64px;
+    }
+
+    .section-label {
+      font-size: 0.8rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--text-soft);
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-family: "Georgia", "Times New Roman", serif;
+      font-size: 1.8rem;
+      margin-bottom: 18px;
+    }
+
+    .section-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+      gap: 32px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: var(--radius-lg);
+      padding: 20px 22px;
+      border: 1px solid var(--border-soft);
+      box-shadow: 0 10px 26px rgba(0,0,0,0.03);
+    }
+
+    .card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
+
+    .card p {
+      font-size: 0.9rem;
+      color: var(--text-soft);
+    }
+
+    .timeline {
+      display: grid;
+      gap: 10px;
+      font-size: 0.9rem;
+    }
+
+    .timeline-item {
+      display: flex;
+      flex-direction: column;
+      padding: 10px 12px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.7);
+      border: 1px solid var(--border-soft);
+    }
+
+    .timeline-role {
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+
+    .timeline-meta {
+      font-size: 0.8rem;
+      color: var(--text-soft);
+      margin-bottom: 4px;
+    }
+
+    .timeline-desc {
+      font-size: 0.85rem;
+      color: var(--text-soft);
+    }
+
+    /* Proyectos */
+
+    .projects-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .pill-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 0.8rem;
+    }
+
+    .pill {
+      padding: 5px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--border-soft);
+      background: #fff;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .project {
+      background: #fff;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-soft);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 10px 26px rgba(0,0,0,0.03);
+    }
+
+    .project-thumb {
+      background: var(--bg-soft);
+      aspect-ratio: 4 / 3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      color: var(--text-soft);
+      padding: 16px;
+      text-align: center;
+    }
+
+    .project-body {
+      padding: 16px 18px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .project-type {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--text-soft);
+    }
+
+    .project-title {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .project-desc {
+      font-size: 0.85rem;
+      color: var(--text-soft);
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 6px;
+      font-size: 0.75rem;
+    }
+
+    .project-tags span {
+      border-radius: 999px;
+      border: 1px solid var(--border-soft);
+      padding: 3px 8px;
+      background: #faf6f0;
+    }
+
+    /* Contacto */
+
+    /* ---------- CONTACTO / HABLEMOS ---------- */
+
+.contact-section {
+  background: #fbf7f2;
+  padding: 80px 20px 100px;
+}
+
+.contact-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contact-kicker {
+  font-size: 0.75rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #6a5c52;
+}
+
+.contact-title {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2.6rem;
+  margin: 12px 0 20px;
+}
+
+.contact-intro {
+  color: #6a5c52;
+  font-size: 1rem;
+  margin-bottom: 48px;
+}
+
+/* FORM */
+
+.contact-form {
+  display: grid;
+  gap: 28px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.form-group label {
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #6a5c52;
+  margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group textarea {
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,0.12);
+  padding: 14px 20px;
+  font-size: 0.95rem;
+  background: #fff;
+  font-family: inherit;
+}
+
+.form-group textarea {
+  border-radius: 22px;
+  min-height: 140px;
+  resize: vertical;
+}
+
+/* BOTÓN */
+
+.contact-button {
+  margin: 24px auto 0;
+  background: #d8bf7c;
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  padding: 14px 34px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.contact-button:hover {
+  background: #c7ad68;
+  transform: translateY(-2px);
+}
+
+/* TEXTO FINAL */
+
+.contact-direct {
+  margin-top: 32px;
+  font-size: 0.9rem;
+  color: #6a5c52;
+}
+
+.contact-direct a {
+  color: #d8bf7c;
+  text-decoration: none;
+}
+      
+      
+      /* ---------- FOOTER ---------- */
+
+.site-footer {
+  border-top: 1px solid rgba(0,0,0,0.1);
+  background: #fbf7f2;
+  padding: 22px 20px;
+}
+
+.site-footer .footer-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: #6a5c52;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .site-footer .footer-inner {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 700px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-title {
+    font-size: 2.2rem;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <nav class="nav">
+        <div class="nav-left">
+          <div class="nav-mark">DP</div>
+          <div class="nav-title">Portafolio</div>
+        </div>
+        <div class="nav-links">
+          <a href="#sobre-mi">Sobre mí</a>
+          <a href="#experiencia">Experiencia</a>
+          <a href="#proyectos">Proyectos</a>
+          <a href="#contacto" class="nav-pill">Contacto</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="wrapper">
+        <!-- HERO -->
+        <section class="hero">
+          <div>
+            <div class="hero-title-kicker">PORTAFOLIO DE DISEÑO</div>
+            <h1>
+              Daniela<br />
+              <span>Pasmiño Díaz</span>
+            </h1>
+            <div class="hero-subtitle">
+              Diseñadora gráfica con foco en 
+              <strong>diseño editorial digital, identidad visual y packaging</strong>,
+              creando marcas que cuentan historias y conectan emocionalmente.
+            </div>
+            <div class="hero-tags">
+              <span class="tag">UI &amp; UX</span>
+              <span class="tag">Identidad Visual</span>
+              <span class="tag">Diseño Editorial</span>
+              <span class="tag">Packaging</span>
+            </div>
+            <p class="hero-small">
+              Este portafolio reúne proyectos desarrollados desde una mirada sensible y estratégica,
+              donde cada decisión visual responde a un concepto, una emoción y una experiencia de uso.
+            </p>
+          </div>
+
+          <aside class="hero-card">
+              
+            
+            <div>
+              <div class="hero-card-label">Acerca de mi enfoque</div>
+              <p class="hero-quote">
+                Me interesa el diseño que <span>acompaña el día a día</span>: desde un envase que
+                se transforma en objeto querido, hasta una interfaz clara que guía sin agotar.
+              </p>
+            </div>
+            <div class="hero-meta">
+              <div class="hero-meta-block">
+                <span class="hero-meta-label">Especialidades</span>
+                <span>Branding, sistemas editoriales, packaging con doble función, UI para experiencias culturales.</span>
+              </div>
+              <div class="hero-meta-block">
+                <span class="hero-meta-label">Ubicación</span>
+                <span>Chile · Formada en Diseño Gráfico (Duoc UC)</span>
+              </div>
+            </div>
+          </aside>
+        </section>
+
+        <!-- SOBRE MÍ -->
+        <section id="sobre-mi">
+          <div class="section-label">Perfil</div>
+          <h2 class="section-title">Sobre mí</h2>
+          <div class="section-grid">
+            <div>
+              <p>
+                Soy Daniela, diseñadora gráfica con especial interés en el 
+                <strong>diseño editorial digital</strong> y en construir 
+                <strong>marcas sensibles y honestas</strong>. Me inspira trabajar con conceptos
+                que nacen de lo cotidiano: una conversación, un recuerdo, un aroma o una textura.
+              </p>
+              <br />
+              <p>
+                Disfruto especialmente del proceso de investigación y narrativa visual:
+                crear moodboards, definir paletas, tipografías y sistemas que no solo se vean bien,
+                sino que cuenten una historia coherente en cada soporte.
+              </p>
+            </div>
+            <div class="card">
+              <h3>Lo que me define como diseñadora</h3>
+              <p>
+                • Mirada editorial: busco ritmo, jerarquía y armonía entre texto e imagen.<br />
+                • Enfoque emocional: cada proyecto nace de una idea o sensación concreta.<br />
+                • Detalle y cuidado: desde la elección del papel hasta el microcopy en una interfaz.<br />
+                • Colaboración: me gusta escuchar, traducir necesidades y proponer soluciones claras.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- EXPERIENCIA -->
+        <section id="experiencia">
+          <div class="section-label">Trayectoria</div>
+          <h2 class="section-title">Formación y experiencia</h2>
+          <div class="section-grid">
+            <div class="card">
+              <h3>Formación</h3>
+              <div class="timeline">
+                <div class="timeline-item">
+                  <div class="timeline-role">Diseño Gráfico</div>
+                  <div class="timeline-meta">Duoc UC · Titulada</div>
+                  <div class="timeline-desc">
+                    Formación con énfasis en proyectos editoriales, identidad visual y
+                    desarrollo de piezas gráficas aplicadas a distintos formatos.
+                  </div>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-role">Exploraciones personales</div>
+                  <div class="timeline-meta">Proyectos autorales</div>
+                  <div class="timeline-desc">
+                    Desarrollo de marcas ficticias y líneas editoriales como
+                    <em>Miel de Amor</em>, <em>El Café de tus Ojos</em> y una guía
+                    editorial inspirada en Turquía, entre otros.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <h3>Experiencia y enfoque profesional</h3>
+              <p>
+                Busco proyectarme en un entorno de trabajo estable donde pueda aportar 
+                en áreas de <strong>branding, marketing y diseño editorial digital</strong>.
+                Me interesa especialmente colaborar con marcas que conectan con emociones,
+                historias y experiencias de usuario bien cuidadas.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- PROYECTOS -->
+        <section id="proyectos">
+          <div class="section-label">Selección de trabajos</div>
+          <div class="projects-header">
+            <h2 class="section-title">Proyectos destacados</h2>
+            <div class="pill-group">
+              <span class="pill">UI &amp; UX</span>
+              <span class="pill">Identidad visual</span>
+              <span class="pill">Diseño editorial</span>
+              <span class="pill">Packaging</span>
+              </div>
+          </div>
+
+          <div class="project-grid">
+            <!-- 1: TÓTEM UI/UX -->
+            <article class="project">
+  <a href="proyectos/museo.html" class="project-thumb">
+  <img src="museo/portada-museo.jpg"alt="Tótem interactivo · Museo">
+</a>
+  <div class="project-body">
+    <div class="project-type">UI &amp; UX · Interfaz interactiva</div>
+    <div class="project-title">Tótem interactivo · Museo</div>
+    <p class="project-desc">
+      Propuesta de interfaz clara y accesible para un tótem informativo en un contexto cultural. El diseño organiza contenidos por niveles de lectura, utiliza iconografía simple y prioriza recorridos intuitivos, pensando en distintos perfiles de visitantes.
+    </p>
+      
+      <div class="project-tags">
+                  <span>Wireframes</span>
+                  <span>Diseño de interacción</span>
+                  <span>Gráfica aplicada</span>
+                </div>
+      
+      
+  </div>
+</article>
+
+            <!-- 2: LIENZO INSTITUCIONAL 8M -->
+            <article class="project">
+  <a href="proyectos/isl.html" class="project-thumb">
+  <img src="lienzo/portada lienzo.jpg">
+</a>
+
+
+  <div class="project-body">
+    <div class="project-type">UI &amp; UX · Interfaz interactiva</div>
+    <div class="project-title">ISL · Plataforma interactiva</div>
+    <p class="project-desc">
+      Pieza gráfica desarrollada para conmemorar el Día Internacional de la Mujer desde una mirada institucional, combinando mensaje respetuoso, tipografía fuerte y una paleta vinculada al 8M. El lienzo equilibra sensibilidad y claridad, reforzando valores de respeto, diversidad y reconocimiento.
+    </p>
+
+    <div class="project-tags">
+      <span>8M</span>
+      <span>Comunicación institucional </span>
+      <span>Gráfica aplicada</span>
+    </div>
+  </div>
+</article>
+
+            <!-- 3: TURQUÍA EDITORIAL -->
+            <article class="project">
+ <a href="proyectos/turquia.html" class="project-thumb">
+  <img src="turquia/diseno-final.jpg" alt="portada">
+</a>
+
+
+  <div class="project-body">
+    <div class="project-type">Diseño editorial</div>
+    <div class="project-title">Turquía · Guía editorial</div>
+    <p class="project-desc">
+      Publicación que explora la cultura, los colores y la arquitectura de Turquía a través de una composición editorial equilibrada. El proyecto trabaja el ritmo de las páginas, la relación entre imagen y texto y el uso de fichas informativas para guiar al lector.
+    </p>
+
+    <div class="project-tags">
+      <span>Maquetación</span>
+      <span>Ritmo editorial</span>
+      <span>Narrativa visual</span>
+    </div>
+  </div>
+</article>
+
+
+            <!-- 4: EL CAFÉ DE TUS OJOS -->
+           <article class="project">
+ <a href="proyectos/cafe.html" class="project-thumb">
+ 
+    <img src="cafe/portada1.jpg" alt="Proyecto El Café de tus Ojos">
+  </a>
+
+  <div class="project-body">
+    <div class="project-type">Identidad visual · Packaging</div>
+    <div class="project-title">El Café de tus Ojos</div>
+    <p class="project-desc">
+      Marca de café inspirada en una frase íntima y poética sobre una mirada especial.
+      El proyecto combina una tipografía serif con carácter editorial para “El Café”
+      y una manuscrita fluida para “de tus Ojos”, construyendo una identidad visual
+      sensible, emocional y cercana.
+    </p>
+
+    <div class="project-tags">
+      <span>Branding</span>
+      <span>Storytelling</span>
+      <span>Tipografía mixta</span>
+    </div>
+  </div>
+</article>
+
+
+            <!-- 5: MIEL DE AMOR -->
+            <article class="project">
+  <a href="proyectos/miel.html" class="project-thumb">
+    <img src="miel/portada-2.jpg" alt="Proyecto Miel de Amor">
+  </a>
+
+  <div class="project-body">
+    <div class="project-type">Identidad visual · Packaging</div>
+    <div class="project-title">Miel de Amor</div>
+    <p class="project-desc">
+      Marca de miel artesanal que nace de la idea de “endulzar con cariño”.
+      El proyecto explora una identidad visual cálida, honesta y cercana,
+      donde cada frasco se convierte en un pequeño gesto cotidiano.
+      La paleta dorada, las texturas naturales y los detalles ilustrados
+      refuerzan su carácter afectivo y artesanal.
+    </p>
+
+    <div class="project-tags">
+      <span>Branding</span>
+      <span>Packaging</span>
+      <span>Ilustración sutil</span>
+    </div>
+  </div>
+</article>
+
+          </div>
+        </section>
+
+        <!-- CONTACTO -->
+       <section id="contacto" class="contact-section">
+  <div class="contact-wrapper">
+
+    <span class="contact-kicker">Contacto</span>
+    <h2 class="contact-title">Hablemos</h2>
+
+    <p class="contact-intro">
+      Si te gustó mi trabajo, puedes escribirme y te responderé lo antes posible.
+    </p>
+
+    <form class="contact-form">
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Nombre</label>
+          <input type="text" placeholder="Tu nombre">
+        </div>
+
+        <div class="form-group">
+          <label>Correo</label>
+          <input type="email" placeholder="tucorreo@email.com">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Asunto</label>
+        <input type="text" placeholder="Ej: Branding / Packaging / Diseño editorial">
+      </div>
+
+      <div class="form-group">
+        <label>Mensaje</label>
+        <textarea placeholder="Cuéntame sobre tu proyecto..."></textarea>
+      </div>
+
+      <button type="submit" class="contact-button">
+        Enviar mensaje
+      </button>
+
+    </form>
+
+    <p class="contact-direct">
+      También puedes escribirme directo a:
+      <a href="mailto:danielapasminidiaz@gmail.com">danielapasminodiaz@gmail.com</a>
+    </p>
+
+  </div>
+</section>
+
+      </div>
+    </main>
+
+   <footer class="site-footer">
+  <div class="footer-inner">
+    <span>© Portafolio de Daniela Pasmiño Díaz</span>
+    <span>Identidad Visual · Editorial · Packaging · UI &amp; UX</span>
+  </div>
+</footer>
+
+
+  </div>
+</body>
+</html>
