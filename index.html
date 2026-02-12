@@ -367,33 +367,94 @@
       background: #fff;
     }
 
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
-    }
+   /* =========================
+   PROYECTOS – GRID LIMPIO
+========================= */
 
-    .project {
-      background: #fff;
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--border-soft);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      box-shadow: 0 10px 26px rgba(0,0,0,0.03);
-    }
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 36px;
+}
+      
+     .project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+ 
+      .project-miel {
+  grid-column: 1 / -1; /* ocupa las dos columnas */
+  max-width: 520px;     /* más angosto */
+  margin: 60px auto 0;  /* lo centra y le da aire arriba */
+}
 
-    .project-thumb {
-      background: var(--bg-soft);
-      aspect-ratio: 4 / 3;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.8rem;
-      color: var(--text-soft);
-      padding: 16px;
-      text-align: center;
-    }
+
+.project {
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,0.06);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.05);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.project:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+/* IMAGEN */
+
+.project-thumb {
+  width: 100%;
+  aspect-ratio: 1 / 1; /* todas cuadradas */
+  background: #f3eee7; /* marco suave editorial */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 22px;
+}
+
+.project-thumb img {
+  max-width: 85%;
+  max-height: 85%;
+  object-fit: contain; /* NO recorta */
+  transition: transform 0.6s ease;
+}
+
+.project:hover .project-thumb img {
+  transform: scale(1.05);
+}
+
+
+/* TEXTO */
+
+.project-body {
+  padding: 22px;
+}
+
+.project-type {
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #8a7d72;
+  margin-bottom: 6px;
+}
+
+.project-title {
+  font-family: Georgia, serif;
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+.project-desc {
+  font-size: 0.85rem;
+  color: #6a5c52;
+  line-height: 1.5;
+}
+
 
     .project-body {
       padding: 16px 18px 18px;
@@ -563,13 +624,12 @@
 }
 
 /* Responsive */
-@media (max-width: 700px) {
-  .site-footer .footer-inner {
-    flex-direction: column;
-    gap: 8px;
-    text-align: center;
+@media (max-width: 900px) {
+  .project-grid {
+    grid-template-columns: 1fr;
   }
 }
+
 
 
 /* RESPONSIVE */
@@ -782,30 +842,10 @@
   </div>
 </article>
 
-            <!-- 3: TURQUÍA EDITORIAL -->
-            <article class="project">
- <a href="proyectos/turquia.html" class="project-thumb">
-  <img src="turquia/diseno-final.jpg" alt="portada">
-</a>
 
 
-  <div class="project-body">
-    <div class="project-type">Diseño editorial</div>
-    <div class="project-title">Turquía · Guía editorial</div>
-    <p class="project-desc">
-      Publicación que explora la cultura, los colores y la arquitectura de Turquía a través de una composición editorial equilibrada. El proyecto trabaja el ritmo de las páginas, la relación entre imagen y texto y el uso de fichas informativas para guiar al lector.
-    </p>
 
-    <div class="project-tags">
-      <span>Maquetación</span>
-      <span>Ritmo editorial</span>
-      <span>Narrativa visual</span>
-    </div>
-  </div>
-</article>
-
-
-            <!-- 4: EL CAFÉ DE TUS OJOS -->
+            <!-- 3: EL CAFÉ DE TUS OJOS -->
            <article class="project">
  <a href="proyectos/cafe.html" class="project-thumb">
  
@@ -831,7 +871,7 @@
 </article>
 
 
-            <!-- 5: MIEL DE AMOR -->
+            <!-- 4: MIEL DE AMOR -->
             <article class="project">
   <a href="proyectos/miel.html" class="project-thumb">
     <img src="miel/portada-2.jpg" alt="Proyecto Miel de Amor">
@@ -852,6 +892,30 @@
       <span>Branding</span>
       <span>Packaging</span>
       <span>Ilustración sutil</span>
+    </div>
+  </div>
+</article>
+              
+              
+              
+             <!-- 5: TURQUÍA EDITORIAL -->
+            <article class="project">
+ <a href="proyectos/turquia.html" class="project-thumb">
+  <img src="turquia/diseno-final.jpg" alt="portada">
+</a>
+
+
+  <div class="project-body">
+    <div class="project-type">Diseño editorial</div>
+    <div class="project-title">Turquía · Guía editorial</div>
+    <p class="project-desc">
+      Publicación que explora la cultura, los colores y la arquitectura de Turquía a través de una composición editorial equilibrada. El proyecto trabaja el ritmo de las páginas, la relación entre imagen y texto y el uso de fichas informativas para guiar al lector.
+    </p>
+
+    <div class="project-tags">
+      <span>Maquetación</span>
+      <span>Ritmo editorial</span>
+      <span>Narrativa visual</span>
     </div>
   </div>
 </article>
