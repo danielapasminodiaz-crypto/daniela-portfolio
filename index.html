@@ -292,6 +292,114 @@
       grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
       gap: 32px;
     }
+      
+      /* ===============================
+   SOBRE MI - NUEVA DIAGRAMACIÓN
+================================= */
+
+.about-wrapper {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.about-text {
+  font-size: 1rem;
+  line-height: 1.8;
+  max-width: 520px;
+}
+
+.about-highlight {
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: 1.4rem;
+  line-height: 1.5;
+  margin-bottom: 24px;
+}
+
+.about-card {
+  background: #fff;
+  border-radius: 22px;
+  padding: 28px;
+  border: 1px solid var(--border-soft);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.04);
+}
+
+.about-card h3 {
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: 1.1rem;
+  margin-bottom: 14px;
+}
+
+.about-list {
+  display: grid;
+  gap: 14px;
+  font-size: 0.95rem;
+  color: var(--text-soft);
+}
+
+.about-list span {
+  display: block;
+}
+
+/* ===============================
+   EXPERIENCIA - NUEVA DIAGRAMACIÓN
+================================= */
+
+.experience-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.experience-block {
+  background: #fff;
+  padding: 32px;
+  border-radius: 22px;
+  border: 1px solid var(--border-soft);
+  box-shadow: 0 18px 45px rgba(0,0,0,0.04);
+}
+
+.experience-block h3 {
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: 1.2rem;
+  margin-bottom: 18px;
+}
+
+.experience-item {
+  margin-bottom: 20px;
+}
+
+.experience-item strong {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.experience-item span {
+  font-size: 0.85rem;
+  color: var(--text-soft);
+}
+
+.experience-item p {
+  font-size: 0.9rem;
+  margin-top: 6px;
+  color: var(--text-soft);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+  .about-wrapper {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .experience-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
 
     .card {
       background: #fff;
@@ -715,74 +823,98 @@
 
         <!-- SOBRE MÍ -->
         <section id="sobre-mi">
-          <div class="section-label">Perfil</div>
-          <h2 class="section-title">Sobre mí</h2>
-          <div class="section-grid">
-            <div>
-              <p>
-                Soy Daniela, diseñadora gráfica con especial interés en el 
-                <strong>diseño editorial digital</strong> y en construir 
-                <strong>marcas sensibles y honestas</strong>. Me inspira trabajar con conceptos
-                que nacen de lo cotidiano: una conversación, un recuerdo, un aroma o una textura.
-              </p>
-              <br />
-              <p>
-                Disfruto especialmente del proceso de investigación y narrativa visual:
-                crear moodboards, definir paletas, tipografías y sistemas que no solo se vean bien,
-                sino que cuenten una historia coherente en cada soporte.
-              </p>
-            </div>
-            <div class="card">
-              <h3>Lo que me define como diseñadora</h3>
-              <p>
-                • Mirada editorial: busco ritmo, jerarquía y armonía entre texto e imagen.<br />
-                • Enfoque emocional: cada proyecto nace de una idea o sensación concreta.<br />
-                • Detalle y cuidado: desde la elección del papel hasta el microcopy en una interfaz.<br />
-                • Colaboración: me gusta escuchar, traducir necesidades y proponer soluciones claras.
-              </p>
-            </div>
-          </div>
-        </section>
+  <div class="section-label">Perfil</div>
+  <h2 class="section-title">Sobre mí</h2>
+
+  <div class="about-wrapper">
+
+    <div class="about-text">
+      <div class="about-highlight">
+        Diseño desde la sensibilidad y la estructura.
+      </div>
+
+      <p>
+        Soy Daniela, diseñadora gráfica con especial interés en el 
+        <strong>diseño editorial digital</strong> y en construir 
+        <strong>marcas sensibles y honestas</strong>. Me inspira trabajar con conceptos
+        que nacen de lo cotidiano: una conversación, un recuerdo, un aroma o una textura.
+      </p>
+
+      <br>
+
+      <p>
+        Disfruto especialmente del proceso de investigación y narrativa visual:
+        crear moodboards, definir paletas, tipografías y sistemas que no solo se vean bien,
+        sino que cuenten una historia coherente en cada soporte.
+      </p>
+    </div>
+
+    <div class="about-card">
+      <h3>Lo que me define como diseñadora</h3>
+
+      <div class="about-list">
+        <span><strong>Mirada editorial:</strong> ritmo, jerarquía y armonía entre texto e imagen.</span>
+        <span><strong>Enfoque emocional:</strong> cada proyecto nace de una idea o sensación concreta.</span>
+        <span><strong>Detalle y cuidado:</strong> desde la elección del papel hasta el microcopy en una interfaz.</span>
+        <span><strong>Colaboración:</strong> escuchar, traducir necesidades y proponer soluciones claras.</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 
         <!-- EXPERIENCIA -->
-        <section id="experiencia">
-          <div class="section-label">Trayectoria</div>
-          <h2 class="section-title">Formación y experiencia</h2>
-          <div class="section-grid">
-            <div class="card">
-              <h3>Formación</h3>
-              <div class="timeline">
-                <div class="timeline-item">
-                  <div class="timeline-role">Diseño Gráfico</div>
-                  <div class="timeline-meta">Duoc UC · Titulada</div>
-                  <div class="timeline-desc">
-                    Formación con énfasis en proyectos editoriales, identidad visual y
-                    desarrollo de piezas gráficas aplicadas a distintos formatos.
-                  </div>
-                </div>
-                <div class="timeline-item">
-                  <div class="timeline-role">Exploraciones personales</div>
-                  <div class="timeline-meta">Proyectos autorales</div>
-                  <div class="timeline-desc">
-                    Desarrollo de marcas ficticias y líneas editoriales como
-                    <em>Miel de Amor</em>, <em>El Café de tus Ojos</em> y una guía
-                    editorial inspirada en Turquía, entre otros.
-                  </div>
-                </div>
-              </div>
-            </div>
+     <section id="experiencia">
+  <div class="section-label">Trayectoria</div>
+  <h2 class="section-title">Formación y experiencia</h2>
 
-            <div class="card">
-              <h3>Experiencia y enfoque profesional</h3>
-              <p>
-                Busco proyectarme en un entorno de trabajo estable donde pueda aportar 
-                en áreas de <strong>branding, marketing y diseño editorial digital</strong>.
-                Me interesa especialmente colaborar con marcas que conectan con emociones,
-                historias y experiencias de usuario bien cuidadas.
-              </p>
-            </div>
-          </div>
-        </section>
+  <div class="experience-wrapper">
+
+    <div class="experience-block">
+      <h3>Formación</h3>
+
+      <div class="experience-item">
+        <strong>Diseño Gráfico</strong>
+        <span>Duoc UC · Titulada</span>
+        <p>
+          Formación con énfasis en proyectos editoriales, identidad visual y
+          desarrollo de piezas gráficas aplicadas a distintos formatos.
+        </p>
+      </div>
+
+      <div class="experience-item">
+        <strong>Exploraciones personales</strong>
+        <span>Proyectos autorales</span>
+        <p>
+          Desarrollo de marcas ficticias como Miel de Amor,
+          El Café de tus Ojos y una guía editorial inspirada en Turquía.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="experience-block">
+      <h3>Enfoque profesional</h3>
+
+      <div class="experience-item">
+        <p>
+          Busco proyectarme en un entorno de trabajo estable donde pueda aportar 
+          en áreas de <strong>branding, marketing y diseño editorial digital</strong>.
+        </p>
+
+        <br>
+
+        <p>
+          Me interesa colaborar con marcas que conectan con emociones,
+          historias y experiencias de usuario bien cuidadas.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 
         <!-- PROYECTOS -->
         <section id="proyectos">
