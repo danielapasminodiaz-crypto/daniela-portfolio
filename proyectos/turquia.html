@@ -28,7 +28,8 @@
     h1 {
       font-family: Georgia, "Times New Roman", serif;
       font-size: 2.4rem;
-      margin: 20px 0 12px;
+      margin: 20px auto 12px;
+      max-width: 680px;
     }
 
     p {
@@ -37,29 +38,63 @@
       font-size: 0.95rem;
     }
 
-    /* ---------- HEADER ---------- */
+    /* 🔹 COLUMNA EDITORIAL */
+    .content-narrow {
+      max-width: 680px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .project-intro {
+      margin: 32px auto 56px;
+    }
+
+    .project-intro p {
+      text-align: justify;
+    }
+
+    .project-intro p:first-of-type {
+      font-size: 1rem;
+    }
+
+    .project-intro h3 {
+      font-size: 0.75rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: #6a5c52;
+      margin-top: 26px;
+      margin-bottom: 6px;
+    }
+
+    .tools {
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
 
     .back-link {
       display: inline-block;
       margin-bottom: 24px;
     }
 
-    /* ---------- HERO IMAGE ---------- */
+ /* ---------- HERO IMAGE ---------- */
 
-    .hero-image-wrapper {
-      max-width: 760px;
-      margin: 48px auto 64px;
-    }
+   .hero-image-wrapper {
+  max-width: 680px;   /* ⬅ mismo ancho que el texto */
+  margin: 48px auto 64px;
+}
 
-    .hero-img {
-      width: 100%;
-      display: block;
-      border-radius: 22px;
-      box-shadow: 0 18px 40px rgba(0,0,0,0.08);
-    }
 
-    /* ---------- PROCESS ---------- */
+.hero-img {
+  width: 100%;
+  display: block;
+  border-radius: 22px;
+  
+}
 
+
+
+    /* PROCESS */
     .process {
       margin-top: 80px;
       display: grid;
@@ -68,6 +103,7 @@
 
     .process-header {
       max-width: 680px;
+      margin: 0 auto;
     }
 
     .process-kicker {
@@ -103,10 +139,6 @@
       margin-bottom: 8px;
     }
 
-    .process-text p {
-      font-size: 0.95rem;
-    }
-
     .step-number {
       font-family: Georgia, serif;
       font-size: 3.6rem;
@@ -132,8 +164,6 @@
       transform: scale(1.06);
     }
 
-    /* ---------- FOOTER ---------- */
-
     footer {
       margin-top: 100px;
       font-size: 0.8rem;
@@ -146,8 +176,6 @@
       gap: 12px;
     }
 
-    /* ---------- RESPONSIVE ---------- */
-
     @media (max-width: 820px) {
       .process-step {
         grid-template-columns: 1fr;
@@ -158,25 +186,48 @@
 
 <body>
 
-  <div class="wrapper">
+<div class="wrapper">
 
-    <a href="../index.html" class="back-link">← Volver al portafolio</a>
+<a href="../index.html" class="back-link">← Volver al portafolio</a>
 
-    <h1>Turquía · Guía editorial</h1>
+<h1>Turquía · Guía editorial</h1>
 
-    <p>
-      Proyecto editorial inspirado en la cultura, arquitectura y colores de Turquía.
-      La propuesta busca guiar al lector a través de una experiencia visual equilibrada,
-      combinando imagen, texto y fichas informativas.
-    </p>
+<div class="project-intro content-narrow">
+
+<p>
+Diseño de guía editorial inspirada en la cultura, arquitectura y paletas cromáticas de Turquía, orientada a construir una narrativa visual coherente mediante la integración de imagen, tipografía y fichas informativas.
+</p>
+
+<p class="tools">
+Herramientas: Adobe InDesign · Adobe Illustrator · Adobe Photoshop
+</p>
+
+<h3>Objetivo</h3>
+<p>
+Desarrollar una propuesta editorial con ritmo de lectura claro y jerarquías tipográficas definidas, permitiendo una experiencia visual equilibrada en formato impreso y digital.
+</p>
+
+<h3>Rol</h3>
+<p>
+Investigación visual, definición de retícula, selección tipográfica, dirección de arte y diseño de la maqueta editorial completa.
+</p>
+
+<h3>Resultado</h3>
+<p>
+Pieza editorial con narrativa visual estructurada, adaptable a plataformas digitales e interactivos, que combina contenido informativo con una experiencia de lectura fluida.
+</p>
+
+</div>
+
 
     <!-- IMAGEN PRINCIPAL -->
     <div class="hero-image-wrapper">
-      <img 
-        src="../turquia/diseno-final.jpg"
-        alt="Diseño editorial final de Turquía"
-        class="hero-img">
-    </div>
+  <img 
+    src="../turquia/portada-final.jpg"
+    alt="Diseño editorial final de Turquía"
+    class="hero-img">
+</div>
+
 
     <!-- PROCESO -->
     <section class="process">

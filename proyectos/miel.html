@@ -56,6 +56,74 @@
       margin-bottom: 28px;
     }
 
+/* COLUMNA EDITORIAL */
+
+.content-narrow {
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.project-intro {
+  margin-left: 0;
+  margin-right: auto;
+  margin-bottom: 48px;
+}
+.project-intro + section {
+  margin-top: 80px;
+}
+
+
+
+.project-intro p {
+  text-align: justify;
+}
+
+.project-intro p:first-of-type {
+  font-size: 1rem;
+}
+
+.project-intro h3 {
+  font-size: 0.75rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #6a5c52;
+  margin-top: 26px;
+  margin-bottom: 6px;
+}
+
+/* 🔧 Ajuste de ritmo vertical después del bloque Objetivo/Rol/Resultado */
+
+.project-intro + section {
+  margin-top: 48px;   /* antes quedaba demasiado lejos */
+}
+
+.section-kicker {
+  margin-top: 0;      /* elimina el salto extra arriba */
+}
+
+.section-grid > div:first-child {
+  max-width: 680px;
+}
+
+      section h2 {
+  margin-bottom: 14px;
+}
+
+.section-grid {
+  margin-top: 24px;
+}
+
+
+
+.tools {
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+
+
     /* HERO */
 
     .hero {
@@ -63,7 +131,7 @@
       grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
       gap: 40px;
       align-items: center;
-      margin-bottom: 96px;
+      margin-bottom: 50px;
     }
 
     .hero-img {
@@ -94,12 +162,31 @@
       margin-bottom: 8px;
     }
 
-    .section-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-      gap: 36px;
-      align-items: center;
-    }
+.section-kicker {
+  margin-bottom: 4px;   /* antes era más grande */
+}
+
+section h2 {
+  margin-top: 0;
+  margin-bottom: 18px;
+}
+
+
+   .section-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+
+  gap: 36px;
+  align-items: center;
+}
+
+.section-grid .image-card {
+  max-width: 320px;
+  margin-top: 20px;
+}
+
+
+
 
     /* EFECTO IMAGEN (igual que Museo) */
 
@@ -207,7 +294,21 @@
         font-size: 2.2rem;
       }
     }
+
+/* 🔧 Ajuste del bloque Objetivo / Rol / Resultado */
+
+.project-intro {
+  margin-bottom: 40px;   /* antes era muy grande */
+}
+
+/* elimina el espacio extra del último párrafo */
+.project-intro p:last-child {
+  margin-bottom: 0;
+}
+
   </style>
+
+
 </head>
 
 <body>
@@ -237,31 +338,64 @@
       <img src="../miel/portada-2.jpg" alt="Miel de Amor - Identidad visual" class="hero-img">
     </section>
 
-    <!-- ORIGEN -->
-    <section>
-      <span class="section-kicker">Concepto</span>
-      <h2>Cómo nació el proyecto</h2>
+<div class="project-intro content-narrow">
 
-      <div class="section-grid">
-        <div>
-          <p>
-            Miel de Amor surge como una marca pensada para regalar, compartir y
-            acompañar momentos íntimos. La miel se entiende como símbolo de
-            cuidado, dulzura y dedicación, alejándose de lo industrial para
-            recuperar lo artesanal y lo humano.
-          </p>
+  <h3>Objetivo</h3>
+  <p>
+    Construir una identidad visual capaz de transmitir la idea de dulzura,
+    cercanía y afecto a través de un lenguaje gráfico cálido y adaptable
+    a distintos soportes de packaging y comunicación.
+  </p>
 
-          <p>
-            Cada frasco busca transmitir cercanía, honestidad y una conexión
-            emocional simple pero profunda.
-          </p>
-        </div>
+  <p class="tools">
+    Herramientas: Adobe Illustrator · Adobe Photoshop
+  </p>
 
-        <div class="image-card">
-          <img src="../miel/concepto.jpg" alt="Concepto Miel de Amor">
-        </div>
-      </div>
-    </section>
+  <h3>Rol</h3>
+  <p>
+    Desarrollo de concepto, dirección de arte, diseño de logotipo,
+    definición de sistema tipográfico, selección cromática y creación
+    de aplicaciones gráficas.
+  </p>
+
+  <h3>Resultado</h3>
+  <p>
+    Sistema de identidad visual coherente y emocional, aplicado a
+    packaging y piezas gráficas, que comunica el carácter artesanal
+    y afectivo de la marca.
+  </p>
+
+</div>
+
+
+   <!-- CONCEPTO -->
+<section>
+  <span class="section-kicker">Concepto</span>
+  <h2>Cómo nació el proyecto</h2>
+
+  <div class="section-grid">
+
+    <div>
+      <p>
+        Miel de Amor surge como una marca pensada para regalar, compartir y
+        acompañar momentos íntimos. La miel se entiende como símbolo de
+        cuidado, dulzura y dedicación, alejándose de lo industrial para
+        recuperar lo artesanal y lo humano.
+      </p>
+
+      <p>
+        Cada frasco busca transmitir cercanía, honestidad y una conexión
+        emocional simple pero profunda.
+      </p>
+    </div>
+
+    <div class="image-card">
+      <img src="../miel/concepto.jpg" alt="Frasco de miel artesanal Miel de Amor">
+    </div>
+
+  </div>
+</section>
+
 
     <!-- MOODBOARD -->
     <section>
@@ -334,12 +468,33 @@
       “Endulzar con cariño.”
     </div>
 
+    <div class="back-portfolio">
+  <a href="../index.html">← Volver al portafolio</a>
+</div>
+
+
     <footer>
-      <a href="../index.html">← Volver al portafolio</a>
-      <span>© Portafolio de Daniela Pasmiño Díaz · Identidad visual</span>
+      <span>© Portafolio de Daniela Pasmiño Díaz</span>
+      <span>Diseño editorial · Narrativa visual</span>
     </footer>
 
   </div>
 
+  <!-- ANIMACIÓN SCROLL -->
+  <script>
+    const steps = document.querySelectorAll('.process-step');
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    steps.forEach(step => observer.observe(step));
+  </script>
+
 </body>
 </html>
+  
