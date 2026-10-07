@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href="../assets/dp-favicon.png?v=3">
+<title>Proyectos · Daniela Pasmiño</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f7f5f0;
+  color: #171717;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.wrap {
+  max-width: 1180px;
+  margin: auto;
+  padding: 56px 5% 90px;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 70px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.back {
+  font-size: 13px;
+  color: #6b6964;
+}
+
+.logo {
+  font: 34px Georgia, serif;
+  color: #c99a4b;
+  letter-spacing: -7px;
+  width: 50px;
+}
+
+.logo span:last-child {
+  position: relative;
+  left: 7px;
+  top: 5px;
+}
+
+.kicker {
+  font-size: 11px;
+  letter-spacing: .16em;
+  color: #8b7852;
+  font-weight: 700;
+}
+
+h1 {
+  font: 400 clamp(52px, 7vw, 92px) / .92 Georgia, serif;
+  letter-spacing: -.05em;
+  margin: 10px 0 55px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 18px;
+  align-items: center;
+
+  padding: 22px;
+
+  background: #fff;
+  border-radius: 16px;
+  border: 1px solid #e2ddd4;
+
+  transition: .25s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 28px rgba(30, 25, 18, .09);
+}
+
+
+/* =========================================================
+   IMAGEN DE CADA PROYECTO
+========================================================= */
+
+.thumb {
+  grid-row: 1 / 3;
+
+  width: 100%;
+  height: 150px;
+
+  overflow: hidden;
+
+  border-radius: 11px;
+  background: #dfe7d7;
+}
+
+.thumb img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+  object-position: center;
+
+  transition: transform .4s ease;
+}
+
+.card:hover .thumb img {
+  transform: scale(1.04);
+}
+
+
+/* =========================================================
+   INFORMACIÓN
+========================================================= */
+
+.card strong {
+  display: block;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.card span {
+  display: block;
+  font-size: 12px;
+  color: #77736c;
+}
+
+.card b {
+  grid-column: 2;
+  grid-row: 1 / 3;
+
+  font-size: 22px;
+  font-weight: 400;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+</style>
+</head>
+
+
+<body>
+
+<div class="wrap">
+
+  <!-- HEADER -->
+
+  <div class="top">
+
+    <a class="back" href="../index.html">
+      ← Volver al inicio
+    </a>
+
+    <a
+      class="logo"
+      href="../index.html"
+      aria-label="Inicio"
+    >
+      <span>D</span><span>P</span>
+    </a>
+
+  </div>
+
+
+  <!-- TITULO -->
+
+  <p class="kicker">
+    PORTAFOLIO · PROYECTOS
+  </p>
+
+  <h1>
+    Proyectos
+  </h1>
+
+
+  <!-- PROYECTOS -->
+
+  <div class="grid">
+
+
+    <!-- TODO PERRO -->
+
+    <a
+      class="card"
+      href="todoperro/index.html"
+    >
+
+      <div class="thumb">
+        <img
+          src="../assets/perrito.png"
+          alt="Proyecto TodoPerro"
+        >
+      </div>
+
+      <div>
+        <strong>TodoPerro</strong>
+        <span>UX/UI · Diseño Web</span>
+      </div>
+
+      <b>→</b>
+
+    </a>
+
+
+    <!-- MUSEO -->
+
+    <a
+      class="card"
+      href="museo/index.html"
+    >
+
+      <div class="thumb">
+        <img
+          src="../assets/museo%202.png"
+          alt="Proyecto Museo"
+        >
+      </div>
+
+      <div>
+        <strong>Museo</strong>
+        <span>Diseño Digital · UX/UI</span>
+      </div>
+
+      <b>→</b>
+
+    </a>
+
+
+    <!-- ISL -->
+
+    <a
+      class="card"
+      href="isl/index.html"
+    >
+
+      <div class="thumb">
+        <img
+          src="../assets/isl%20proyecto.png"
+          alt="Proyecto ISL"
+        >
+      </div>
+
+      <div>
+        <strong>ISL</strong>
+        <span>Diseño Institucional</span>
+      </div>
+
+      <b>→</b>
+
+    </a>
+
+
+    <!-- TURQUÍA -->
+
+    <a
+      class="card"
+      href="turquia/index.html"
+    >
+
+      <div class="thumb">
+        <img
+          src="../assets/turquia.png"
+          alt="Proyecto Turquía"
+        >
+      </div>
+
+      <div>
+        <strong>Turquía</strong>
+        <span>Diseño Editorial</span>
+      </div>
+
+      <b>→</b>
+
+    </a>
+
+
+    <!-- EL CAFÉ DE TUS OJOS -->
+
+    <a
+      class="card"
+      href="cafe/index.html"
+    >
+
+      <div class="thumb">
+        <img
+          src="../assets/portada%20cafe.png"
+          alt="Proyecto El Café de tus Ojos"
+        >
+      </div>
+
+      <div>
+        <strong>El Café de tus Ojos</strong>
+        <span>Branding</span>
+      </div>
+
+      <b>→</b>
+
+    </a>
+
+
+       <!-- MIEL DE AMOR -->
+
+    <a
+      class="card"
+      href="miel/index.html"
+    >
+
+      <div class="thumb">
+        <img
+          src="../assets/miel%20portada.png"
+          alt="Proyecto Miel de Amor"
+        >
+      </div>
+
+      <div>
+        <strong>Miel de Amor</strong>
+        <span>Branding · Packaging</span>
+      </div>
+
+      <b>→</b>
+
+    </a>
+
+
+    <!-- ZÚRICH -->
+
+    <a
+      class="card"
+      href="zurich/index.html"
+    >
+
+      <div class="thumb">
+        <img
+          src="../assets/zurich%20portada.png"
+          alt="Infografía editorial sobre Zúrich"
+        >
+      </div>
+
+      <div>
+        <strong>Zúrich</strong>
+        <span>Infografía · Diseño Editorial</span>
+      </div>
+
+      <b>→</b>
+
+    </a>
+
+
+    <!-- REDES SOCIALES -->
+
+    <a
+      class="card"
+      href="lua/index.html"
+    >
+
+      <div class="thumb">
+        <img
+          src="../assets/lua%20portada.jpg"
+          alt="Proyecto de diseño para redes sociales"
+        >
+      </div>
+
+      <div>
+        <strong>LÚA Botanicals</strong>
+        <span>Diseño Digital · Social Media</span>
+      </div>
+
+      <b>→</b>
+
+    </a>
+
+
+  </div>
+
+    </a>
+
+
+  </div>
+
+</div>
+
+</body>
+</html>

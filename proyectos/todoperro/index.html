@@ -1,0 +1,1616 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TodoPerro · Caso de estudio · Daniela Pasmiño</title>
+
+    <!-- FAVICON TODO PERRO -->
+    <link rel="icon" type="image/png" href="assets/favicon%20todo%20perro.png">
+
+    <style>
+/* =========================
+   RESET
+========================= */
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#f7f4ec;
+    color:#1d281c;
+    font-family:Arial, Helvetica, sans-serif;
+    line-height:1.6;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+
+/* =========================
+   VARIABLES
+========================= */
+
+:root{
+
+    --verde:#2e4b2e;
+    --verde-suave:#6a8f5b;
+
+    --crema:#f4eee6;
+    --arena:#eadcc4;
+
+    --madera:#8b5e34;
+
+    --texto:#1d281c;
+    --gris:#66675f;
+
+    --blanco:#fffdf9;
+
+    --radio:24px;
+
+    --max:1200px;
+}
+
+
+/* =========================
+   CONTENEDOR
+========================= */
+
+.container{
+
+    width:min(var(--max), 90%);
+
+    margin:auto;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar{
+
+    position:relative;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:28px 0;
+
+    border-bottom:1px solid rgba(46,75,46,.12);
+}
+
+.logo{
+
+    font-family:Georgia, serif;
+
+    font-size:24px;
+
+    color:var(--verde);
+
+    font-weight:bold;
+}
+
+.logo small{
+
+    display:block;
+
+    font-family:Arial, sans-serif;
+
+    font-size:8px;
+
+    letter-spacing:.12em;
+
+    font-weight:normal;
+}
+
+.nav-right{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:30px;
+
+    font-size:13px;
+}
+
+.back{
+
+    color:#666;
+
+    transition:.2s;
+}
+
+.back:hover{
+
+    color:var(--verde);
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+
+    padding:90px 0 80px;
+}
+
+.hero-grid{
+
+    display:grid;
+
+    grid-template-columns: .82fr 1.18fr;
+
+    gap:58px;
+
+    align-items:center;
+}
+
+.eyebrow{
+
+    color:var(--verde);
+
+    font-size:11px;
+
+    font-weight:bold;
+
+    letter-spacing:.16em;
+
+    text-transform:uppercase;
+
+    margin-bottom:18px;
+}
+
+.hero h1{
+
+    font-family:Georgia, serif;
+
+    font-size:clamp(54px,5.2vw,68px);
+
+    line-height:.96;
+
+    letter-spacing:-.05em;
+
+    font-weight:400;
+
+    margin-bottom:24px;
+
+    max-width:610px;
+}
+
+.hero h1 span{
+
+    color:var(--verde);
+}
+
+.hero-description{
+
+    max-width:500px;
+
+    color:#55594f;
+
+    font-size:16px;
+
+    margin-bottom:30px;
+}
+
+.buttons{
+
+    display:flex;
+
+    gap:12px;
+
+    flex-wrap:wrap;
+}
+
+.button{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:13px 20px;
+
+    border-radius:10px;
+
+    font-size:13px;
+
+    font-weight:bold;
+
+    transition:.25s;
+}
+
+.button-primary{
+
+    background:var(--verde);
+
+    color:white;
+}
+
+.button-primary:hover{
+
+    background:#203a21;
+
+    transform:translateY(-2px);
+}
+
+.button-secondary{
+
+    border:1px solid #b9b09e;
+
+    color:var(--verde);
+
+    background:transparent;
+}
+
+.button-secondary:hover{
+
+    background:var(--arena);
+}
+
+.hero-note{
+
+    margin-top:25px;
+
+    font-size:12px;
+
+    color:#666;
+}
+
+
+/* =========================
+   HERO IMAGE
+========================= */
+
+.hero-image{
+
+    border-radius:28px;
+
+    overflow:hidden;
+
+    box-shadow:0 25px 60px rgba(40,45,30,.15);
+
+    display:flex;
+
+    align-items:center;
+}
+
+.hero-image img{
+
+    width:100%;
+
+    height:auto;
+
+    display:block;
+}
+
+
+/* =========================
+   PROJECT INFO
+========================= */
+
+.project-info{
+
+    border-top:1px solid rgba(46,75,46,.15);
+
+    border-bottom:1px solid rgba(46,75,46,.15);
+
+    padding:30px 0;
+
+    margin-bottom:100px;
+}
+
+.info-grid{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:20px;
+}
+
+.project-signature{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-top:26px;
+    color:var(--verde);
+}
+
+.signature-icon{
+    width:38px;
+    height:38px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border:1px solid rgba(46,75,46,.16);
+    border-radius:50%;
+    background:rgba(255,253,249,.7);
+    font-size:18px;
+}
+
+.project-signature strong{
+    display:block;
+    font-family:Georgia, serif;
+    font-size:16px;
+    font-weight:400;
+    line-height:1.1;
+}
+
+.project-signature small{
+    display:block;
+    margin-top:3px;
+    color:#77766e;
+    font-size:10px;
+    letter-spacing:.04em;
+}
+
+.info-item{
+
+    padding-right:20px;
+
+    border-right:1px solid rgba(46,75,46,.12);
+}
+
+.info-item:last-child{
+
+    border-right:0;
+}
+
+.info-label{
+
+    display:block;
+
+    color:#858278;
+
+    font-size:10px;
+
+    text-transform:uppercase;
+
+    letter-spacing:.12em;
+
+    margin-bottom:5px;
+}
+
+.info-value{
+
+    font-size:14px;
+
+    font-weight:bold;
+}
+
+
+/* =========================
+   SECCIONES
+========================= */
+
+.section{
+
+    padding:100px 0;
+}
+
+.section-header{
+
+    max-width:650px;
+
+    margin-bottom:45px;
+}
+
+.section-number{
+
+    color:var(--verde);
+
+    font-size:11px;
+
+    letter-spacing:.15em;
+
+    font-weight:bold;
+
+    margin-bottom:12px;
+}
+
+.section h2{
+
+    font-family:Georgia, serif;
+
+    font-size:clamp(38px,4vw,58px);
+
+    line-height:1.05;
+
+    font-weight:400;
+
+    letter-spacing:-.04em;
+
+    margin-bottom:20px;
+}
+
+.section-intro{
+
+    color:#65665f;
+
+    font-size:15px;
+
+    max-width:620px;
+}
+
+
+/* =========================
+   ANTES / DESPUÉS
+========================= */
+
+.before-after{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:25px;
+
+    background:#fffdf9;
+
+    padding:25px;
+
+    border-radius:var(--radio);
+
+    border:1px solid #e5dfd4;
+}
+
+.before-after img{
+
+    width:100%;
+
+    border-radius:16px;
+}
+
+
+/* =========================
+   FULL IMAGE
+========================= */
+
+.image-card{
+
+    background:#fffdf9;
+
+    border:1px solid #e5dfd4;
+
+    border-radius:var(--radio);
+
+    padding:18px;
+
+    overflow:hidden;
+}
+
+.image-card img{
+
+    width:100%;
+
+    border-radius:16px;
+}
+
+
+/* =========================
+   PROCESO
+========================= */
+
+.process{
+
+    display:grid;
+
+    grid-template-columns:repeat(6,1fr);
+
+    gap:12px;
+
+    margin-top:45px;
+}
+
+.process-item{
+
+    text-align:center;
+
+    padding:25px 12px;
+
+    background:#fffdf9;
+
+    border:1px solid #e5dfd4;
+
+    border-radius:18px;
+}
+
+.process-number{
+
+    width:42px;
+
+    height:42px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    margin:0 auto 15px;
+
+    border-radius:50%;
+
+    background:var(--verde);
+
+    color:white;
+
+    font-size:13px;
+
+    font-weight:bold;
+}
+
+.process-item strong{
+
+    display:block;
+
+    font-size:12px;
+
+    margin-bottom:7px;
+}
+
+.process-item span{
+
+    display:block;
+
+    font-size:11px;
+
+    color:#77766e;
+}
+
+
+/* =========================
+   DECISIONES DE EXPERIENCIA
+========================= */
+
+.decision-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:16px;
+}
+
+.decision-card{
+    background:#fffdf9;
+    border:1px solid #e5dfd4;
+    border-radius:20px;
+    padding:26px;
+}
+
+.decision-index{
+    display:block;
+    color:var(--verde);
+    font-size:11px;
+    font-weight:bold;
+    letter-spacing:.12em;
+    margin-bottom:35px;
+}
+
+.decision-card h3{
+    font-family:Georgia, serif;
+    font-size:24px;
+    font-weight:400;
+    margin-bottom:10px;
+}
+
+.decision-card p{
+    color:#6b6b64;
+    font-size:13px;
+    line-height:1.6;
+}
+
+
+/* =========================
+   DESIGN SYSTEM
+========================= */
+
+.design-system{
+
+    background:#edf0e5;
+
+    border-radius:30px;
+
+    padding:35px;
+}
+
+.design-system img{
+
+    border-radius:18px;
+}
+
+
+/* =========================
+   FINAL DESIGN
+========================= */
+
+.final-section{
+
+    background:#f0eee4;
+
+    border-radius:30px;
+
+    padding:50px;
+
+    margin-top:30px;
+}
+
+.final-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:30px;
+
+    align-items:center;
+}
+
+.final-text h3{
+
+    font-family:Georgia, serif;
+
+    font-size:38px;
+
+    line-height:1.1;
+
+    font-weight:400;
+
+    margin-bottom:20px;
+}
+
+.final-text p{
+
+    color:#65665f;
+
+    max-width:500px;
+
+    margin-bottom:25px;
+}
+
+
+/* =========================
+   BOTÓN DEL CIERRE
+========================= */
+
+.resultado .final-cta{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    background:var(--arena);
+    color:var(--verde);
+    border:1px solid var(--arena);
+    min-width:260px;
+}
+
+.resultado .final-cta:hover{
+    background:var(--blanco);
+    color:var(--verde);
+    border-color:var(--blanco);
+    transform:translateY(-2px);
+}
+
+/* =========================
+   RESULTADO
+========================= */
+
+.resultado{
+
+    background:var(--verde);
+
+    color:white;
+
+    border-radius:30px;
+
+    padding:60px;
+
+    text-align:center;
+
+    margin:100px 0;
+}
+
+.resultado h2{
+
+    font-family:Georgia, serif;
+
+    font-size:46px;
+
+    font-weight:400;
+
+    margin-bottom:18px;
+}
+
+.resultado p{
+
+    max-width:650px;
+
+    margin:0 auto 30px;
+
+    color:#e7eadf;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer.container{
+  padding-top:0;
+}
+
+.footer-inner{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-between;
+  align-items:center;
+  row-gap:12px;
+  column-gap:24px;
+  padding:22px 0 50px;
+  border-top:1px solid rgba(46,75,46,.15);
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:var(--gris);
+}
+
+.footer-inner a{
+  transition:color .2s ease;
+}
+
+.footer-back:hover,
+.footer-links a:hover{
+  color:var(--verde);
+}
+
+.footer-links{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  order:2;
+  margin:0 auto;
+}
+
+.footer-sep{
+  color:rgba(46,75,46,.3);
+}
+
+.footer-copy{
+  order:3;
+  color:#9a9488;
+  font-size:9px;
+  font-weight:400;
+  letter-spacing:.06em;
+  text-transform:none;
+}
+
+.footer-back{
+  order:1;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+
+@media(max-width:900px){
+
+    .hero-grid{
+
+        grid-template-columns:1fr;
+
+        gap:40px;
+    }
+
+    .info-grid{
+
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .process{
+
+        grid-template-columns:repeat(3,1fr);
+    }
+
+    .final-grid{
+        grid-template-columns:1fr;
+    }
+
+    .decision-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:600px){
+
+    .navbar{
+
+        padding:20px 0;
+    }
+
+    .nav-right{
+
+        gap:12px;
+    }
+
+    .hero{
+
+        padding:55px 0;
+    }
+
+    .hero h1{
+
+        font-size:50px;
+    }
+
+    .project-info{
+
+        margin-bottom:40px;
+    }
+
+    .info-grid{
+
+        grid-template-columns:1fr 1fr;
+    }
+
+    .info-item{
+
+        border-right:0;
+    }
+
+    .section{
+
+        padding:65px 0;
+    }
+
+    .before-after{
+
+        grid-template-columns:1fr;
+
+        padding:12px;
+    }
+
+    .process{
+
+        grid-template-columns:1fr 1fr;
+    }
+
+    .design-system,
+    .final-section,
+    .resultado{
+        padding:25px;
+    }
+
+    .decision-grid{
+        grid-template-columns:1fr;
+    }
+
+    .resultado h2{
+
+        font-size:36px;
+    }
+
+    .footer-inner{
+        flex-direction:column;
+        align-items:center;
+        text-align:center;
+        gap:14px;
+    }
+
+    .footer-links{
+        margin:0;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAV
+========================= -->
+
+<header class="container">
+
+    <nav class="navbar">
+
+        <a href="../../index.html" class="logo">
+
+            TodoPerro
+
+            <small>CASAS DE MADERA ARTESANALES</small>
+
+        </a>
+
+        <div class="nav-right">
+
+            <a href="../index.html" class="back">
+                ← Volver a proyectos
+            </a>
+
+            <a href="../../index.html">
+                DP
+            </a>
+
+        </div>
+
+    </nav>
+
+</header>
+
+
+<main>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+<div class="container">
+
+<div class="hero-grid">
+
+
+<div>
+
+<p class="eyebrow">
+CASO DE ESTUDIO · UX/UI
+</p>
+
+<h1>
+Una experiencia<br>
+digital para los<br>
+<span>mejores amigos.</span>
+</h1>
+
+<p class="hero-description">
+
+Rediseño de la experiencia digital de TodoPerro,
+una marca de casas de madera personalizadas
+para perros, buscando una navegación más clara,
+cercana y confiable.
+
+</p>
+
+
+<div class="buttons">
+
+<a href="#proceso" class="button button-primary">
+Ver proceso →
+</a>
+
+</div>
+
+
+<p class="hero-note">
+ Diseño realizado en Chile · UX/UI · Diseño Web
+</p>
+
+<div class="project-signature" aria-label="Firma de Daniela Pasmiño">
+    <span class="signature-icon" aria-hidden="true">🐾</span>
+    <span>
+        <strong>Daniela Pasmiño</strong>
+        <small>Diseñadora Gráfica &amp; Digital</small>
+    </span>
+</div>
+
+</div>
+
+
+<div class="hero-image">
+
+<img
+src="assets/Mockup%20TodoPerro_%20casas%20artesanales%20para%20perros.png"
+alt="Proyecto TodoPerro en computador y teléfono"
+>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     DATOS
+========================= -->
+
+<section class="project-info">
+
+<div class="container">
+
+<div class="info-grid">
+
+<div class="info-item">
+<span class="info-label">Cliente</span>
+<span class="info-value">TodoPerro</span>
+</div>
+
+<div class="info-item">
+<span class="info-label">Servicio</span>
+<span class="info-value">UX/UI · Diseño Web</span>
+</div>
+
+<div class="info-item">
+<span class="info-label">Rol</span>
+<span class="info-value">Diseñadora UX/UI</span>
+</div>
+
+<div class="info-item">
+<span class="info-label">Año</span>
+<span class="info-value">2024</span>
+</div>
+
+<div class="info-item">
+<span class="info-label">Duración</span>
+<span class="info-value">4 semanas</span>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     DESAFÍO
+========================= -->
+
+<section class="section">
+
+<div class="container">
+
+<div class="section-header">
+
+<p class="section-number">
+01 · EL DESAFÍO
+</p>
+
+<h2>
+Una experiencia que no comunicaba todo su potencial.
+</h2>
+
+<p class="section-intro">
+
+El sitio necesitaba una experiencia más clara,
+visual y cercana que ayudara a los usuarios a
+comprender los productos y avanzar fácilmente
+hacia la cotización.
+
+</p>
+
+</div>
+
+
+<div class="image-card">
+
+<img
+src="assets/antes-despues-nuevo.png"
+alt="Antes y después del sitio web TodoPerro"
+>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     PROCESO UX
+========================= -->
+
+<section class="section" id="proceso">
+
+<div class="container">
+
+<div class="section-header">
+
+<p class="section-number">
+02 · PROCESO UX
+</p>
+
+<h2>
+Diseño centrado en las personas y sus perros.
+</h2>
+
+<p class="section-intro">
+
+Trabajé el proyecto desde una perspectiva
+centrada en el usuario para comprender sus
+necesidades y transformar esos hallazgos
+en decisiones de diseño.
+
+</p>
+
+</div>
+
+
+<div class="process">
+
+
+<div class="process-item">
+
+<div class="process-number">01</div>
+
+<strong>INVESTIGAR</strong>
+
+<span>
+Comprender usuarios,
+contexto y necesidades.
+</span>
+
+</div>
+
+
+<div class="process-item">
+
+<div class="process-number">02</div>
+
+<strong>DEFINIR</strong>
+
+<span>
+Organizar hallazgos
+y oportunidades.
+</span>
+
+</div>
+
+
+<div class="process-item">
+
+<div class="process-number">03</div>
+
+<strong>IDEAR</strong>
+
+<span>
+Generar soluciones
+y estructura.
+</span>
+
+</div>
+
+
+<div class="process-item">
+
+<div class="process-number">04</div>
+
+<strong>DISEÑAR</strong>
+
+<span>
+Crear wireframes
+y diseño visual.
+</span>
+
+</div>
+
+
+<div class="process-item">
+
+<div class="process-number">05</div>
+
+<strong>VALIDAR</strong>
+
+<span>
+Revisar la experiencia
+y mejorarla.
+</span>
+
+</div>
+
+
+<div class="process-item">
+
+<div class="process-number">06</div>
+
+<strong>IMPLEMENTAR</strong>
+
+<span>
+Preparar la solución
+final responsive.
+</span>
+
+</div>
+
+
+</div>
+
+
+<div class="image-card" style="margin-top:35px;">
+
+<img
+src="assets/proceso-ux.png"
+alt="Proceso UX de TodoPerro"
+>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     WIREFRAMES
+========================= -->
+
+<section class="section">
+
+<div class="container">
+
+<div class="section-header">
+
+<p class="section-number">
+03 · ARQUITECTURA Y WIREFRAMES
+</p>
+
+<h2>
+Primero estructuramos. Después diseñamos.
+</h2>
+
+<p class="section-intro">
+
+La experiencia se organizó en secciones que
+acompañan al usuario desde el descubrimiento
+del producto hasta la cotización.
+
+</p>
+
+</div>
+
+
+<div class="image-card">
+
+<img
+src="assets/wireframes-todoperro.png"
+alt="Wireframes y estructura de TodoPerro"
+>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     DECISIONES DE EXPERIENCIA
+========================= -->
+
+<section class="section decision-section">
+
+<div class="container">
+
+<div class="section-header">
+
+<p class="section-number">
+03.5 · DECISIONES DE EXPERIENCIA
+</p>
+
+<h2>
+Cada decisión busca facilitar la elección.
+</h2>
+
+<p class="section-intro">
+La estructura del sitio organiza la información para acompañar al usuario
+desde el descubrimiento de las casas hasta el contacto con la marca.
+</p>
+
+</div>
+
+<div class="decision-grid">
+
+<div class="decision-card">
+<span class="decision-index">01</span>
+<h3>Jerarquía clara</h3>
+<p>Priorizamos producto, beneficios y llamados a la acción para facilitar la lectura.</p>
+</div>
+
+<div class="decision-card">
+<span class="decision-index">02</span>
+<h3>Navegación simple</h3>
+<p>La arquitectura reduce la fricción y ordena el recorrido por el contenido.</p>
+</div>
+
+<div class="decision-card">
+<span class="decision-index">03</span>
+<h3>Experiencia responsive</h3>
+<p>La propuesta se adapta a desktop y móvil manteniendo claridad y consistencia.</p>
+</div>
+
+<div class="decision-card">
+<span class="decision-index">04</span>
+<h3>Identidad cercana</h3>
+<p>Verdes, crema, madera e iconografía construyen una experiencia cálida y artesanal.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     DESIGN SYSTEM
+========================= -->
+
+<section class="section">
+
+<div class="container">
+
+<div class="section-header">
+
+<p class="section-number">
+04 · DESIGN SYSTEM
+</p>
+
+<h2>
+Una identidad visual cálida, natural y cercana.
+</h2>
+
+<p class="section-intro">
+
+La identidad combina verdes inspirados en la naturaleza, tonos crema y madera para transmitir confianza, cercanía y fabricación artesanal.
+
+</p>
+
+</div>
+
+
+<div class="design-system">
+
+<img
+src="assets/design-system.png"
+alt="Design System TodoPerro"
+>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     COMPONENTES
+========================= -->
+
+<section class="section">
+
+<div class="container">
+
+<div class="section-header">
+
+<p class="section-number">
+05 · UI Y COMPONENTES
+</p>
+
+<h2>
+Componentes para una experiencia clara.
+</h2>
+
+<p class="section-intro">
+
+Diseñé componentes reutilizables para mantener una interfaz ordenada y fácil de usar.
+</p>
+
+</div>
+
+
+<div class="image-card">
+
+<img
+src="assets/componentes.png"
+alt="Componentes e interacciones TodoPerro"
+>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     DISEÑO FINAL
+========================= -->
+
+<section class="section">
+
+<div class="container">
+
+<div class="section-header">
+
+<p class="section-number">
+06 · DISEÑO FINAL
+</p>
+
+<h2>
+Una experiencia clara y cercana.
+</h2>
+
+<p class="section-intro">
+
+La interfaz se adapta de forma fluida para ofrecer una navegación cómoda e intuitiva en cualquier pantalla.
+</p>
+
+</div>
+
+
+<div class="final-section">
+
+<div class="final-grid">
+
+
+<div class="final-text">
+
+<h3>
+Una experiencia clara en cada dispositivo.
+</h3>
+
+<p>
+
+El diseño final busca que cada interacción sea clara y cercana, facilitando la elección de una casa y el contacto con la marca.
+
+</p>
+
+
+
+</div>
+
+
+<div>
+
+<img
+src="assets/Dise%C3%B1o%20final%20desktop%20TodoPerro.png"alt="Diseño final desktop TodoPerro"style="border-radius:18px;">
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<div style="margin-top:30px;" class="image-card">
+
+<img
+src="assets/final-mobile-nuevo.png"
+alt="Diseño responsive móvil TodoPerro"
+>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     PROCESO DE DISEÑO
+========================= -->
+
+<section class="section">
+
+<div class="container">
+
+<div class="section-header">
+
+<p class="section-number">
+07 · EVOLUCIÓN DEL DISEÑO
+</p>
+
+<h2>
+Del planteamiento a la experiencia final.
+</h2>
+
+</div>
+
+
+<div class="image-card">
+
+<img
+src="assets/Evoluci%C3%B3n%20del%20dise%C3%B1o%20TodoPerro.png"
+alt="Evolución del diseño TodoPerro"
+>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     CIERRE
+========================= -->
+
+<section class="container">
+
+<div class="resultado">
+
+<h2>
+Hecho con amor,
+para quienes son familia. 🐾
+</h2>
+
+<p>
+
+TodoPerro fue diseñado para transformar una
+experiencia digital compleja en una experiencia
+más clara, cálida y conectada con las personas
+que consideran a sus perros parte de la familia.
+
+</p>
+
+<a href="../index.html" class="button final-cta">
+ ← Ver todos los proyectos
+ </a>
+
+</div>
+
+</section>
+
+
+</main>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer class="container">
+
+  <div class="footer-inner">
+
+    <a href="../index.html" class="footer-back">← Volver a proyectos</a>
+
+    <div class="footer-links">
+      <a href="../index.html#proyectos">Todos los proyectos</a>
+      <span class="footer-sep" aria-hidden="true">·</span>
+     
+    </div>
+
+    <span class="footer-copy">© 2026 Daniela Pasmiño</span>
+
+  </div>
+
+</footer>
+
+
+</body>
+</html>

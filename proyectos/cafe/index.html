@@ -1,0 +1,1394 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>El Café de tus Ojos — Daniela Pasmiño</title>
+
+  <!-- Favicon: usa el isotipo real de la marca (grano de café con vapor) -->
+  <link rel="icon" type="image/png" href="../cafe/isotipo-image.png">
+
+  <style>
+    /* =========================================================
+       EL CAFÉ DE TUS OJOS
+       Nueva diagramación editorial
+       ========================================================= */
+
+    :root {
+      --espresso: #3B2A22;
+      --cream: #F2E5D9;
+      --gold: #C19C65;
+      --olive: #8E8E73;
+      --terracotta: #C98F78;
+      --forest: #1E3A32;
+      --ink: #211914;
+      --paper: #F8F4EE;
+      --white: #FFFDFC;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* =========================================================
+       NAVEGACIÓN
+       ========================================================= */
+
+    .topbar {
+      position: absolute;
+      z-index: 10;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 25px 4%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--espresso);
+    }
+
+    .brand-mini {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-mini-mark {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 25px;
+    }
+
+    .brand-mini-text {
+      font-size: 9px;
+      line-height: 1.3;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .nav {
+      display: flex;
+      gap: 30px;
+      font-size: 9px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .nav a:hover {
+      opacity: .55;
+    }
+
+    /* =========================================================
+       TIPOGRAFÍA
+       ========================================================= */
+
+    .eyebrow {
+      margin-bottom: 17px;
+      color: var(--gold);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3,
+    .script {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 400;
+    }
+
+    h2 {
+      font-size: clamp(38px, 5vw, 68px);
+      line-height: .98;
+      letter-spacing: -.035em;
+    }
+
+    .body-copy {
+      max-width: 490px;
+      color: #5d5049;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+      
+      /* =========================================================
+   LOGO DE EL CAFÉ DE TUS OJOS
+   ========================================================= */
+
+.cafe-brand {
+  display: flex;
+  align-items: center;
+}
+
+.cafe-brand img {
+  width: 90px;
+  height: auto;
+  display: block;
+}
+
+    /* =========================================================
+   01 — HERO
+   Mantiene completa la proporción de la imagen
+   ========================================================= */
+
+.hero{
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1927 / 816;
+  overflow: hidden;
+}
+
+.hero-image{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-image img{
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* ---------------------------------------------------------
+   BLOQUE DE TEXTO
+   Va encima de la zona clara de la fotografía.
+   --------------------------------------------------------- */
+
+.hero-copy{
+  position:relative;
+  z-index:3;
+  width:40%;
+  height:100%;
+  padding:145px 35px 60px 4.2%;
+
+  display:flex;
+  align-items:flex-start;
+  justify-content:center;
+  flex-direction:column;
+
+  /* IMPORTANTE:
+     ya NO ponemos fondo ni border-radius,
+     porque la onda está en la imagen */
+  background:transparent;
+}
+
+.hero-copy-inner{
+  width:100%;
+  max-width:430px;
+}
+
+/* ---------------------------------------------------------
+   TEXTOS
+   --------------------------------------------------------- */
+
+.hero-title{
+  margin-top:18px;
+
+  color:var(--espresso);
+
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:72px;
+  font-weight:400;
+  line-height:.84;
+  letter-spacing:-.055em;
+}
+
+.hero-title span{
+  display:block;
+
+  margin-top:7px;
+
+  color:#9a724e;
+
+  font-family:"Brush Script MT","Segoe Script",cursive;
+  font-size:47px;
+  line-height:1;
+  letter-spacing:-.02em;
+}
+
+.hero-copy .copy{
+  max-width:390px;
+  margin-top:28px;
+
+  color:#554a43;
+  font-size:12px;
+  line-height:1.75;
+}
+
+.hero-quote{
+  margin-top:21px;
+
+  color:var(--espresso);
+
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:13px;
+  font-style:italic;
+}
+
+.hero-link{
+  width:max-content;
+
+  margin-top:31px;
+  padding-bottom:6px;
+
+  border-bottom:1px solid #a98a6a;
+
+  color:#725c4b;
+
+  font-size:8px;
+  font-weight:700;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+
+    /* =========================================================
+       CONTENEDOR GENERAL
+       ========================================================= */
+
+    .section {
+      padding: 105px 5%;
+    }
+
+    .section-inner {
+      width: min(1280px, 100%);
+      margin: 0 auto;
+    }
+
+    /* =========================================================
+       02 — CONCEPTO
+       ========================================================= */
+
+    .concept {
+      background: var(--paper);
+    }
+
+    .concept-grid {
+      display: grid;
+      grid-template-columns: .78fr 1.22fr;
+      gap: 75px;
+      align-items: center;
+    }
+
+    .concept-text h2 {
+      max-width: 450px;
+    }
+
+    .concept-text .body-copy {
+      margin-top: 30px;
+    }
+
+    .concept-text .body-copy + .body-copy {
+      margin-top: 17px;
+    }
+
+    .concept-image {
+      position: relative;
+    }
+
+    .concept-image img {
+      position: relative;
+      z-index: 1;
+      height: 480px;
+      object-fit: cover;
+      border-radius: 3px;
+    }
+
+    /* =========================================================
+       03 — MOODBOARD
+       ========================================================= */
+
+    .moodboard {
+      background: var(--white);
+    }
+
+    .mood-heading {
+      display: flex;
+      justify-content: space-between;
+      gap: 40px;
+      align-items: end;
+      margin-bottom: 35px;
+    }
+
+    .mood-heading p {
+      max-width: 380px;
+      color: #74675f;
+      font-size: 13px;
+    }
+
+    .mood-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 9px;
+    }
+
+    .mood-grid img {
+      height: 185px;
+      object-fit: cover;
+      border-radius: 3px;
+    }
+
+    .color-strip {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      margin-top: 18px;
+      height: 42px;
+    }
+
+    .color-strip div:nth-child(1) {
+      background: var(--espresso);
+    }
+
+    .color-strip div:nth-child(2) {
+      background: var(--cream);
+    }
+
+    .color-strip div:nth-child(3) {
+      background: var(--gold);
+    }
+
+    .color-strip div:nth-child(4) {
+      background: var(--olive);
+    }
+
+    .color-strip div:nth-child(5) {
+      background: var(--terracotta);
+    }
+
+    /* =========================================================
+       04 + 05 — IDENTIDAD / SISTEMA GRÁFICO
+       Nueva diagramación basada en la referencia aprobada
+       ========================================================= */
+
+    .identity-system {
+      background: var(--paper);
+    }
+
+    .identity-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-top: 1px solid #d9cec3;
+      border-bottom: 1px solid #d9cec3;
+    }
+
+    .identity-column {
+      min-height: 620px;
+      padding: 70px 7%;
+    }
+
+    .identity-column + .identity-column {
+      border-left: 1px solid #d9cec3;
+    }
+
+    .identity-column h2 {
+      margin-bottom: 42px;
+    }
+
+    .small-label {
+      margin-bottom: 18px;
+      color: var(--gold);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: .17em;
+      text-transform: uppercase;
+    }
+
+    /* 04 — Logo e isotipo */
+
+    .logo-block {
+      display: grid;
+      grid-template-columns: 1.35fr .65fr;
+      gap: 35px;
+      align-items: start;
+      margin-top: 0;
+    }
+
+    .logo-column,
+    .isotipo-column {
+      min-width: 0;
+    }
+
+    .logo-image {
+      width: 100%;
+      max-width: 350px;
+      height: 125px;
+      object-fit: contain;
+      object-position: left center;
+    }
+
+    .isotipo-image {
+      width: 100%;
+      max-width: 125px;
+      height: 150px;
+      object-fit: contain;
+      object-position: center;
+    }
+
+    .application-area {
+      display: grid;
+      grid-template-columns: .72fr 1.28fr;
+      gap: 35px;
+      align-items: center;
+      margin-top: 42px;
+    }
+
+    .application-image {
+      width: 100%;
+      height: 220px;
+      object-fit: contain;
+      object-position: center bottom;
+    }
+
+    .identity-description {
+      margin: 0;
+      max-width: 430px;
+      color: #655850;
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    .identity-description p + p {
+      margin-top: 20px;
+    }
+
+    /* 05 — Sistema gráfico */
+
+    .palette {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 10px;
+      margin-top: 0;
+    }
+
+    .swatch {
+      height: 88px;
+      display: flex;
+      align-items: end;
+      padding: 9px;
+      border-radius: 2px;
+      font-size: 8px;
+      font-weight: 700;
+      letter-spacing: .08em;
+    }
+
+    .swatch span {
+      mix-blend-mode: difference;
+      color: white;
+    }
+
+    .swatch.cream-swatch span {
+      color: var(--espresso);
+      mix-blend-mode: normal;
+    }
+
+    .swatch.forest-swatch span {
+      color: white;
+      mix-blend-mode: normal;
+    }
+
+    .type-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 35px;
+      margin-top: 0;
+    }
+
+    .type-name {
+      margin-bottom: 10px;
+      font-family: "Bodoni Moda", Georgia, "Times New Roman", serif;
+      font-size: 30px;
+    }
+
+    .type-script {
+      font-family: "Satisfy", "Brush Script MT", "Segoe Script", cursive;
+      font-size: 31px;
+      font-style: italic;
+    }
+
+    .type-sample {
+      color: #766960;
+      font-size: 11px;
+      line-height: 1.7;
+    }
+
+    /* =========================================================
+       06 — PACKAGING
+       Diagramación editorial aprobada
+       ========================================================= */
+
+    .packaging {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background: var(--paper);
+  color: var(--espresso);
+}
+
+.packaging .section-inner {
+  width: min(1870px, 100%);
+}
+
+.packaging-layout {
+  display: grid;
+  grid-template-columns: 390px minmax(0, 1fr);
+  gap: 43px;
+  align-items: start;
+}
+
+    .packaging-copy .eyebrow {
+      margin-bottom: 24px;
+      color: var(--gold);
+    }
+
+    .packaging-copy h2 {
+      margin-bottom: 28px;
+      max-width: 430px;
+      color: var(--espresso);
+      font-size: clamp(42px, 3.2vw, 58px);
+      line-height: .98;
+      letter-spacing: -.035em;
+    }
+
+    .packaging-copy p {
+      max-width: 355px;
+      margin-bottom: 30px;
+      color: #665850;
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    .packaging-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      min-width: 205px;
+      padding: 13px 16px;
+      border: 1px solid #b9a58f;
+      color: var(--espresso);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+      transition: .25s ease;
+    }
+
+    .packaging-button span {
+      font-size: 17px;
+      line-height: 1;
+      margin-left: 22px;
+    }
+
+    .packaging-button:hover {
+      background: var(--espresso);
+      color: var(--paper);
+    }
+
+    .packaging-gallery {
+  display: grid;
+  grid-template-columns: 2.75fr 1fr;
+  gap: 13px;
+  min-width: 0;
+  align-items: start;
+}
+
+.packaging-main-image {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 12px;
+}
+
+.packaging-side {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1.05fr .95fr;
+  gap: 13px;
+  min-width: 0;
+  height: 100%;
+}
+
+.packaging-side img {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  display: block;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.packaging-side img:first-child {
+  grid-column: 1 / 3;
+}
+
+    /* =========================================================
+       07 — APLICACIONES
+       ========================================================= */
+
+    .applications { padding: 70px 5% 65px; background: var(--paper); }
+    .applications .section-inner { width: min(1380px, 100%); margin: 0 auto; }
+    .applications-heading { display:flex; justify-content:space-between; align-items:end; gap:50px; margin-bottom:28px; }
+    .applications-heading h2 { margin-top:8px; color:var(--espresso); font-size:clamp(42px,4vw,58px); line-height:.98; letter-spacing:-.035em; }
+    .applications-heading p { max-width:480px; margin-bottom:3px; color:#665850; font-size:13px; line-height:1.7; }
+    .application-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:10px; width:100%; }
+    .application-grid img { display:block; width:100%; height:190px; object-fit:cover; object-position:center; border-radius:12px; }
+
+    /* =========================================================
+   08 — RESULTADO FINAL
+========================================================= */
+
+.resultado-final {
+    position: relative;
+    min-height: 520px;
+    display: grid;
+    grid-template-columns: 42% 58%;
+    align-items: stretch;
+    overflow: hidden;
+    background: #f5f0e9;
+}
+
+
+/* ---------------------------------------------------------
+   TEXTO
+--------------------------------------------------------- */
+
+.resultado-texto {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 80px 40px 80px 6vw;
+
+    background: #f5f0e9;
+}
+
+
+.resultado-numero {
+    margin-bottom: 35px;
+
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+
+    color: #b9975b;
+}
+
+
+.resultado-texto h2 {
+    margin: 0 0 35px;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(42px, 4vw, 68px);
+    line-height: 0.98;
+    font-weight: 400;
+
+    color: #33251f;
+}
+
+
+.resultado-texto p {
+    max-width: 560px;
+
+    margin: 0;
+
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    line-height: 1.7;
+
+    color: #5d514a;
+}
+
+
+/* ---------------------------------------------------------
+   IMAGEN
+--------------------------------------------------------- */
+
+.resultado-imagen {
+    position: relative;
+    overflow: hidden;
+}
+
+
+.resultado-imagen::before {
+    content: "";
+
+    position: absolute;
+    z-index: 1;
+
+    left: -1px;
+    top: 0;
+    bottom: 0;
+
+    width: 180px;
+
+    background: linear-gradient(
+        to right,
+        #f5f0e9 0%,
+        rgba(245, 240, 233, 0.85) 25%,
+        rgba(245, 240, 233, 0.25) 70%,
+        transparent 100%
+    );
+
+    pointer-events: none;
+}
+
+
+.resultado-imagen img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+    object-position: center;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+  padding: 25px 5%;
+  background: var(--paper);
+}
+
+.footer-inner {
+  width: min(1280px, 100%);
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  row-gap: 12px;
+  column-gap: 24px;
+  padding: 22px 0;
+  border-top: 1px solid #d8ccc0;
+  color: #8a7768;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.footer-inner a {
+  transition: color .2s ease;
+}
+
+.footer-back:hover,
+.footer-links a:hover {
+  color: var(--espresso);
+}
+
+.footer-links {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  order: 2;
+  margin: 0 auto;
+}
+
+.footer-sep {
+  color: #cbb9a7;
+}
+
+.footer-copy {
+  order: 3;
+  color: #b3a494;
+  font-size: 9px;
+  font-weight: 400;
+  letter-spacing: .06em;
+}
+
+.footer-back {
+  order: 1;
+}
+
+
+/* ---------------------------------------------------------
+   RESPONSIVE
+--------------------------------------------------------- */
+
+@media (max-width: 900px) {
+
+    .resultado-final {
+        grid-template-columns: 1fr;
+    }
+
+    .resultado-texto {
+        padding: 70px 30px 50px;
+    }
+
+    .resultado-imagen {
+        min-height: 400px;
+    }
+
+    .resultado-imagen::before {
+        display: none;
+    }
+}
+
+    @media (max-width:600px) {
+      .applications { padding:60px 6%; }
+      .application-grid { grid-template-columns:1fr 1fr; }
+      .application-grid img { height:190px; }
+      .final { padding:0 6% 30px; }
+      .final-layout { display:flex; flex-direction:column; }
+      .final-copy { padding:45px 30px; }
+      .final-image { height:320px; }
+      .project-navigation { grid-template-columns:1fr 1fr; gap:18px; padding:18px; border-radius:18px; }
+      .project-all { grid-column:1/3; grid-row:1; padding:0 20px; border:0; }
+      .project-prev { grid-column:1; grid-row:2; }
+      .project-next { grid-column:2; grid-row:2; }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 14px;
+      }
+
+      .footer-links {
+        margin: 0;
+      }
+    }
+  </style>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=Satisfy&display=swap');
+  </style>
+
+</head>
+
+<body>
+
+  <!-- =========================================================
+       NAVEGACIÓN
+       ========================================================= -->
+
+  <header class="topbar">
+    <a href="../index.html" class="brand-mini cafe-brand">
+  <img src="../cafe/logito.png" alt="El Café de tus Ojos">
+</a>
+
+    <nav class="nav">
+      <a href="../index.html#proyectos">Proyectos</a>
+      <a href="../index.html#sobre-mi">Sobre mí</a>
+      <a href="../index.html#enfoque">Enfoque</a>
+      <a href="../index.html#contacto">Contacto</a>
+    </nav>
+  </header>
+
+
+  <!-- =========================================================
+       01 — PORTADA / IDENTIDAD VISUAL
+       ========================================================= -->
+
+  <main>
+<section class="hero">
+
+  <!-- IMAGEN COMPLETA DEL HERO -->
+  <div class="hero-image">
+
+    <img
+      src="../cafe/hero.png"
+      alt="El Café de tus Ojos">
+
+  </div>
+
+
+  <!-- TEXTO SOBRE LA ZONA CLARA -->
+  <div class="hero-copy">
+
+    <div class="hero-copy-inner">
+
+      <div class="eyebrow">
+        01 — Identidad visual
+      </div>
+
+      <h1 class="hero-title">
+        El Café
+        <span>de tus Ojos</span>
+      </h1>
+
+      <p class="copy">
+        Proyecto de identidad visual inspirado en una frase íntima
+        y poética. La marca transforma una emoción —una mirada
+        intensa— en una experiencia sensorial ligada al café,
+        lo cotidiano y lo afectivo.
+      </p>
+
+      <p class="hero-quote">
+        “La intensidad de una mirada hecha café.”
+      </p>
+
+      <a href="#concepto" class="hero-link">
+        Ver proyecto completo
+        &nbsp;&nbsp;&nbsp; →
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+    <!-- =======================================================
+         02 — CONCEPTO
+         ======================================================= -->
+
+    <section class="section concept" id="concepto">
+
+      <div class="section-inner concept-grid">
+
+        <div class="concept-text">
+
+          <div class="eyebrow">
+            02 — La idea
+          </div>
+
+          <h2>
+            Cómo nació<br>
+            el proyecto
+          </h2>
+
+          <p class="body-copy">
+            El Café de tus Ojos surge a partir de una conversación
+            íntima entre amigas, donde las miradas, los recuerdos
+            y los amores se transforman en palabras.
+          </p>
+
+          <p class="body-copy">
+            El café aparece como metáfora de intensidad, cercanía
+            y emoción compartida.
+          </p>
+
+          <p class="body-copy">
+            La marca busca conectar desde lo sensible, alejándose
+            de lo industrial, para proponer una experiencia honesta,
+            cálida y cercana.
+          </p>
+
+        </div>
+
+        <div class="concept-image">
+          <img src="../cafe/concepto.jpg.png" alt="Concepto de El Café de tus Ojos">
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =======================================================
+         03 — MOODBOARD
+         ======================================================= -->
+
+    <section class="section moodboard">
+
+      <div class="section-inner">
+
+        <div class="mood-heading">
+
+          <div>
+            <div class="eyebrow">
+              03 — Universo visual
+            </div>
+
+            <h2>
+              Moodboard e inspiración
+            </h2>
+          </div>
+
+          <p>
+            Un universo construido desde el café, las miradas,
+            la calidez, las texturas naturales y una sensibilidad
+            íntima y femenina.
+          </p>
+
+        </div>
+
+        <div class="mood-grid">
+          <img src="../cafe/mood-1.jpg" alt="Inspiración café">
+          <img src="../cafe/mood-2.jpg" alt="Inspiración mirada">
+          <img src="../cafe/mood-3.jpg" alt="Inspiración luz">
+          <img src="../cafe/mood-4.png" alt="Inspiración natural">
+          <img src="../cafe/mood-5.png" alt="Texturas e inspiración">
+          <img src="../cafe/mood-6.jpg" alt="Universo visual">
+        </div>
+
+        <div class="color-strip" aria-label="Paleta cromática">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =======================================================
+         04 + 05 — IDENTIDAD Y SISTEMA GRÁFICO
+         ======================================================= -->
+
+    <section class="section identity-system">
+
+      <div class="section-inner identity-grid">
+
+        <!-- 04 -->
+        <article class="identity-column">
+
+          <div class="eyebrow">
+            04 — Identidad de marca
+          </div>
+
+          <h2>
+            Logo<br>
+            e isotipo
+          </h2>
+
+          <div class="logo-block">
+
+            <div class="logo-column">
+
+              <div class="small-label">
+                Logotipo principal
+              </div>
+
+              <img
+                class="logo-image"
+                src="../cafe/logo-image.png"
+                alt="Logotipo principal de El Café de tus Ojos">
+
+            </div>
+
+            <div class="isotipo-column">
+
+              <div class="small-label">
+                Isotipo
+              </div>
+
+              <img
+                class="isotipo-image"
+                src="../cafe/isotipo-image.png"
+                alt="Isotipo de El Café de tus Ojos">
+
+            </div>
+
+          </div>
+
+          <div class="application-area">
+
+            <div>
+
+              <div class="small-label">
+                Aplicación
+              </div>
+
+              <img
+                class="application-image"
+                src="../cafe/application.png"
+                alt="Aplicación de identidad en vaso">
+
+            </div>
+
+            <div class="identity-description">
+
+              <p>
+                El logotipo combina una tipografía serif editorial para
+                “El Café”, aportando carácter y elegancia, con una
+                tipografía manuscrita para “de tus Ojos”, que refuerza
+                la cercanía y la emoción.
+              </p>
+
+              <p>
+                El isotipo, inspirado en un grano de café que se
+                transforma en vapor, representa una mirada profunda,
+                cálida y envolvente.
+              </p>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- 05 -->
+        <article class="identity-column">
+
+          <div class="eyebrow">
+            05 — Sistema gráfico
+          </div>
+
+          <h2>
+            Color &<br>
+            Tipografía
+          </h2>
+
+          <div class="small-label">
+            Paleta cromática
+          </div>
+
+          <div class="palette">
+
+            <div class="swatch" style="background:#3B2A22;">
+              <span>#3B2A22</span>
+            </div>
+
+            <div class="swatch cream-swatch" style="background:#F2E5D9;">
+              <span>#F2E5D9</span>
+            </div>
+
+            <div class="swatch" style="background:#C19C65;">
+              <span>#C19C65</span>
+            </div>
+
+            <div class="swatch" style="background:#8E8E73;">
+              <span>#8E8E73</span>
+            </div>
+
+            <div class="swatch" style="background:#C98F78;">
+              <span>#C98F78</span>
+            </div>
+
+            <div class="swatch forest-swatch" style="background:#1E3A32;">
+              <span>#1E3A32</span>
+            </div>
+
+          </div>
+
+          <div class="small-label" style="margin-top:40px;">
+            Tipografías
+          </div>
+
+          <div class="type-grid">
+
+            <div>
+
+              <div class="type-name">
+                Bodoni Moda
+              </div>
+
+              <div class="type-sample">
+                ABCDEFGHIJKLM NOPQRSTUVWXYZ<br>
+                abcdefghijklmnopqrstuvwxyz<br>
+                1234567890
+              </div>
+
+            </div>
+
+            <div>
+
+              <div class="type-script">
+                Satisfy
+              </div>
+
+              <div class="type-sample">
+                ABCDEFGHIJKLM NOPQRSTUVWXYZ<br>
+                abcdefghijklmnopqrstuvwxyz<br>
+                1234567890
+              </div>
+
+            </div>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- =======================================================
+         06 — PACKAGING
+         ======================================================= -->
+
+    <section class="section packaging">
+
+      <div class="section-inner packaging-layout">
+
+        <!-- TEXTO -->
+        <div class="packaging-copy">
+
+          <div class="eyebrow">
+            06 — Packaging
+          </div>
+
+          <h2>
+            La identidad<br>
+            que se convierte<br>
+            en producto
+          </h2>
+
+          <p>
+            El sistema visual se traslada al packaging para comunicar
+            la esencia de la marca: cálida, artesanal y romántica.
+            Cada pieza refleja el cuidado por los detalles y la conexión
+            con lo natural y el amor por el café.
+          </p>
+
+          <a class="packaging-button" href="#aplicaciones">
+            Ver detalles
+            <span>→</span>
+          </a>
+
+        </div>
+
+
+        <!-- GALERÍA -->
+        <div class="packaging-gallery">
+
+          <img
+            class="packaging-main-image"
+            src="../cafe/portada12.png"
+            alt="Sistema completo de packaging de El Café de tus Ojos">
+
+          <div class="packaging-side">
+
+            <img
+              src="../cafe/concepto.png"
+              alt="Detalle de etiqueta y packaging">
+
+            <img
+              src="../cafe/Detalle%20de%20lata%20de%20cafe.png"
+              alt="Detalle de lata de café">
+
+            <img
+              src="../cafe/Detalle%20de%20aplicacion%20de%20identidad.png"
+              alt="Detalle de aplicación de identidad">
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =======================================================
+         07 — APLICACIONES
+         ======================================================= -->
+
+    <section class="section applications" id="aplicaciones">
+      <div class="section-inner">
+        <div class="applications-heading">
+          <div>
+            <div class="eyebrow">07 — Aplicaciones</div>
+            <h2>La marca en uso</h2>
+          </div>
+          <p>Aplicaciones que mantienen la coherencia visual en diferentes soportes y momentos de consumo, llevando la identidad del producto a la experiencia.</p>
+        </div>
+
+        <div class="application-grid">
+          <img src="../cafe/taza.png" alt="Aplicación de identidad en producto">
+          <img src="../cafe/aplicacion%20de%20marca.png" alt="Aplicación de marca">
+          <img src="../cafe/application.png" alt="Aplicación editorial">
+          <img src="../cafe/bolsita.jpg" alt="Aplicación de identidad">
+          <img src="../cafe/detalle%20aplicacion.png" alt="Detalle de aplicación">
+        </div>
+      </div>
+    </section>
+
+   <!-- =========================================================
+     08 — RESULTADO FINAL
+========================================================= -->
+
+<section class="resultado-final">
+
+    <div class="resultado-texto">
+
+        <span class="resultado-numero">
+            08 — RESULTADO FINAL
+        </span>
+
+        <h2>
+            La intensidad de<br>
+            una mirada hecha café.
+        </h2>
+
+        <p>
+            Más que café, una experiencia que se siente,
+            se comparte y permanece en la memoria.
+        </p>
+
+    </div>
+
+
+    <div class="resultado-imagen">
+
+        <img 
+            src="../cafe/resultado-final.png" 
+            alt="El Café de tus Ojos — resultado final"
+        >
+
+    </div>
+
+</section>
+
+    <!-- =========================================================
+         FOOTER
+         ========================================================= -->
+
+    <footer>
+      <div class="footer-inner">
+
+        <a href="../index.html" class="footer-back">
+          ← Volver a proyectos
+        </a>
+
+        <div class="footer-links">
+          <a href="../index.html#proyectos">Todos los proyectos</a>
+          <span class="footer-sep" aria-hidden="true">·</span>
+          <a href="../index.html#contacto">Contacto</a>
+        </div>
+
+        <span class="footer-copy">© 2026 Daniela Pasmiño</span>
+
+      </div>
+    </footer>
+
+    </main>
+
+</body>
+</html>

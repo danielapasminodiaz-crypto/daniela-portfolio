@@ -1,0 +1,2618 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Museo Nacional de Historia Natural · Tótem interactivo</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- FAVICON -->
+    <link rel="icon" type="image/png" href="../museo/logo-mnhn.png">
+
+    <style>
+
+        /* =========================================================
+           VARIABLES
+        ========================================================= */
+
+        :root {
+            --rojo: #e51b23;
+            --rojo-oscuro: #bd151c;
+            --negro: #111111;
+            --blanco: #ffffff;
+            --crema: #f5f1e9;
+            --arena: #e5d8c5;
+            --terracota: #c96b57;
+            --gris: #66615d;
+            --linea: rgba(17, 17, 17, 0.14);
+        }
+
+
+        /* =========================================================
+           RESET
+        ========================================================= */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--crema);
+            color: var(--negro);
+            line-height: 1.6;
+        }
+
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+
+        /* =========================================================
+           CONTENEDOR GENERAL
+        ========================================================= */
+
+        .container {
+            width: min(1180px, calc(100% - 80px));
+            margin: 0 auto;
+        }
+
+
+        /* =========================================================
+           HEADER
+        ========================================================= */
+
+        header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 10;
+            padding: 28px 0;
+            color: var(--blanco);
+        }
+
+
+        .header-inner {
+            width: min(1180px, calc(100% - 80px));
+            margin: 0 auto;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+
+        .brand img {
+    width: 62px;
+    height: 62px;
+    object-fit: contain;
+
+    background: var(--blanco);
+    border-radius: 50%;
+
+    padding: 6px;
+
+    flex-shrink: 0;
+}
+
+        .brand-text {
+    font-size: 0.76rem;
+    line-height: 1.12;
+    font-weight: 700;
+
+    max-width: 150px;
+
+    color: var(--blanco);
+}
+
+
+        nav {
+            display: flex;
+            gap: 28px;
+            font-size: 0.78rem;
+        }
+
+
+        nav a {
+            opacity: 0.9;
+            transition: opacity 0.3s ease;
+        }
+
+
+        nav a:hover {
+            opacity: 1;
+        }
+
+
+        /* =========================================================
+           HERO
+        ========================================================= */
+
+        .hero {
+    min-height: 720px;
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    color: var(--blanco);
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,0.86) 0%,
+            rgba(0,0,0,0.68) 38%,
+            rgba(0,0,0,0.20) 72%,
+            rgba(0,0,0,0.05) 100%
+        ),
+        url("../museo/fondo.png");
+
+    background-size: cover;
+    background-position: center center;
+
+}
+
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    transparent 0%,
+                    rgba(229,27,35,0.14) 100%
+                );
+
+            pointer-events: none;
+        }
+
+
+        .hero-content {
+    position: relative;
+    z-index: 2;
+
+    width: min(1180px, calc(100% - 80px));
+    margin: 0 auto;
+
+    padding-top: 90px;
+    padding-bottom: 60px;
+}
+
+
+        .hero-kicker {
+            font-size: 0.75rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+
+            margin-bottom: 22px;
+
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+
+        .hero-kicker::before {
+            content: "";
+            width: 34px;
+            height: 2px;
+            background: var(--rojo);
+        }
+
+
+        .hero h1 {
+    max-width: 720px;
+
+    font-size: clamp(3.4rem, 6.5vw, 6.2rem);
+    line-height: 0.92;
+
+    letter-spacing: -0.055em;
+
+    margin-bottom: 30px;
+
+    font-weight: 700;
+}
+
+        .hero h1 span {
+            color: var(--rojo);
+        }
+
+
+        .hero-description {
+            max-width: 510px;
+
+            font-size: 1.05rem;
+            line-height: 1.7;
+
+            color: rgba(255,255,255,0.88);
+
+            margin-bottom: 38px;
+        }
+
+
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+
+        .hero-tag {
+            border: 1px solid rgba(255,255,255,0.35);
+            padding: 9px 15px;
+            border-radius: 100px;
+
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+
+        /* =========================================================
+           BOTÓN
+        ========================================================= */
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+
+            background: var(--rojo);
+            color: var(--blanco);
+
+            padding: 14px 20px;
+
+            font-size: 0.78rem;
+            font-weight: 700;
+
+            transition: all 0.3s ease;
+        }
+
+
+        .button:hover {
+            background: var(--blanco);
+            color: var(--rojo);
+        }
+
+
+        /* =========================================================
+           INTRO
+        ========================================================= */
+
+        .intro {
+            padding: 120px 0;
+        }
+
+
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 90px;
+            align-items: start;
+        }
+
+
+        .section-number {
+            font-size: 4rem;
+            line-height: 1;
+
+            font-weight: 300;
+
+            color: var(--rojo);
+        }
+
+
+        .section-label {
+            margin-top: 12px;
+
+            font-size: 0.72rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+
+            color: var(--gris);
+        }
+
+
+        .intro h2 {
+            font-size: clamp(2rem, 4vw, 3.6rem);
+            line-height: 1.05;
+
+            letter-spacing: -0.04em;
+
+            margin-bottom: 25px;
+        }
+
+
+        .intro p {
+            max-width: 650px;
+
+            color: #55504b;
+
+            font-size: 1rem;
+        }
+
+
+        .intro-image {
+            margin-top: 40px;
+
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 18px;
+        }
+
+
+        .intro-image img {
+            width: 100%;
+            height: 360px;
+            object-fit: cover;
+        }
+
+
+        .intro-image img:last-child {
+            height: 360px;
+        }
+
+
+        /* =========================================================
+           SECCIÓN GENERAL
+        ========================================================= */
+
+        .section {
+            padding: 120px 0;
+        }
+
+
+        .section.dark {
+            background: var(--negro);
+            color: var(--blanco);
+        }
+
+
+        .section.red {
+            background: var(--rojo);
+            color: var(--blanco);
+        }
+
+
+        .section-header {
+            display: grid;
+            grid-template-columns: 0.7fr 1.3fr;
+
+            gap: 60px;
+
+            margin-bottom: 70px;
+        }
+
+
+        .section-header h2 {
+            font-size: clamp(2.3rem, 5vw, 4.8rem);
+            line-height: 0.98;
+
+            letter-spacing: -0.045em;
+        }
+
+
+        .section-header p {
+            max-width: 560px;
+
+            color: #68625c;
+            margin-top: 22px;
+        }
+
+
+        .dark .section-header p {
+            color: rgba(255,255,255,0.65);
+        }
+
+
+        .red .section-header p {
+            color: rgba(255,255,255,0.82);
+        }
+
+
+        .red-line {
+            width: 40px;
+            height: 3px;
+
+            background: var(--rojo);
+
+            margin-bottom: 18px;
+        }
+
+
+        .dark .red-line,
+        .red .red-line {
+            background: var(--blanco);
+        }
+
+
+        /* =========================================================
+           INVESTIGACIÓN
+        ========================================================= */
+
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+
+        .research-card {
+            background: var(--blanco);
+            padding: 34px;
+            min-height: 300px;
+
+            display: flex;
+            flex-direction: column;
+        }
+
+
+        .research-card-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            margin-bottom: 28px;
+        }
+
+
+        .research-card-number {
+            color: var(--rojo);
+
+            font-size: 1.5rem;
+            line-height: 1;
+            font-weight: 400;
+        }
+
+
+        .research-card-icon {
+            width: 34px;
+            height: 34px;
+
+            border: 1.5px solid var(--negro);
+            border-radius: 50%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 0.82rem;
+            font-weight: 700;
+        }
+
+
+        .research-card span {
+            display: block;
+
+            color: var(--gris);
+
+            font-size: 0.68rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+
+            margin-bottom: 15px;
+        }
+
+
+        .research-card h3 {
+            font-size: 1.65rem;
+            line-height: 1.08;
+
+            letter-spacing: -0.025em;
+
+            margin-bottom: 20px;
+        }
+
+
+        .research-card p {
+            color: var(--gris);
+            font-size: 0.92rem;
+            line-height: 1.6;
+        }
+
+
+        .research-image {
+            grid-column: span 3;
+
+            margin-top: 2px;
+        }
+
+
+        .research-image img {
+            width: 100%;
+            height: 620px;
+            object-fit: cover;
+            object-position: center;
+        }
+
+
+        /* =========================================================
+           ARQUITECTURA
+        ========================================================= */
+
+        .architecture {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+
+        .architecture-copy h3 {
+            font-size: 2rem;
+            line-height: 1.05;
+
+            margin-bottom: 20px;
+        }
+
+
+        .architecture-copy p {
+            color: rgba(255,255,255,0.68);
+            max-width: 450px;
+        }
+
+
+        .architecture-image {
+    padding: 0;
+    background: transparent;
+}
+
+.architecture-image img {
+    width: 120%;
+    max-width: none;
+    margin-left: -10%;
+}
+
+        /* =========================================================
+           SISTEMA VISUAL
+        ========================================================= */
+
+        .visual-system {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+
+        .palette {
+            display: flex;
+            gap: 12px;
+            margin: 30px 0 40px;
+        }
+
+
+        .color {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+        }
+
+
+        .color.red {
+            background: var(--rojo);
+        }
+
+
+        .color.terracotta {
+            background: var(--terracota);
+        }
+
+
+        .color.arena {
+            background: var(--arena);
+        }
+
+
+        .color.black {
+            background: var(--negro);
+        }
+
+
+        .visual-system h3 {
+            font-size: 2.5rem;
+            line-height: 1;
+
+            margin-bottom: 20px;
+        }
+
+
+        .visual-system p {
+            color: var(--gris);
+            max-width: 500px;
+        }
+
+
+        .visual-image {
+            background: var(--blanco);
+            padding: 18px;
+        }
+
+
+        .visual-image img {
+            width: 100%;
+        }
+
+
+
+        /* =========================================================
+           SISTEMA VISUAL · SECCIÓN 04
+           Fondo crema + tipografía oscura
+        ========================================================= */
+
+        .visual-section {
+            background: var(--crema);
+            color: var(--negro);
+            overflow: hidden;
+        }
+
+        .visual-section .section-header {
+            margin-bottom: 70px;
+        }
+
+        .visual-section .section-header h2 {
+            color: var(--negro);
+        }
+
+        .visual-section .section-header p {
+            color: #68625c;
+        }
+
+        .visual-section .section-label {
+            color: var(--gris);
+        }
+
+        .visual-section .red-line {
+            background: var(--rojo);
+        }
+
+        .visual-section .visual-system {
+            display: grid;
+            grid-template-columns: 0.82fr 1.55fr 0.95fr;
+            gap: 38px;
+            align-items: start;
+        }
+
+        /* Columna izquierda */
+        .visual-notes {
+            display: flex;
+            flex-direction: column;
+            gap: 62px;
+            padding-top: 5px;
+        }
+
+        .visual-block {
+            max-width: 270px;
+        }
+
+        .visual-block-label {
+            display: block;
+            color: var(--rojo);
+            font-size: 0.72rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .visual-block h3 {
+            color: var(--negro);
+            font-size: 1.25rem;
+            line-height: 1.1;
+            margin-bottom: 12px;
+            letter-spacing: -0.02em;
+        }
+
+        .visual-block p {
+            color: #68625c;
+            font-size: 0.88rem;
+            line-height: 1.55;
+            max-width: 260px;
+        }
+
+        /* Columna central */
+        .visual-center {
+            border-left: 1px solid rgba(17,17,17,0.14);
+            border-right: 1px solid rgba(17,17,17,0.14);
+            padding: 0 34px;
+            min-width: 0;
+        }
+
+        .visual-subtitle {
+            color: var(--negro);
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+        }
+
+        .visual-center .palette {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 13px;
+            margin: 0 0 48px;
+        }
+
+        .color-item {
+            min-width: 0;
+            text-align: center;
+        }
+
+        .color-item .color {
+            width: 58px;
+            height: 58px;
+            margin: 0 auto 9px;
+            border-radius: 50%;
+        }
+
+        .color.red-dark {
+            background: var(--rojo-oscuro);
+        }
+
+        .color.white {
+            background: var(--blanco);
+            border: 1px solid rgba(17,17,17,0.16);
+        }
+
+        .color-name,
+        .color-code {
+            display: block;
+            font-size: 0.62rem;
+            line-height: 1.25;
+        }
+
+        .color-name {
+            color: var(--negro);
+            font-weight: 700;
+            margin-bottom: 3px;
+        }
+
+        .color-code {
+            color: var(--gris);
+            letter-spacing: 0.03em;
+        }
+
+        /* Tipografía */
+        .type-system {
+            display: grid;
+            grid-template-columns: 150px 1fr;
+            gap: 30px;
+            align-items: center;
+            margin-bottom: 48px;
+        }
+
+        .type-display {
+            color: var(--negro);
+            font-size: 6rem;
+            line-height: 0.82;
+            font-weight: 700;
+            letter-spacing: -0.08em;
+        }
+
+        .type-name {
+            color: var(--negro);
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-top: 14px;
+        }
+
+        .type-samples {
+            border-left: 1px solid rgba(17,17,17,0.18);
+            padding-left: 30px;
+        }
+
+        .type-sample {
+            margin-bottom: 13px;
+        }
+
+        .type-sample:last-child {
+            margin-bottom: 0;
+        }
+
+        .type-sample-label {
+            display: block;
+            color: var(--gris);
+            font-size: 0.68rem;
+            margin-bottom: 3px;
+        }
+
+        .type-sample-text {
+            display: block;
+            color: var(--negro);
+            font-size: 0.82rem;
+            line-height: 1.3;
+            word-break: break-word;
+        }
+
+        .type-sample:nth-child(1) .type-sample-text {
+            font-weight: 700;
+        }
+
+        .type-sample:nth-child(2) .type-sample-text {
+            font-weight: 600;
+        }
+
+        /* Iconografía */
+        .icon-system {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 22px 12px;
+        }
+
+        .icon-item {
+            text-align: center;
+        }
+
+        .icon-circle {
+            width: 56px;
+            height: 56px;
+            margin: 0 auto 8px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--blanco);
+            font-size: 1.15rem;
+            font-weight: 700;
+        }
+
+        .icon-item:nth-child(1) .icon-circle { background: #1598ad; }
+        .icon-item:nth-child(2) .icon-circle { background: #333333; }
+        .icon-item:nth-child(3) .icon-circle { background: #f2bd35; }
+        .icon-item:nth-child(4) .icon-circle { background: #39a68d; }
+        .icon-item:nth-child(5) .icon-circle { background: var(--rojo); }
+        .icon-item:nth-child(6) .icon-circle { background: #a9bd75; }
+        .icon-item:nth-child(7) .icon-circle { background: #e65d9b; }
+        .icon-item:nth-child(8) .icon-circle { background: #e86c32; }
+        .icon-item:nth-child(9) .icon-circle { background: #bd151c; }
+        .icon-item:nth-child(10) .icon-circle { background: #f39a62; }
+
+        .icon-label {
+            display: block;
+            color: var(--gris);
+            font-size: 0.62rem;
+            line-height: 1.2;
+        }
+
+        /* Columna derecha */
+        .visual-interface {
+            padding-left: 2px;
+            min-width: 0;
+        }
+
+        .visual-interface h3 {
+            color: var(--negro);
+            font-size: 1.2rem;
+            line-height: 1.1;
+            margin-bottom: 10px;
+        }
+
+        .visual-interface > p {
+            color: var(--gris);
+            font-size: 0.82rem;
+            line-height: 1.5;
+            margin-bottom: 22px;
+        }
+
+        .interface-button {
+            width: 100%;
+            min-height: 48px;
+            border-radius: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            font-size: 0.76rem;
+            font-weight: 700;
+            margin-bottom: 14px;
+        }
+
+        .interface-button.primary {
+            background: var(--rojo);
+            color: var(--blanco);
+        }
+
+        .interface-button.secondary {
+            border: 1px solid var(--negro);
+            color: var(--negro);
+        }
+
+        .interface-card {
+            min-height: 90px;
+            background: #e8b0a2;
+            border-radius: 10px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 18px 0;
+        }
+
+        .interface-card strong {
+            color: var(--negro);
+            font-family: Georgia, serif;
+            font-size: 1.05rem;
+            line-height: 1.05;
+        }
+
+        .interface-arrow {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: rgba(189,21,28,0.75);
+            color: var(--blanco);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .interface-icons {
+            display: flex;
+            gap: 14px;
+            margin: 18px 0 24px;
+        }
+
+        .interface-icon {
+            width: 54px;
+            height: 54px;
+            border-radius: 50%;
+            background: var(--rojo);
+            color: var(--blanco);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .interface-icon.outline {
+            background: transparent;
+            border: 1px solid var(--negro);
+            color: var(--negro);
+        }
+
+        .visual-device {
+            width: 145%;
+            margin-left: -12%;
+            margin-top: -10px;
+            position: relative;
+        }
+
+        .visual-device img {
+            width: 100%;
+            max-width: none;
+            height: auto;
+            display: block;
+        }
+
+        /* =========================================================
+           SECCIÓN 05 · LA INTERFAZ
+           Composición final: mockup + etapas de la experiencia
+           ========================================================= */
+
+        .interface-section {
+            background: #111111;
+            color: var(--blanco);
+            overflow: hidden;
+            padding: 0;
+        }
+
+        .interface-showcase {
+            width: 100vw;
+            margin-left: calc(50% - 50vw);
+            background: #111111;
+            overflow: hidden;
+        }
+
+        .interface-showcase img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .interface-steps {
+            width: min(1380px, calc(100% - 120px));
+            margin: 0 auto;
+            padding: 34px 0 55px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0;
+        }
+
+        .interface-step {
+            padding: 0 34px;
+            border-right: 1px solid rgba(255,255,255,0.18);
+        }
+
+        .interface-step:first-child {
+            padding-left: 0;
+        }
+
+        .interface-step:last-child {
+            padding-right: 0;
+            border-right: none;
+        }
+
+        .interface-step-number {
+            display: inline-block;
+            margin-right: 14px;
+            color: var(--rojo);
+            font-size: 1.15rem;
+            font-weight: 700;
+            line-height: 1;
+            vertical-align: top;
+        }
+
+        .interface-step-title {
+            display: inline-block;
+            color: var(--blanco);
+            font-size: 1.12rem;
+            line-height: 1.15;
+            font-weight: 700;
+            vertical-align: top;
+        }
+
+        .interface-step p {
+            margin-top: 13px;
+            color: rgba(255,255,255,0.72);
+            font-size: 0.92rem;
+            line-height: 1.55;
+            max-width: 280px;
+        }
+
+        @media (max-width: 900px) {
+            .interface-steps {
+                width: min(100% - 50px, 680px);
+                grid-template-columns: repeat(2, 1fr);
+                gap: 28px 0;
+            }
+
+            .interface-step:nth-child(2) {
+                border-right: none;
+            }
+
+            .interface-step:nth-child(3) {
+                padding-left: 0;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .interface-steps {
+                width: calc(100% - 40px);
+                grid-template-columns: 1fr;
+                padding: 28px 0 40px;
+            }
+
+            .interface-step,
+            .interface-step:nth-child(3) {
+                padding: 0 0 24px;
+                border-right: none;
+                border-bottom: 1px solid rgba(255,255,255,0.16);
+            }
+
+            .interface-step:last-child {
+                border-bottom: none;
+                padding-bottom: 0;
+            }
+        }
+
+
+        /* =========================================================
+           INTERFAZ
+           ========================================================= */
+
+        .interface-intro {
+            max-width: 680px;
+            margin-bottom: 60px;
+        }
+
+
+        .interface-intro h2 {
+            font-size: clamp(2.5rem, 5vw, 5rem);
+            line-height: 0.95;
+
+            letter-spacing: -0.05em;
+
+            margin-bottom: 20px;
+        }
+
+
+        .interface-intro p {
+            color: rgba(255,255,255,0.7);
+        }
+
+
+        .interface-image {
+            background: #181818;
+
+            padding: 45px;
+        }
+
+
+        .interface-image img {
+            width: 100%;
+        }
+
+
+        /* =========================================================
+           RECORRIDO
+        ========================================================= */
+
+        .journey {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+
+        .journey-card {
+            background: var(--blanco);
+            padding: 14px 14px 24px;
+            overflow: hidden;
+        }
+
+
+        /*
+           Cada tarjeta muestra una parte de la composición final
+           del tótem. Usamos la misma imagen de la Sección 05
+           para mantener continuidad visual y evitar repetir
+           archivos que no forman parte del proyecto.
+        */
+        .journey-screen {
+            width: 100%;
+            aspect-ratio: 3 / 4;
+            overflow: hidden;
+            background: #111111;
+            margin-bottom: 22px;
+            position: relative;
+        }
+
+
+        .journey-screen img {
+            width: 400%;
+            max-width: none;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+        }
+        
+        
+        /* FOTO REAL DEL RECORRIDO · INICIO */
+.journey-screen.screen-01 img {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    transform: none;
+}
+
+
+     
+
+
+        .journey-screen.screen-02 img {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    transform: none;
+}
+
+
+        
+        
+        .journey-screen.screen-03 img {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    transform: none;
+}
+
+              
+        
+        
+        .journey-screen.screen-04 img {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    transform: none;
+}
+
+        .journey-card span {
+            display: block;
+            font-size: 0.7rem;
+            color: var(--rojo);
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 7px;
+        }
+
+
+        .journey-card h3 {
+            font-size: 1.35rem;
+            line-height: 1.1;
+            margin-top: 0;
+            letter-spacing: -0.02em;
+        }
+
+
+        /* =========================================================
+           RESULTADO
+        ========================================================= */
+
+        .result {
+            padding: 130px 0 110px;
+        }
+
+
+        .result-grid {
+            display: grid;
+            grid-template-columns: 1.25fr 0.75fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+
+        .result-image {
+            overflow: hidden;
+        }
+
+
+        .result-image img {
+            width: 100%;
+            transition: transform 0.7s ease;
+        }
+
+
+        .result-image:hover img {
+            transform: scale(1.025);
+        }
+
+
+        .result-copy h2 {
+            font-size: clamp(2.7rem, 5vw, 5.3rem);
+            line-height: 0.94;
+
+            letter-spacing: -0.05em;
+
+            margin-bottom: 25px;
+        }
+
+
+        .result-copy h2 span {
+            color: var(--rojo);
+        }
+
+
+        .result-copy p {
+            color: #625d57;
+            max-width: 440px;
+        }
+
+
+        .result-line {
+            width: 45px;
+            height: 3px;
+
+            background: var(--rojo);
+
+            margin-bottom: 25px;
+        }
+
+
+        /* =========================================================
+           NAVEGACIÓN
+        ========================================================= */
+
+        .project-navigation {
+            border-top: 1px solid var(--linea);
+            border-bottom: 1px solid var(--linea);
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+
+        .project-navigation a {
+            padding: 30px 20px;
+
+            font-size: 0.78rem;
+
+            transition: background 0.3s ease;
+        }
+
+
+        .project-navigation a:first-child {
+            border-right: 1px solid var(--linea);
+        }
+
+
+        .project-navigation a:hover {
+            background: var(--blanco);
+        }
+
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+
+        footer {
+            padding: 35px 0;
+
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+
+            font-size: 0.72rem;
+
+            color: var(--gris);
+        }
+
+
+        /* =========================================================
+           ANIMACIONES
+        ========================================================= */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(35px);
+
+            transition:
+                opacity 0.8s ease,
+                transform 0.8s ease;
+        }
+
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+
+        /* =========================================================
+           RESPONSIVE
+        ========================================================= */
+
+
+        @media (max-width: 1100px) {
+
+            .visual-section .visual-system {
+                grid-template-columns: 0.75fr 1.4fr 0.85fr;
+                gap: 24px;
+            }
+
+            .visual-center {
+                padding: 0 24px;
+            }
+
+            .visual-center .palette {
+                grid-template-columns: repeat(3, 1fr);
+                row-gap: 20px;
+            }
+
+            .type-system {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .type-samples {
+                border-left: none;
+                border-top: 1px solid rgba(17,17,17,0.18);
+                padding-left: 0;
+                padding-top: 20px;
+            }
+
+            .icon-system {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .visual-device {
+                width: 125%;
+                margin-left: -8%;
+            }
+        }
+
+
+        @media (max-width: 900px) {
+
+            .container,
+            .header-inner,
+            .hero-content {
+                width: min(100% - 40px, 700px);
+            }
+
+
+            header {
+                position: absolute;
+            }
+
+
+            nav {
+                display: none;
+            }
+
+
+            .hero {
+                min-height: 680px;
+            }
+
+
+            .intro-grid,
+            .architecture,
+            .visual-system,
+            .result-grid,
+            .section-header {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .visual-section .visual-system {
+                grid-template-columns: 1fr;
+                gap: 45px;
+            }
+
+            .visual-notes {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 24px;
+            }
+
+            .visual-block {
+                max-width: none;
+            }
+
+            .visual-center {
+                border-left: none;
+                border-right: none;
+                border-top: 1px solid rgba(17,17,17,0.14);
+                border-bottom: 1px solid rgba(17,17,17,0.14);
+                padding: 40px 0;
+            }
+
+            .visual-interface {
+                padding-left: 0;
+            }
+
+            .visual-device {
+                width: 100%;
+                margin-left: 0;
+            }
+
+
+            .research-grid {
+                grid-template-columns: 1fr;
+            }
+
+
+            .research-image {
+                grid-column: auto;
+            }
+
+
+            .research-image img {
+                height: 500px;
+            }
+
+
+            .journey {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+
+            .intro-image {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+
+
+        @media (max-width: 600px) {
+
+            .visual-notes {
+                grid-template-columns: 1fr;
+            }
+
+            .visual-center .palette {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .icon-system {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .type-display {
+                font-size: 5rem;
+            }
+
+
+
+            .container,
+            .header-inner,
+            .hero-content {
+                width: calc(100% - 32px);
+            }
+
+
+            .hero {
+                min-height: 650px;
+            }
+
+
+            .hero h1 {
+                font-size: 3.4rem;
+            }
+
+
+            .section,
+            .intro,
+            .result {
+                padding: 80px 0;
+            }
+
+
+            .section-number {
+                font-size: 3rem;
+            }
+
+
+            .research-card {
+                padding: 25px;
+                min-height: auto;
+            }
+
+
+            .research-image img {
+                height: 380px;
+            }
+
+
+            .interface-image {
+                padding: 15px;
+            }
+
+
+            .journey {
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
+            }
+
+
+            .journey-card {
+                padding: 10px;
+            }
+
+
+            .palette {
+                flex-wrap: wrap;
+            }
+
+
+            .color {
+                width: 58px;
+                height: 58px;
+            }
+
+
+            .project-navigation {
+                grid-template-columns: 1fr;
+            }
+
+
+            .project-navigation a:first-child {
+                border-right: none;
+                border-bottom: 1px solid var(--linea);
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================================
+         HEADER
+    ========================================================= -->
+
+    <header>
+
+        <div class="header-inner">
+
+            <a href="../index.html" class="brand">
+
+                <img
+                    src="../museo/logo-mnhn.png"
+                    alt="Museo Nacional de Historia Natural">
+
+                <span class="brand-text">
+                    Museo Nacional<br>
+                    de Historia<br>
+                    Natural
+                </span>
+
+            </a>
+
+
+            <nav>
+
+                <a href="#contexto">Contexto</a>
+
+                <a href="#investigacion">Investigación</a>
+
+                <a href="#interfaz">Interfaz</a>
+
+                <a href="#resultado">Resultado</a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================================================
+         HERO
+    ========================================================= -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <div class="hero-kicker">
+                UX / UI
+            </div>
+
+
+            <h1>
+                Explorar el museo
+                <span>también puede ser</span>
+                una experiencia digital.
+            </h1>
+
+
+            <p class="hero-description">
+                Diseño de un tótem interactivo para el Museo Nacional
+                de Historia Natural, orientado a facilitar la navegación
+                y el acceso a la información dentro del museo.
+            </p>
+
+
+            <div class="hero-meta">
+
+                <span class="hero-tag">
+                    Tótem interactivo
+                </span>
+
+                <span class="hero-tag">
+                    UX / UI
+                </span>
+
+                <span class="hero-tag">
+                    Diseño de interfaz
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         01 CONTEXTO
+    ========================================================= -->
+
+    <section class="intro" id="contexto">
+
+        <div class="container">
+
+            <div class="intro-grid">
+
+                <div>
+
+                    <div class="section-number">
+                        01
+                    </div>
+
+                    <div class="section-label">
+                        El contexto
+                    </div>
+
+                </div>
+
+
+                <div>
+
+                    <div class="red-line"></div>
+
+                    <h2>
+                        Un museo con una gran cantidad de información que explorar.
+                    </h2>
+
+                    <p>
+                        Este proyecto nació en la asignatura Taller de Experiencias de Usuario,
+                        a partir de una investigación realizada en el Museo Nacional
+                        de Historia Natural. El desafío identificado fue la necesidad
+                        de incorporar un recurso tecnológico que facilitara el acceso
+                        a la información y acompañara la experiencia de los visitantes.
+
+                        La propuesta consistió en diseñar un tótem interactivo que reuniera
+                        información sobre exhibiciones, historia, mapa y contenidos del museo
+                        en una experiencia digital de fácil exploración.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="intro-image reveal">
+
+                <img
+                    src="analisis.png"
+                    alt="Contexto e investigación del proyecto">
+
+                <img
+                    src="Diseño final del proyecto.png"
+                    alt="Diseño final del proyecto">
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         02 INVESTIGACIÓN
+    ========================================================= -->
+
+    <section class="section" id="investigacion">
+
+        <div class="container">
+
+            <div class="section-header">
+
+                <div>
+
+                    <div class="section-number">
+                        02
+                    </div>
+
+                    <div class="section-label">
+                        Investigación
+                    </div>
+
+                </div>
+
+
+                <div>
+
+                    <div class="red-line"></div>
+
+                    <h2>
+                        Conocer el museo para entender qué información debía organizarse.
+                    </h2>
+
+                    <p>
+                        La investigación permitió identificar la diversidad de
+                        contenidos que forman parte de la experiencia del Museo
+                        Nacional de Historia Natural. La propuesta debía considerar
+                        distintas formas de explorar el museo y facilitar el acceso
+                        a sus contenidos desde un mismo punto de interacción.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="research-grid">
+
+                <article class="research-card reveal">
+
+                    <div class="research-card-top">
+
+                        <div class="research-card-number">
+                            01
+                        </div>
+
+                        <div class="research-card-icon">
+                            ◉
+                        </div>
+
+                    </div>
+
+                    <span>
+                        Exhibiciones
+                    </span>
+
+                    <h3>
+                        Descubrir lo que el museo tiene para explorar.
+                    </h3>
+
+                    <p>
+                        Las exhibiciones presentan contenidos relacionados
+                        con el patrimonio natural y cultural, acercando la
+                        ciencia y el conocimiento a los visitantes.
+                    </p>
+
+                </article>
+
+
+                <article class="research-card reveal">
+
+                    <div class="research-card-top">
+
+                        <div class="research-card-number">
+                            02
+                        </div>
+
+                        <div class="research-card-icon">
+                            ◈
+                        </div>
+
+                    </div>
+
+                    <span>
+                        Colecciones
+                    </span>
+
+                    <h3>
+                        Un universo de naturaleza e historia.
+                    </h3>
+
+                    <p>
+                        El MNHN reúne colecciones vinculadas a áreas como
+                        Zoología, Botánica, Paleontología, Geología,
+                        Mineralogía, Antropología, Etnología y Arqueología.
+                    </p>
+
+                </article>
+
+
+                <article class="research-card reveal">
+
+                    <div class="research-card-top">
+
+                        <div class="research-card-number">
+                            03
+                        </div>
+
+                        <div class="research-card-icon">
+                            ●
+                        </div>
+
+                    </div>
+
+                    <span>
+                        Orientación
+                    </span>
+
+                    <h3>
+                        Encontrar el camino dentro del museo.
+                    </h3>
+
+                    <p>
+                        El tótem debía reunir información que ayudara al
+                        visitante a orientarse, descubrir los distintos
+                        espacios y acceder a los contenidos durante su recorrido.
+                    </p>
+
+                </article>
+
+
+                <div class="research-image reveal">
+
+                    <img
+                        src="analisis.png"
+                        alt="Investigación y experiencia de visita en el Museo Nacional de Historia Natural">
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         03 ARQUITECTURA DE INFORMACIÓN
+    ========================================================= -->
+
+    <section class="section dark">
+
+        <div class="container">
+
+            <div class="section-header">
+
+                <div>
+
+                    <div class="section-number">
+                        03
+                    </div>
+
+                    <div class="section-label">
+                        Arquitectura
+                    </div>
+
+                </div>
+
+
+                <div>
+
+                    <div class="red-line"></div>
+
+                    <h2>
+                        Organizar para que encontrar información sea más fácil.
+                    </h2>
+
+                    <p>
+                        Se definió la estructura de la información y se
+                        trabajó sobre recorridos simples e intuitivos,
+                        considerando la navegación y las distintas
+                        necesidades de información del visitante.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="architecture reveal">
+
+                <div class="architecture-copy">
+
+                    <h3>
+                        Una estructura pensada para explorar.
+                    </h3>
+
+                    <p>
+                        La organización del contenido permite establecer
+                        una jerarquía visual clara y orientar al usuario
+                        durante su recorrido por la interfaz.
+                    </p>
+
+                </div>
+
+
+                <div class="architecture-image">
+
+                    <img
+                        src="../museo/muckup.png"
+                        alt="Arquitectura y estructura del proyecto">
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         04 SISTEMA VISUAL
+    ========================================================= -->
+
+    <section class="section visual-section">
+
+        <div class="container">
+
+            <div class="section-header">
+
+                <div>
+                    <div class="section-number">04</div>
+                    <div class="section-label">Sistema visual</div>
+                </div>
+
+                <div>
+                    <div class="red-line"></div>
+
+                    <h2>
+                        Un lenguaje visual inspirado en el museo.
+                    </h2>
+
+                    <p>
+                        El sistema visual combina una paleta de colores cálida y terrosa,
+                        tipografía clara e iconografía simple y reconocible, creando una
+                        experiencia coherente con la identidad del Museo Nacional de Historia Natural.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="visual-system reveal">
+
+                <div class="visual-notes">
+
+                    <div class="visual-block">
+                        <span class="visual-block-label">01 · Colores</span>
+
+                        <h3>Una paleta reconocible.</h3>
+
+                        <p>
+                            Tonos cálidos y contrastados que ayudan a organizar la información
+                            y mantener una relación visual con el universo del museo.
+                        </p>
+                    </div>
+
+
+                    <div class="visual-block">
+                        <span class="visual-block-label">02 · Tipografía</span>
+
+                        <h3>Clara y legible.</h3>
+
+                        <p>
+                            Una tipografía sans serif que facilita la lectura en pantalla
+                            y permite establecer diferentes niveles de información.
+                        </p>
+                    </div>
+
+
+                    <div class="visual-block">
+                        <span class="visual-block-label">03 · Iconografía</span>
+
+                        <h3>Categorías fáciles de reconocer.</h3>
+
+                        <p>
+                            Íconos circulares y simples que representan las principales
+                            categorías y facilitan la navegación dentro del tótem.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="visual-center">
+
+                    <div class="visual-subtitle">Paleta cromática</div>
+
+                    <div class="palette">
+
+                        <div class="color-item">
+                            <div class="color red"></div>
+                            <span class="color-name">Rojo</span>
+                            <span class="color-code">#E51B23</span>
+                        </div>
+
+                        <div class="color-item">
+                            <div class="color red-dark"></div>
+                            <span class="color-name">Rojo oscuro</span>
+                            <span class="color-code">#BD151C</span>
+                        </div>
+
+                        <div class="color-item">
+                            <div class="color terracotta"></div>
+                            <span class="color-name">Terracota</span>
+                            <span class="color-code">#C96B57</span>
+                        </div>
+
+                        <div class="color-item">
+                            <div class="color arena"></div>
+                            <span class="color-name">Arena</span>
+                            <span class="color-code">#E5D8C5</span>
+                        </div>
+
+                        <div class="color-item">
+                            <div class="color black"></div>
+                            <span class="color-name">Negro</span>
+                            <span class="color-code">#111111</span>
+                        </div>
+
+                        <div class="color-item">
+                            <div class="color white"></div>
+                            <span class="color-name">Blanco</span>
+                            <span class="color-code">#FFFFFF</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="visual-subtitle">Tipografía</div>
+
+                    <div class="type-system">
+
+                        <div>
+                            <div class="type-display">Aa</div>
+                            <div class="type-name">Inter</div>
+                        </div>
+
+                        <div class="type-samples">
+
+                            <div class="type-sample">
+                                <span class="type-sample-label">Título / Bold</span>
+                                <span class="type-sample-text">ABCDEFGHIJKLMNOPQRSTUVWXYZ</span>
+                            </div>
+
+                            <div class="type-sample">
+                                <span class="type-sample-label">Subtítulo / Semibold</span>
+                                <span class="type-sample-text">abcdefghijklmnopqrstuvwxyz</span>
+                            </div>
+
+                            <div class="type-sample">
+                                <span class="type-sample-label">Texto / Regular</span>
+                                <span class="type-sample-text">0123456789</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="visual-subtitle">Iconografía</div>
+
+                    <div class="icon-system">
+
+                        <div class="icon-item"><div class="icon-circle">≈</div><span class="icon-label">Vida marina</span></div>
+                        <div class="icon-item"><div class="icon-circle">◐</div><span class="icon-label">Aves</span></div>
+                        <div class="icon-item"><div class="icon-circle">✦</div><span class="icon-label">Mamíferos</span></div>
+                        <div class="icon-item"><div class="icon-circle">◆</div><span class="icon-label">Reptiles</span></div>
+                        <div class="icon-item"><div class="icon-circle">✚</div><span class="icon-label">Ciencia</span></div>
+                        <div class="icon-item"><div class="icon-circle">○</div><span class="icon-label">Anfibios</span></div>
+                        <div class="icon-item"><div class="icon-circle">✺</div><span class="icon-label">Fauna chilena</span></div>
+                        <div class="icon-item"><div class="icon-circle">◇</div><span class="icon-label">Dinosaurios</span></div>
+                        <div class="icon-item"><div class="icon-circle">✿</div><span class="icon-label">Botánica</span></div>
+                        <div class="icon-item"><div class="icon-circle">◉</div><span class="icon-label">Geología</span></div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="visual-interface">
+
+                    <h3>Elementos de interfaz</h3>
+
+                    <p>
+                        Componentes simples y consistentes para una navegación intuitiva.
+                    </p>
+
+                    <div class="interface-button primary">
+                        Explorar sala
+                        <span>→</span>
+                    </div>
+
+                    <div class="interface-button secondary">
+                        <span>←</span>
+                        Volver
+                    </div>
+
+                    <div class="interface-card">
+                        <strong>
+                            Sala<br>
+                            Antártica
+                        </strong>
+
+                        <div class="interface-arrow">→</div>
+                    </div>
+
+                    <div class="interface-icons">
+                        <div class="interface-icon">▦</div>
+                        <div class="interface-icon outline">♡</div>
+                    </div>
+
+                    <div class="visual-device">
+                        <img
+                            src="../museo/muckup.png"
+                            alt="Interfaz del tótem interactivo del Museo Nacional de Historia Natural">
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- =========================================================
+         05 LA INTERFAZ
+         ========================================================= -->
+
+    <section class="interface-section section dark" id="interfaz">
+
+        <div class="interface-showcase reveal">
+
+            <img
+                src="../museo/interfaz-totem.png"
+                alt="Mockup del tótem interactivo del Museo Nacional de Historia Natural con las pantallas de inicio, mapa, salas y contenido">
+
+        </div>
+
+        <div class="interface-steps reveal">
+
+            <article class="interface-step">
+                <span class="interface-step-number">01</span>
+                <span class="interface-step-title">Inicio</span>
+                <p>
+                    Pantalla de bienvenida que invita a explorar el museo de forma simple y atractiva.
+                </p>
+            </article>
+
+            <article class="interface-step">
+                <span class="interface-step-number">02</span>
+                <span class="interface-step-title">Mapa</span>
+                <p>
+                    Navegación por las salas del museo con un mapa interactivo y acceso a las principales categorías.
+                </p>
+            </article>
+
+            <article class="interface-step">
+                <span class="interface-step-number">03</span>
+                <span class="interface-step-title">Salas</span>
+                <p>
+                    Acceso rápido a las distintas salas temáticas a través de iconos circulares y reconocibles.
+                </p>
+            </article>
+
+            <article class="interface-step">
+                <span class="interface-step-number">04</span>
+                <span class="interface-step-title">Contenido</span>
+                <p>
+                    Información clara y visual sobre cada exhibición, combinando imágenes, textos y navegación intuitiva.
+                </p>
+            </article>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         06 RECORRIDO
+    ========================================================= -->
+
+    <section class="section">
+
+        <div class="container">
+
+            <div class="section-header">
+
+                <div>
+
+                    <div class="section-number">
+                        06
+                    </div>
+
+                    <div class="section-label">
+                        Recorrido
+                    </div>
+
+                </div>
+
+
+                <div>
+
+                    <div class="red-line"></div>
+
+                    <h2>
+                        Una experiencia en simples pasos.
+                    </h2>
+
+                    <p>
+                        La navegación se plantea como un recorrido progresivo,
+                        desde el inicio hasta la información que el visitante
+                        desea explorar.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="journey reveal">
+
+                <article class="journey-card">
+
+                    <div class="journey-screen screen-01">
+                        <img
+                            src="../museo/pantalla%201.png"
+                            alt="Pantalla de inicio del tótem interactivo">
+                    </div>
+
+                    <span>
+                        01
+                    </span>
+
+                    <h3>
+                        Inicio
+                    </h3>
+
+                </article>
+
+
+                <article class="journey-card">
+
+                    <div class="journey-screen screen-02">
+                        <img
+                            src="../museo/pantalla2.png"
+                            alt="Pantalla de categorías y mapa del museo">
+                    </div>
+
+                    <span>
+                        02
+                    </span>
+
+                    <h3>
+                        Categorías
+                    </h3>
+
+                </article>
+
+
+                <article class="journey-card">
+
+                    <div class="journey-screen screen-03">
+                        <img
+                            src="../museo/pantalla%203.png"
+                            alt="Pantalla de exploración de salas">
+                    </div>
+
+                    <span>
+                        03
+                    </span>
+
+                    <h3>
+                        Salas
+                    </h3>
+
+                </article>
+
+
+                <article class="journey-card">
+
+                    <div class="journey-screen screen-04">
+                        <img
+                            src="../museo/pantalla%204.png"
+                            alt="Pantalla de información de la Sala Antártica">
+                    </div>
+
+                    <span>
+                        04
+                    </span>
+
+                    <h3>
+                        Información
+                    </h3>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         07 RESULTADO
+    ========================================================= -->
+
+    <section class="result" id="resultado">
+
+        <div class="container">
+
+            <div class="result-grid">
+
+                <div class="result-image reveal">
+
+                    <img
+                        src="../museo/resultado%20final.png"
+                        alt="Resultado final del proyecto Museo">
+
+                </div>
+
+
+                <div class="result-copy">
+
+                    <div class="result-line"></div>
+
+                    <div class="section-number">
+                        07
+                    </div>
+
+                    <h2>
+                        Una nueva forma de
+                        <span>explorar el museo.</span>
+                    </h2>
+
+                    <p>
+                        Propuesta visual estructurada y de rápida comprensión,
+                        que permite una navegación intuitiva y mejora el acceso
+                        a la información para distintos perfiles de usuarios.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         CIERRE ROJO
+    ========================================================= -->
+
+    <section class="section red">
+
+        <div class="container">
+
+            <div class="section-header">
+
+                <div>
+
+                    <img
+                        src="../museo/logo-mnhn.png"
+                        alt="Logo MNHN"
+                        style="
+                            width: 150px;
+                            background: #ffffff;
+                            padding: 14px;
+                        ">
+
+                </div>
+
+
+                <div>
+
+                    <div class="red-line"></div>
+
+                    <h2>
+                        Conectando personas
+                        con la historia natural
+                        de Chile.
+                    </h2>
+
+                    <p>
+                        Una propuesta de interfaz que busca acercar
+                        la información del museo a una experiencia
+                        digital clara y accesible.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         NAVEGACIÓN ENTRE PROYECTOS
+    ========================================================= -->
+
+    <div class="container">
+
+        <div class="project-navigation">
+
+            <a href="../index.html">
+                ← Volver al portafolio
+            </a>
+
+
+            <a href="../isl/index.html">
+                Siguiente proyecto →
+            </a>
+
+        </div>
+
+
+        <footer>
+
+            <span>
+                © Portafolio de Daniela Pasmiño
+            </span>
+
+            <span>
+                UI & UX · Diseño editorial · Identidad visual
+            </span>
+
+        </footer>
+
+    </div>
+
+
+
+    <!-- =========================================================
+         ANIMACIÓN
+    ========================================================= -->
+
+    <script>
+
+        const elements = document.querySelectorAll(".reveal");
+
+
+        const observer = new IntersectionObserver(
+
+            entries => {
+
+                entries.forEach(entry => {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.add("visible");
+
+                    }
+
+                });
+
+            },
+
+            {
+                threshold: 0.12
+            }
+
+        );
+
+
+        elements.forEach(element => {
+
+            observer.observe(element);
+
+        });
+
+    </script>
+
+
+</body>
+
+</html>

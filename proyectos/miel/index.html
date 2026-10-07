@@ -1,0 +1,3476 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+  Miel de Amor · Branding · Daniela Pasmiño
+</title>
+
+<!-- FAVICON -->
+<link
+  rel="icon"
+  type="image/png"
+  href="favicon-abeja.png"
+>
+  <!-- =====================================================
+       TIPOGRAFÍAS
+       ===================================================== -->
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&family=Italianno&display=swap"
+    rel="stylesheet"
+  >
+
+
+  <!-- =====================================================
+       ESTILOS
+       ===================================================== -->
+
+  <style>
+
+    /* =====================================================
+       VARIABLES
+       ===================================================== */
+
+    :root {
+
+      --crema: #F6EFE4;
+      --crema-clara: #FBF8F2;
+      --almendra: #F0DDC5;
+
+      --miel: #F4B940;
+      --miel-oscura: #D89B28;
+
+      --oliva: #9C9A60;
+
+      --cacao: #4E2E1F;
+      --cacao-suave: #735343;
+
+      --texto: #35251E;
+      --gris: #756B63;
+
+      --blanco: #FFFFFF;
+
+      --linea: rgba(78, 46, 31, 0.16);
+
+      --max-width: 1180px;
+
+      --radio: 24px;
+
+    }
+
+
+    /* =====================================================
+       RESET
+       ===================================================== */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+
+    body {
+
+      background: var(--crema-clara);
+
+      color: var(--texto);
+
+      font-family:
+        "DM Sans",
+        sans-serif;
+
+      line-height: 1.6;
+
+      overflow-x: hidden;
+
+    }
+
+
+    img {
+
+      width: 100%;
+
+      display: block;
+
+    }
+
+
+    a {
+
+      color: inherit;
+
+      text-decoration: none;
+
+    }
+
+
+    /* =====================================================
+       CONTENEDOR
+       ===================================================== */
+
+    .container {
+
+      width: min(
+        calc(100% - 80px),
+        var(--max-width)
+      );
+
+      margin: 0 auto;
+
+    }
+
+
+    /* =====================================================
+       NAVEGACIÓN
+       ===================================================== */
+
+    header {
+
+      position: relative;
+
+      z-index: 10;
+
+      border-bottom:
+        1px solid var(--linea);
+
+      background:
+        rgba(251, 248, 242, 0.96);
+
+    }
+
+
+    .nav {
+
+      width: min(
+        calc(100% - 80px),
+        var(--max-width)
+      );
+
+      min-height: 88px;
+
+      margin: 0 auto;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 40px;
+
+    }
+
+
+    .brand {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 14px;
+
+    }
+
+
+    .brand img {
+
+      width: 68px;
+
+      height: auto;
+
+    }
+
+
+    .nav-right {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 30px;
+
+    }
+
+
+    .nav-links {
+
+      display: flex;
+
+      gap: 26px;
+
+      font-size: 11px;
+
+      letter-spacing: 0.12em;
+
+      text-transform: uppercase;
+
+      color: var(--cacao);
+
+    }
+
+
+    .nav-links a {
+
+      transition:
+        opacity 0.25s ease;
+
+    }
+
+
+    .nav-links a:hover {
+
+      opacity: 0.55;
+
+    }
+
+
+    .back-link {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 8px;
+
+      font-size: 12px;
+
+      color: var(--cacao);
+
+    }
+
+
+    .back-link span {
+
+      font-size: 17px;
+
+      transition:
+        transform 0.25s ease;
+
+    }
+
+
+    .back-link:hover span {
+
+      transform:
+        translateX(-4px);
+
+    }
+
+
+    /* =====================================================
+       HERO
+       ===================================================== */
+
+    .hero {
+
+      position: relative;
+
+      min-height: 650px;
+
+      display: flex;
+
+      align-items: stretch;
+
+      overflow: hidden;
+
+      background: var(--crema);
+
+    }
+
+
+    /* La fotografía ocupa todo el hero.
+       El difuminado se construye con una capa degradada
+       que permite que la imagen desaparezca suavemente
+       detrás del texto, como en el diseño de referencia. */
+
+    .hero-image {
+
+      position: absolute;
+
+      inset: 0;
+
+      z-index: 0;
+
+      min-height: 650px;
+
+      overflow: hidden;
+
+      background: var(--almendra);
+
+    }
+
+
+    .hero-image::after {
+
+      content: "";
+
+      position: absolute;
+
+      inset: 0;
+
+      background:
+        linear-gradient(
+          90deg,
+          var(--crema) 0%,
+          var(--crema) 27%,
+          rgba(246, 239, 228, 0.96) 37%,
+          rgba(246, 239, 228, 0.72) 46%,
+          rgba(246, 239, 228, 0.25) 56%,
+          rgba(246, 239, 228, 0) 67%
+        );
+
+      pointer-events: none;
+
+    }
+
+
+    .hero-image img {
+
+      width: 100%;
+
+      height: 100%;
+
+      object-fit: cover;
+
+      object-position: center center;
+
+      transform: scale(1.01);
+
+    }
+
+
+    .hero-copy {
+
+      position: relative;
+
+      z-index: 2;
+
+      width: min(
+        54%,
+        760px
+      );
+
+      min-height: 650px;
+
+      display: flex;
+
+      align-items: center;
+
+      padding:
+        90px
+        clamp(40px, 7vw, 100px);
+
+    }
+
+
+    .hero-inner {
+
+      max-width: 510px;
+
+    }
+
+
+    .eyebrow {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 12px;
+
+      margin-bottom: 25px;
+
+      font-size: 11px;
+
+      font-weight: 700;
+
+      letter-spacing: 0.16em;
+
+      text-transform: uppercase;
+
+      color: var(--cacao);
+
+    }
+
+
+    .eyebrow::before {
+
+      content: "";
+
+      width: 34px;
+
+      height: 1px;
+
+      background: var(--miel-oscura);
+
+    }
+
+
+    .hero h1 {
+
+      margin-bottom: 18px;
+
+      font-family:
+        "Cormorant Garamond",
+        serif;
+
+      font-size:
+        clamp(64px, 7vw, 104px);
+
+      font-weight: 500;
+
+      line-height: 0.86;
+
+      letter-spacing: -0.045em;
+
+      color: var(--cacao);
+
+    }
+
+
+    .hero h1 span {
+
+      display: block;
+
+      font-family:
+        "Italianno",
+        cursive;
+
+      font-size:
+        clamp(74px, 8vw, 118px);
+
+      line-height: 0.8;
+
+      color: var(--miel-oscura);
+
+      margin-top: 12px;
+
+    }
+
+
+    .hero-subtitle {
+
+      max-width: 420px;
+
+      margin-bottom: 25px;
+
+      font-family:
+        "Cormorant Garamond",
+        serif;
+
+      font-size: 26px;
+
+      line-height: 1.15;
+
+      color: var(--cacao-suave);
+
+    }
+
+
+    .hero-text {
+
+      max-width: 300px;
+
+      margin-bottom: 35px;
+
+      font-size: 15px;
+
+      color: var(--gris);
+
+    }
+
+
+    .hero-button {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 18px;
+
+      padding:
+        14px 22px;
+
+      background: var(--cacao);
+
+      color: var(--blanco);
+
+      border-radius: 999px;
+
+      font-size: 12px;
+
+      font-weight: 600;
+
+      letter-spacing: 0.04em;
+
+      transition:
+        transform 0.25s ease,
+        background 0.25s ease;
+
+    }
+
+
+    .hero-button:hover {
+
+      transform:
+        translateY(-3px);
+
+      background:
+        var(--cacao-suave);
+
+    }
+
+
+
+
+
+    /* =====================================================
+       INFORMACIÓN DEL PROYECTO
+       ===================================================== */
+
+    .project-meta {
+
+      border-bottom:
+        1px solid var(--linea);
+
+      background:
+        var(--crema-clara);
+
+    }
+
+
+    .meta-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(4, 1fr);
+
+      border-left:
+        1px solid var(--linea);
+
+    }
+
+
+    .meta-item {
+
+      padding:
+        30px 28px;
+
+      border-right:
+        1px solid var(--linea);
+
+    }
+
+
+    .meta-label {
+
+      margin-bottom: 8px;
+
+      font-size: 10px;
+
+      font-weight: 700;
+
+      letter-spacing: 0.14em;
+
+      text-transform: uppercase;
+
+      color: var(--gris);
+
+    }
+
+
+    .meta-value {
+
+      font-family:
+        "Cormorant Garamond",
+        serif;
+
+      font-size: 20px;
+
+      color: var(--cacao);
+
+    }
+
+
+    /* =====================================================
+       SECCIONES GENERALES
+       ===================================================== */
+
+    .section {
+
+      padding:
+        130px 0;
+
+    }
+
+
+    .section-number {
+
+      margin-bottom: 18px;
+
+      font-size: 11px;
+
+      font-weight: 700;
+
+      letter-spacing: 0.15em;
+
+      text-transform: uppercase;
+
+      color: var(--miel-oscura);
+
+    }
+
+
+    .section h2 {
+
+      max-width: 720px;
+
+      margin-bottom: 28px;
+
+      font-family:
+        "Cormorant Garamond",
+        serif;
+
+      font-size:
+        clamp(48px, 6vw, 78px);
+
+      font-weight: 500;
+
+      line-height: 0.95;
+
+      letter-spacing: -0.035em;
+
+      color: var(--cacao);
+
+    }
+
+
+    .section-intro {
+
+      max-width: 600px;
+
+      margin-bottom: 55px;
+
+      font-size: 16px;
+
+      color: var(--gris);
+
+    }
+
+
+    /* =====================================================
+       01 — CONCEPTO
+       ===================================================== */
+
+    .concept {
+
+      background: var(--crema-clara);
+
+    }
+
+
+    .concept-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        0.9fr 1.1fr;
+
+      gap: 90px;
+
+      align-items: center;
+
+    }
+
+
+    .concept-copy {
+
+      max-width: 520px;
+
+    }
+
+
+    .concept-copy p {
+
+      margin-bottom: 20px;
+
+      font-size: 16px;
+
+      color: var(--gris);
+
+    }
+
+
+    .quote {
+
+      margin-top: 35px;
+
+      padding-left: 22px;
+
+      border-left:
+        2px solid var(--miel);
+
+      font-family:
+        "Cormorant Garamond",
+        serif;
+
+      font-size: 30px;
+
+      line-height: 1.1;
+
+      color: var(--cacao);
+
+    }
+
+
+    .concept-image {
+
+      position: relative;
+
+    }
+
+
+    .concept-image img {
+
+      border-radius:
+        var(--radio);
+
+      box-shadow:
+        0 22px 55px
+        rgba(78, 46, 31, 0.12);
+
+    }
+
+
+    .concept-image::after {
+
+      content: "✦";
+
+      position: absolute;
+
+      right: -24px;
+
+      bottom: -30px;
+
+      width: 62px;
+
+      height: 62px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      border-radius: 50%;
+
+      background: var(--miel);
+
+      color: var(--cacao);
+
+      font-size: 23px;
+
+    }
+
+
+    /* =====================================================
+       ATRIBUTOS DE MARCA
+       ===================================================== */
+
+    .brand-values {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(4, 1fr);
+
+      gap: 16px;
+
+      margin-top: 70px;
+
+    }
+
+
+    .value-card {
+
+      padding: 28px;
+
+      min-height: 170px;
+
+      border:
+        1px solid var(--linea);
+
+      border-radius:
+        18px;
+
+      background: var(--blanco);
+
+    }
+
+
+    .value-number {
+
+      display: block;
+
+      margin-bottom: 28px;
+
+      font-size: 11px;
+
+      color: var(--miel-oscura);
+
+    }
+
+
+    .value-card h3 {
+
+      margin-bottom: 8px;
+
+      font-family:
+        "Cormorant Garamond",
+        serif;
+
+      font-size: 25px;
+
+      font-weight: 600;
+
+      color: var(--cacao);
+
+    }
+
+
+    .value-card p {
+
+      font-size: 13px;
+
+      color: var(--gris);
+
+    }
+
+
+    /* =====================================================
+       02 — MOODBOARD
+       ===================================================== */
+
+    .moodboard-section {
+
+      background: var(--cacao);
+
+      color: var(--blanco);
+
+    }
+
+
+    .moodboard-section .section-number {
+
+      color: var(--miel);
+
+    }
+
+
+    .moodboard-section h2 {
+
+      color: var(--blanco);
+
+    }
+
+
+    .moodboard-section .section-intro {
+
+      color: rgba(255,255,255,0.68);
+
+    }
+
+
+    .moodboard-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        1.4fr 0.8fr 0.8fr;
+
+      grid-template-rows:
+        250px 250px;
+
+      gap: 14px;
+
+    }
+
+
+    .mood-image {
+
+      overflow: hidden;
+
+      border-radius:
+        18px;
+
+    }
+
+
+    .mood-image img {
+
+      width: 100%;
+
+      height: 100%;
+
+      object-fit: cover;
+
+      transition:
+        transform 0.5s ease;
+
+    }
+
+
+    .mood-image:hover img {
+
+      transform:
+        scale(1.04);
+
+    }
+
+
+    .mood-large {
+
+      grid-row:
+        span 2;
+
+    }
+
+
+    /* =====================================================
+       PALETA DENTRO DEL MOODBOARD
+       ===================================================== */
+
+    .color-panel {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, 1fr);
+
+      gap: 12px;
+
+      height: 100%;
+
+    }
+
+
+    .color-swatch {
+
+      min-height: 115px;
+
+      padding: 18px;
+
+      display: flex;
+
+      flex-direction: column;
+
+      justify-content: flex-end;
+
+      border-radius: 14px;
+
+      font-size: 11px;
+
+      letter-spacing: 0.06em;
+
+    }
+
+
+    .color-honey {
+
+      background: var(--miel);
+
+      color: var(--cacao);
+
+    }
+
+
+    .color-almond {
+
+      background: var(--almendra);
+
+      color: var(--cacao);
+
+    }
+
+
+    .color-olive {
+
+      background: var(--oliva);
+
+      color: var(--blanco);
+
+    }
+
+
+    .color-cocoa {
+
+      background: var(--cacao);
+
+      color: var(--blanco);
+
+    }
+
+
+    /* =====================================================
+       03 — LOGOTIPO
+       ===================================================== */
+
+    .identity {
+
+      background: var(--crema);
+
+    }
+
+
+    .identity-header {
+
+      display: grid;
+
+      grid-template-columns:
+        0.8fr 1.2fr;
+
+      gap: 100px;
+
+      margin-bottom: 70px;
+
+      align-items: end;
+
+    }
+
+
+    .identity-header p {
+
+      max-width: 480px;
+
+      font-size: 16px;
+
+      color: var(--gris);
+
+    }
+
+
+    .logo-showcase {
+
+      display: grid;
+
+      grid-template-columns:
+        1.2fr 0.8fr;
+
+      gap: 18px;
+
+    }
+
+
+    .logo-card {
+
+      min-height: 330px;
+
+      padding: 45px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      border-radius:
+        var(--radio);
+
+      background: var(--blanco);
+
+      border:
+        1px solid var(--linea);
+
+    }
+
+
+    .logo-card.main {
+
+      min-height: 450px;
+
+      background: var(--almendra);
+
+    }
+
+
+    .logo-card img {
+
+      max-width: 300px;
+
+      max-height: 240px;
+
+      object-fit: contain;
+
+    }
+
+
+    /* Ajuste exclusivo del logotipo principal */
+
+    .logo-card.main img {
+
+      width: 72%;
+
+      max-width: 500px;
+
+      max-height: 340px;
+
+      object-fit: contain;
+
+    }
+
+
+    .logo-side {
+
+      display: grid;
+
+      grid-template-rows:
+        1fr 1fr;
+
+      gap: 18px;
+
+    }
+
+
+    .logo-label {
+
+      align-self: flex-end;
+
+      margin-top: 18px;
+
+      font-size: 10px;
+
+      font-weight: 700;
+
+      letter-spacing: 0.13em;
+
+      text-transform: uppercase;
+
+      color: var(--gris);
+
+    }
+
+
+    /* =====================================================
+       04 — PALETA
+       ===================================================== */
+
+    .palette-section {
+
+      background: var(--crema-clara);
+
+    }
+
+
+    .palette-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(4, 1fr);
+
+      gap: 14px;
+
+      margin-top: 60px;
+
+    }
+
+
+    .palette-card {
+
+      min-height: 300px;
+
+      padding: 25px;
+
+      display: flex;
+
+      flex-direction: column;
+
+      justify-content: flex-end;
+
+      border-radius:
+        20px;
+
+    }
+
+
+    .palette-card strong {
+
+      margin-bottom: 3px;
+
+      font-family:
+        "Cormorant Garamond",
+        serif;
+
+      font-size: 26px;
+
+      font-weight: 600;
+
+    }
+
+
+    .palette-card span {
+
+      font-size: 11px;
+
+      letter-spacing: 0.08em;
+
+    }
+
+
+    .palette-honey {
+
+      background: #F4B940;
+
+      color: #4E2E1F;
+
+    }
+
+
+    .palette-almond {
+
+      background: #F0DDC5;
+
+      color: #4E2E1F;
+
+    }
+
+
+    .palette-olive {
+
+      background: #9C9A60;
+
+      color: white;
+
+    }
+
+
+    .palette-cocoa {
+
+      background: #4E2E1F;
+
+      color: white;
+
+    }
+
+
+    /* =====================================================
+       05 — TIPOGRAFÍA
+       ===================================================== */
+
+    .typography {
+
+      background: var(--almendra);
+
+    }
+
+
+    .type-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      gap: 18px;
+
+      margin-top: 55px;
+
+    }
+
+
+    .type-card {
+
+      min-height: 350px;
+
+      padding: 45px;
+
+      border-radius:
+        22px;
+
+      background: var(--crema-clara);
+
+      border:
+        1px solid var(--linea);
+
+    }
+      
+    /* =====================================================
+       05 — TIPOGRAFÍA
+       ===================================================== */
+
+    .typography {
+
+      background: var(--almendra);
+
+    }
+
+
+    .type-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      gap: 18px;
+
+      margin-top: 55px;
+
+    }
+
+
+    .type-card {
+
+      min-height: 350px;
+
+      padding: 45px;
+
+      border-radius:
+        22px;
+
+      background: var(--crema-clara);
+
+      border:
+        1px solid var(--linea);
+
+      display: flex;
+
+      flex-direction: column;
+
+    }
+
+
+    .type-name {
+
+      margin-bottom: 20px;
+
+      font-size: 11px;
+
+      font-weight: 700;
+
+      letter-spacing: 0.14em;
+
+      text-transform: uppercase;
+
+      color: var(--gris);
+
+    }
+
+
+    /* =====================================================
+       TIPOGRAFÍA PRINCIPAL
+       ===================================================== */
+
+    .type-serif {
+
+      margin-top: auto;
+
+      margin-bottom: 35px;
+
+      font-family:
+        "Cormorant Garamond",
+        serif;
+
+      font-size: 92px;
+
+      font-weight: 500;
+
+      line-height: 0.9;
+
+      color: var(--cacao);
+
+    }
+
+
+    /* =====================================================
+       LETTERING REAL DE LA MARCA
+       ===================================================== */
+
+    .type-branding {
+
+      margin-top: auto;
+
+      margin-bottom: 35px;
+
+      width: min(100%, 300px);
+
+      height: auto;
+
+      display: block;
+
+      object-fit: contain;
+
+      object-position: left center;
+
+    }
+
+
+    /* =====================================================
+       INFORMACIÓN DE LA TIPOGRAFÍA
+       ===================================================== */
+
+    .type-sample {
+
+      padding-top: 20px;
+
+      border-top:
+        1px solid var(--linea);
+
+      font-size: 13px;
+
+      line-height: 1.5;
+
+      color: var(--gris);
+
+    }
+
+
+    .type-sample span {
+
+      display: block;
+
+      margin-top: 3px;
+
+      font-size: 11px;
+
+      letter-spacing: 0.05em;
+
+      color: var(--gris);
+
+    }
+
+
+    /* =====================================================
+       06 — PACKAGING
+       ===================================================== */
+
+    .packaging {
+
+      background: var(--crema);
+
+    }
+
+
+    .packaging-layout {
+
+      display: grid;
+
+      grid-template-columns:
+        0.7fr 1.3fr;
+
+      gap: 80px;
+
+      align-items: center;
+
+    }
+
+
+    .packaging-copy {
+
+      max-width: 450px;
+
+    }
+
+
+    .packaging-copy p {
+
+      margin-bottom: 30px;
+
+      font-size: 16px;
+
+      color: var(--gris);
+
+    }
+
+
+    .packaging-highlight {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 10px;
+
+      margin-bottom: 28px;
+
+      font-size: 11px;
+
+      font-weight: 700;
+
+      letter-spacing: 0.12em;
+
+      text-transform: uppercase;
+
+      color: var(--miel-oscura);
+
+    }
+
+
+    .packaging-highlight::before {
+
+      content: "✦";
+
+      font-size: 15px;
+
+    }
+
+
+    .packaging-gallery {
+
+      display: grid;
+
+      grid-template-columns:
+        1.3fr 0.7fr;
+
+      gap: 16px;
+
+      /* Pulido visual: conjunto de imágenes 8% más grande */
+      transform: scale(1.08);
+      transform-origin: center right;
+
+    }
+
+
+    .packaging-main {
+
+      min-height: 650px;
+
+      overflow: hidden;
+
+      border-radius:
+        24px;
+
+      background: var(--almendra);
+
+    }
+
+
+    .packaging-main img {
+
+      width: 100%;
+
+      height: 100%;
+
+      object-fit: cover;
+
+    }
+
+
+    .packaging-side {
+
+      display: grid;
+
+      grid-template-rows:
+        repeat(2, 1fr);
+
+      gap: 16px;
+
+    }
+
+
+    .packaging-side-image {
+
+      overflow: hidden;
+
+      border-radius:
+        20px;
+
+      background: var(--blanco);
+
+    }
+
+
+    .packaging-side-image img {
+
+      width: 100%;
+
+      height: 100%;
+
+      object-fit: cover;
+
+    }
+
+
+    /* =====================================================
+       07 — APLICACIONES
+       ===================================================== */
+
+    .applications {
+
+      background: var(--crema-clara);
+
+    }
+
+
+    .applications-heading {
+
+      display: flex;
+
+      align-items: end;
+
+      justify-content: space-between;
+
+      gap: 60px;
+
+      margin-bottom: 60px;
+
+    }
+
+
+    .applications-heading p {
+
+      max-width: 410px;
+
+      font-size: 15px;
+
+      color: var(--gris);
+
+    }
+
+
+    .applications-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 18px;
+
+    }
+
+
+    .application-card {
+
+      overflow: hidden;
+
+      border-radius:
+        20px;
+
+      background: var(--blanco);
+
+      border:
+        1px solid var(--linea);
+
+    }
+
+
+    .application-card img {
+
+      width: 100%;
+
+      aspect-ratio: 4 / 5;
+
+      object-fit: cover;
+
+    }
+
+
+    .application-caption {
+
+      padding: 18px 20px;
+
+      font-size: 11px;
+
+      font-weight: 700;
+
+      letter-spacing: 0.11em;
+
+      text-transform: uppercase;
+
+      color: var(--cacao);
+
+    }
+
+
+    /* =====================================================
+       08 — REDES SOCIALES
+       ===================================================== */
+
+    .social {
+
+      background: var(--cacao);
+
+      color: var(--blanco);
+
+    }
+
+
+    .social .section-number {
+
+      color: var(--miel);
+
+    }
+
+
+    .social h2 {
+
+      color: var(--blanco);
+
+    }
+
+
+    .social-intro {
+
+      max-width: 550px;
+
+      margin-bottom: 55px;
+
+      color:
+        rgba(255,255,255,0.7);
+
+    }
+
+
+    .social-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 18px;
+
+    }
+
+
+    .social-card {
+
+      overflow: hidden;
+
+      border-radius:
+        20px;
+
+      background: #674536;
+
+    }
+
+
+    .social-card img {
+
+      width: 100%;
+
+      aspect-ratio: 1 / 1.2;
+
+      object-fit: cover;
+
+    }
+
+
+    .social-caption {
+
+      padding: 18px;
+
+      font-size: 11px;
+
+      letter-spacing: 0.1em;
+
+      text-transform: uppercase;
+
+      color:
+        rgba(255,255,255,0.8);
+
+    }
+
+
+    /* =====================================================
+       RESULTADO FINAL
+       ===================================================== */
+
+    .result {
+
+      padding:
+        150px 0;
+
+      background: var(--miel);
+
+      text-align: center;
+
+    }
+
+
+    .result-inner {
+
+      max-width: 780px;
+
+      margin: 0 auto;
+
+    }
+
+
+    .result .section-number {
+
+      color: var(--cacao);
+
+    }
+
+
+    .result h2 {
+
+      margin-bottom: 25px;
+
+      font-family:
+        "Cormorant Garamond",
+        serif;
+
+      font-size:
+        clamp(52px, 7vw, 90px);
+
+      line-height: 0.9;
+
+      font-weight: 500;
+
+      color: var(--cacao);
+
+    }
+
+
+    .result p {
+
+      max-width: 620px;
+
+      margin:
+        0 auto 35px;
+
+      font-size: 16px;
+
+      color: var(--cacao-suave);
+
+    }
+
+
+    .result-quote {
+
+      margin-bottom: 38px;
+
+      font-family:
+        "Italianno",
+        cursive;
+
+      font-size: 55px;
+
+      color: var(--cacao);
+
+    }
+
+
+    .back-button {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 10px;
+
+      padding:
+        14px 23px;
+
+      border:
+        1px solid var(--cacao);
+
+      border-radius: 999px;
+
+      font-size: 12px;
+
+      font-weight: 600;
+
+      transition:
+        background 0.25s ease,
+        color 0.25s ease;
+
+    }
+
+
+    .back-button:hover {
+
+      background: var(--cacao);
+
+      color: var(--miel);
+
+    }
+
+
+    /* =====================================================
+       FOOTER
+       ===================================================== */
+
+    footer {
+
+      padding:
+        28px 0;
+
+      border-top:
+        1px solid var(--linea);
+
+      background:
+        var(--crema-clara);
+
+    }
+
+
+    .footer-inner {
+
+      width: min(
+        calc(100% - 80px),
+        var(--max-width)
+      );
+
+      margin: 0 auto;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 20px;
+
+      font-size: 11px;
+
+      color: var(--gris);
+
+    }
+
+
+    .footer-inner a {
+
+      color: var(--cacao);
+
+      font-weight: 600;
+
+    }
+
+
+    .footer-inner a:hover {
+
+      opacity: 0.55;
+
+    }
+
+
+    /* =====================================================
+       ANIMACIONES
+       ===================================================== */
+
+    .reveal {
+
+      opacity: 0;
+
+      transform:
+        translateY(25px);
+
+      transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+
+    }
+
+
+    .reveal.visible {
+
+      opacity: 1;
+
+      transform:
+        translateY(0);
+
+    }
+
+
+    /* =====================================================
+       RESPONSIVE
+       ===================================================== */
+
+    @media (max-width: 900px) {
+
+      .container,
+      .nav,
+      .footer-inner {
+
+        width:
+          min(
+            calc(100% - 40px),
+            var(--max-width)
+          );
+
+      }
+
+
+      .nav-links {
+
+        display: none;
+
+      }
+
+
+      .hero {
+
+        min-height: auto;
+
+        display: flex;
+
+        flex-direction: column;
+
+      }
+
+
+      .hero-copy {
+
+        width: 100%;
+
+        min-height: auto;
+
+        padding:
+          80px 30px 60px;
+
+      }
+
+
+      .hero-image {
+
+        position: relative;
+
+        inset: auto;
+
+        min-height:
+          520px;
+
+        order: 2;
+
+      }
+
+
+      .hero-image::after {
+
+        background:
+          linear-gradient(
+            180deg,
+            var(--crema) 0%,
+            rgba(246, 239, 228, 0.35) 22%,
+            rgba(246, 239, 228, 0) 42%
+          );
+
+      }
+
+
+      .hero-image img {
+
+        object-position: center center;
+
+      }
+
+
+      .meta-grid {
+
+        grid-template-columns:
+          repeat(2, 1fr);
+
+      }
+
+
+      .concept-grid,
+      .identity-header,
+      .packaging-layout {
+
+        grid-template-columns:
+          1fr;
+
+        gap: 50px;
+
+      }
+
+
+      .brand-values {
+
+        grid-template-columns:
+          repeat(2, 1fr);
+
+      }
+
+
+      .moodboard-grid {
+
+        grid-template-columns:
+          1fr 1fr;
+
+        grid-template-rows:
+          300px 220px;
+
+      }
+
+
+      .mood-large {
+
+        grid-row:
+          span 1;
+
+        grid-column:
+          span 2;
+
+      }
+
+
+      .palette-grid {
+
+        grid-template-columns:
+          repeat(2, 1fr);
+
+      }
+
+
+      .packaging-gallery {
+
+        grid-template-columns:
+          1fr;
+
+        transform: none;
+
+      }
+
+
+      .packaging-main {
+
+        min-height:
+          550px;
+
+      }
+
+
+      .packaging-side {
+
+        grid-template-columns:
+          1fr 1fr;
+
+        grid-template-rows:
+          260px;
+
+      }
+
+
+      .applications-heading {
+
+        align-items:
+          flex-start;
+
+        flex-direction:
+          column;
+
+        gap: 20px;
+
+      }
+
+
+      .applications-grid,
+      .social-grid {
+
+        grid-template-columns:
+          repeat(2, 1fr);
+
+      }
+
+    }
+
+
+    @media (max-width: 600px) {
+
+      .section {
+
+        padding:
+          90px 0;
+
+      }
+
+
+      .hero h1 {
+
+        font-size:
+          67px;
+
+      }
+
+
+      .hero h1 span {
+
+        font-size:
+          80px;
+
+      }
+
+
+      .type-branding {
+
+        width: 100%;
+
+        max-width: 430px;
+
+      }
+
+
+      .meta-grid {
+
+        grid-template-columns:
+          1fr;
+
+      }
+
+
+      .meta-item {
+
+        border-bottom:
+          1px solid var(--linea);
+
+      }
+
+
+      .brand-values,
+      .palette-grid,
+      .type-grid,
+      .applications-grid,
+      .social-grid {
+
+        grid-template-columns:
+          1fr;
+
+      }
+
+
+      .moodboard-grid {
+
+        display: grid;
+
+        grid-template-columns:
+          1fr;
+
+        grid-template-rows:
+          repeat(4, 260px);
+
+      }
+
+
+      .mood-large {
+
+        grid-column:
+          auto;
+
+      }
+
+
+      .logo-showcase {
+
+        grid-template-columns:
+          1fr;
+
+      }
+
+
+      .logo-side {
+
+        grid-template-columns:
+          1fr 1fr;
+
+        grid-template-rows:
+          260px;
+
+      }
+
+
+      .packaging-side {
+
+        grid-template-columns:
+          1fr;
+
+        grid-template-rows:
+          repeat(2, 260px);
+
+      }
+
+
+      .footer-inner {
+
+        flex-direction:
+          column;
+
+        align-items:
+          flex-start;
+
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- =====================================================
+       HEADER
+       ===================================================== -->
+
+  <header>
+
+    <nav class="nav">
+
+      <a
+        href="../../index.html"
+        class="brand"
+      >
+
+        <img
+          src="logo.png"
+          alt="Miel de Amor"
+        >
+
+      </a>
+
+
+      <div class="nav-right">
+
+        <div class="nav-links">
+
+          <a href="#concepto">
+            Proyecto
+          </a>
+
+          <a href="#identidad">
+            Identidad
+          </a>
+
+          <a href="#packaging">
+            Packaging
+          </a>
+
+          <a href="#aplicaciones">
+            Aplicaciones
+          </a>
+
+        </div>
+
+
+        <a
+          href="Miel%20de%20Amor.png"
+          class="back-link"
+        >
+
+         
+        </a>
+
+      </div>
+
+    </nav>
+
+  </header>
+
+
+
+  <main>
+
+
+    <!-- =====================================================
+         HERO
+         ===================================================== -->
+
+    <section class="hero">
+
+      <div class="hero-copy">
+
+        <div class="hero-inner reveal">
+
+          <div class="eyebrow">
+
+            Branding · Identidad visual
+
+          </div>
+
+
+          <h1>
+
+            Miel
+
+            <span>
+              de Amor
+            </span>
+
+          </h1>
+
+
+          <p class="hero-subtitle">
+
+            El sabor de lo natural,
+            hecho con amor.
+
+          </p>
+
+
+          <p class="hero-text">
+
+            Proyecto de identidad visual y packaging
+            desarrollado desde una mirada cálida,
+            artesanal y emocional, donde la miel se
+            convierte en una experiencia cercana.
+
+          </p>
+
+
+          <a
+            href="#concepto"
+            class="hero-button"
+          >
+
+            Ver proyecto
+
+            <span>↓</span>
+
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="hero-image">
+
+        <img
+          src="Miel%20de%20Amor.png"
+          alt="Packaging de Miel de Amor"
+        >
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         INFORMACIÓN DEL PROYECTO
+         ===================================================== -->
+
+    <section class="project-meta">
+
+      <div class="meta-grid">
+
+        <div class="meta-item">
+
+          <div class="meta-label">
+            Proyecto
+          </div>
+
+          <div class="meta-value">
+            Miel de Amor
+          </div>
+
+        </div>
+
+
+        <div class="meta-item">
+
+          <div class="meta-label">
+            Servicio
+          </div>
+
+          <div class="meta-value">
+            Branding · Packaging
+          </div>
+
+        </div>
+
+
+        <div class="meta-item">
+
+          <div class="meta-label">
+            Rol
+          </div>
+
+          <div class="meta-value">
+            Diseñadora Gráfica
+          </div>
+
+        </div>
+
+
+        <div class="meta-item">
+
+          <div class="meta-label">
+            Herramientas
+          </div>
+
+          <div class="meta-value">
+            Illustrator · Photoshop
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         01 — CONCEPTO
+         ===================================================== -->
+
+    <section
+      class="section concept"
+      id="concepto"
+    >
+
+      <div class="container">
+
+        <div class="concept-grid">
+
+          <div class="concept-copy reveal">
+
+            <div class="section-number">
+              01 — Concepto
+            </div>
+
+
+            <h2>
+              Una idea
+              que endulza.
+            </h2>
+
+
+            <p>
+
+              Miel de Amor nació de una idea muy simple:
+              transformar un producto tan cotidiano como
+              la miel en algo que transmita emoción.
+
+            </p>
+
+
+            <p>
+
+              No solo se trata de endulzar,
+              sino de endulzar con cariño.
+
+            </p>
+
+
+            <div class="quote">
+
+              “De la naturaleza
+              para las personas.”
+
+            </div>
+
+          </div>
+
+
+          <div class="concept-image reveal">
+
+            <img
+              src="baje.jpg"
+              alt="Concepto visual Miel de Amor"
+            >
+
+          </div>
+
+        </div>
+
+
+        <!-- VALORES -->
+
+        <div class="brand-values">
+
+          <article class="value-card reveal">
+
+            <span class="value-number">
+              01
+            </span>
+
+            <h3>
+              Natural
+            </h3>
+
+            <p>
+              Una identidad inspirada
+              en la naturaleza y sus formas.
+            </p>
+
+          </article>
+
+
+          <article class="value-card reveal">
+
+            <span class="value-number">
+              02
+            </span>
+
+            <h3>
+              Artesanal
+            </h3>
+
+            <p>
+              Texturas y recursos visuales
+              que evocan lo hecho a mano.
+            </p>
+
+          </article>
+
+
+          <article class="value-card reveal">
+
+            <span class="value-number">
+              03
+            </span>
+
+            <h3>
+              Cercana
+            </h3>
+
+            <p>
+              Un lenguaje visual cálido,
+              simple y humano.
+            </p>
+
+          </article>
+
+
+          <article class="value-card reveal">
+
+            <span class="value-number">
+              04
+            </span>
+
+            <h3>
+              Emocional
+            </h3>
+
+            <p>
+              La identidad busca conectar
+              desde la dulzura y el cariño.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         02 — MOODBOARD
+         ===================================================== -->
+
+    <section class="section moodboard-section">
+
+      <div class="container">
+
+        <div class="section-number">
+          02 — Universo visual
+        </div>
+
+
+        <h2>
+          Inspiración desde
+          la naturaleza.
+        </h2>
+
+
+        <p class="section-intro">
+
+          El moodboard refleja la dulzura y la calidez
+          de una marca que nace del corazón de la naturaleza.
+          En él se encuentran los tonos dorados de la miel,
+          las flores, las abejas y texturas orgánicas que
+          evocan lo rústico y auténtico.
+
+        </p>
+
+
+        <div class="moodboard-grid">
+
+          <div class="mood-image mood-large">
+
+            <img
+              src="descarga%20(57).jpg"
+              alt="Moodboard Miel de Amor"
+            >
+
+          </div>
+
+
+          <div class="mood-image">
+
+            <img
+              src="inspiracion.jpg"
+              alt="Inspiración floral Miel de Amor"
+            >
+
+          </div>
+
+
+          <div class="mood-image">
+
+            <img
+              src="inspiracion%202.jpg"
+              alt="Inspiración natural Miel de Amor"
+            >
+
+          </div>
+
+
+          <div class="mood-image">
+
+            <img
+              src="inspiracion%203.jpg"
+              alt="Texturas Miel de Amor"
+            >
+
+          </div>
+
+
+          <div class="color-panel">
+
+            <div class="color-swatch color-honey">
+
+              Honey Gold
+
+              <strong>
+                #F4B940
+              </strong>
+
+            </div>
+
+
+            <div class="color-swatch color-almond">
+
+              Almond Milk
+
+              <strong>
+                #F0DDC5
+              </strong>
+
+            </div>
+
+
+            <div class="color-swatch color-olive">
+
+              Olive Mist
+
+              <strong>
+                #9C9A60
+              </strong>
+
+            </div>
+
+
+            <div class="color-swatch color-cocoa">
+
+              Dark Cocoa
+
+              <strong>
+                #4E2E1F
+              </strong>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         03 — LOGOTIPO
+         ===================================================== -->
+
+    <section
+      class="section identity"
+      id="identidad"
+    >
+
+      <div class="container">
+
+        <div class="identity-header">
+
+          <div>
+
+            <div class="section-number">
+              03 — Identidad
+            </div>
+
+            <h2>
+              Una marca
+              con alma.
+            </h2>
+
+          </div>
+
+
+          <p>
+
+            El logotipo de Miel de Amor combina tipografía
+            y símbolo en un diseño que refleja lo natural
+            y lo artesanal. El lettering es suave y orgánico,
+            mientras que el ícono —inspirado en la forma del
+            panal y la abeja— transmite pureza, tradición
+            y conexión con la naturaleza.
+
+          </p>
+
+        </div>
+
+
+        <div class="logo-showcase">
+
+          <div>
+
+            <div class="logo-card main reveal">
+
+              <img
+                src="Logotipo%20principal%20Miel%20de%20Amor.png"
+                alt="Logotipo principal Miel de Amor"
+              >
+
+            </div>
+
+            <div class="logo-label">
+              Logotipo principal
+            </div>
+
+          </div>
+
+
+          <div class="logo-side">
+
+            <div>
+
+              <div class="logo-card reveal">
+
+                <img
+                  src="tipografia.png"
+                  alt="Versión tipográfica Miel de Amor"
+                >
+
+              </div>
+
+              <div class="logo-label">
+                Versión tipográfica
+              </div>
+
+            </div>
+
+
+            <div>
+
+              <div class="logo-card reveal">
+
+                <img
+                  src="isotipo.png"
+                  alt="Isotipo Miel de Amor"
+                >
+
+              </div>
+
+              <div class="logo-label">
+                Isotipo
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         04 — PALETA
+         ===================================================== -->
+
+    <section class="section palette-section">
+
+      <div class="container">
+
+        <div class="section-number">
+          04 — Color
+        </div>
+
+
+        <h2>
+          Tonos que transmiten
+          lo esencial.
+        </h2>
+
+
+        <p class="section-intro">
+
+          La paleta combina tonos cálidos y naturales
+          que refuerzan la sensación de dulzura,
+          cercanía y conexión con la naturaleza.
+
+        </p>
+
+
+        <div class="palette-grid">
+
+          <div class="palette-card palette-honey">
+
+            <strong>
+              Honey Gold
+            </strong>
+
+            <span>
+              #F4B940
+            </span>
+
+          </div>
+
+
+          <div class="palette-card palette-almond">
+
+            <strong>
+              Almond Milk
+            </strong>
+
+            <span>
+              #F0DDC5
+            </span>
+
+          </div>
+
+
+          <div class="palette-card palette-olive">
+
+            <strong>
+              Olive Mist
+            </strong>
+
+            <span>
+              #9C9A60
+            </span>
+
+          </div>
+
+
+          <div class="palette-card palette-cocoa">
+
+            <strong>
+              Dark Cocoa
+            </strong>
+
+            <span>
+              #4E2E1F
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         05 — TIPOGRAFÍA
+         ===================================================== -->
+
+    <!-- =====================================================
+     05 — TIPOGRAFÍA
+     ===================================================== -->
+
+<section class="section typography">
+
+  <div class="container">
+
+    <div class="section-number">
+      05 — Tipografía
+    </div>
+
+    <h2>
+      Una combinación
+      dulce y expresiva.
+    </h2>
+
+
+    <div class="type-grid">
+
+      <!-- TIPOGRAFÍA PRINCIPAL -->
+      <article class="type-card reveal">
+
+        <div class="type-name">
+          Tipografía principal
+        </div>
+
+        <div class="type-serif">
+          Miel de
+        </div>
+
+        <div class="type-sample">
+          Cormorant Garamond
+          <span>Serif editorial</span>
+        </div>
+
+      </article>
+
+
+      <!-- LETTERING REAL DE LA MARCA -->
+      <article class="type-card reveal">
+
+        <div class="type-name">
+          Lettering de marca
+        </div>
+
+        <img
+          src="amor.png"
+          class="type-branding"
+          alt="Lettering original Amor de la marca Miel de Amor"
+        >
+
+        <div class="type-sample">
+          Amor
+          <span>Recurso gráfico de identidad</span>
+        </div>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+    <!-- =====================================================
+         06 — PACKAGING
+         ===================================================== -->
+
+    <section
+      class="section packaging"
+      id="packaging"
+    >
+
+      <div class="container">
+
+        <div class="packaging-layout">
+
+          <div class="packaging-copy reveal">
+
+            <div class="section-number">
+              06 — Packaging
+            </div>
+
+
+            <div class="packaging-highlight">
+              Aplicación principal
+            </div>
+
+
+            <h2>
+              La identidad
+              se convierte
+              en producto.
+            </h2>
+
+
+            <p>
+
+              El sistema visual se traslada al packaging
+              para construir una experiencia coherente
+              y reconocible. La combinación de miel,
+              flores, elementos naturales y una gráfica
+              cálida convierte al producto en el principal
+              punto de contacto con la marca.
+
+            </p>
+
+          </div>
+
+
+          <div class="packaging-gallery">
+
+            <div class="packaging-main reveal">
+
+              <img
+                src="packaging%20principal.png"
+                alt="Packaging principal Miel de Amor"
+              >
+
+            </div>
+
+
+            <div class="packaging-side">
+
+              <div class="packaging-side-image reveal">
+
+                <img
+                  src="Detalle%20packaging%20Miel%20de%20Amor.png"
+                  alt="Detalle packaging Miel de Amor"
+                >
+
+              </div>
+
+
+              <div class="packaging-side-image reveal">
+
+                <img
+                  src="aplicacion%20principal.png"
+                  alt="Aplicación de packaging Miel de Amor"
+                >
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         07 — APLICACIONES
+         ===================================================== -->
+
+    <section
+      class="section applications"
+      id="aplicaciones"
+    >
+
+      <div class="container">
+
+        <div class="applications-heading">
+
+          <div>
+
+            <div class="section-number">
+              07 — Aplicaciones
+            </div>
+
+            <h2>
+              La marca
+              en uso.
+            </h2>
+
+          </div>
+
+
+          <p>
+
+            La identidad se extiende a diferentes
+            soportes manteniendo una misma atmósfera
+            visual: cálida, natural y cercana.
+
+          </p>
+
+        </div>
+
+
+        <div class="applications-grid">
+
+          <article class="application-card reveal">
+
+            <img
+              src="uso%201.png"
+              alt="Aplicación gráfica Miel de Amor"
+            >
+
+            <div class="application-caption">
+              Identidad aplicada
+            </div>
+
+          </article>
+
+
+          <article class="application-card reveal">
+
+            <img
+              src="uso%202.png"
+              alt="Aplicación de marca Miel de Amor"
+            >
+
+            <div class="application-caption">
+              Comunicación visual
+            </div>
+
+          </article>
+
+
+          <article class="application-card reveal">
+
+            <img
+              src="uso%203.png"
+              alt="Aplicación de packaging Miel de Amor"
+            >
+
+            <div class="application-caption">
+              Packaging
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         08 — REDES SOCIALES
+         ===================================================== -->
+
+    <section class="section social">
+
+      <div class="container">
+
+        <div class="section-number">
+          08 — Comunicación digital
+        </div>
+
+
+        <h2>
+          Una identidad
+          que también comunica.
+        </h2>
+
+
+        <p class="social-intro">
+
+          El universo visual de Miel de Amor puede
+          trasladarse a piezas digitales manteniendo
+          la misma combinación de calidez, naturaleza
+          y sensibilidad que define la marca.
+
+        </p>
+
+
+        <div class="social-grid">
+
+          <article class="social-card reveal">
+
+            <img
+              src="CONTENIDO%20DE%20MARCA.png"
+              alt="Redes sociales Miel de Amor"
+            >
+
+            <div class="social-caption">
+              Contenido de marca
+            </div>
+
+          </article>
+
+
+          <article class="social-card reveal">
+
+            <img
+              src="Universo%20visual.png"
+              alt="Comunicación digital Miel de Amor"
+            >
+
+            <div class="social-caption">
+              Universo visual
+            </div>
+
+          </article>
+
+
+          <article class="social-card reveal">
+
+            <img
+              src="aplicacion%20digital%20miel%20de%20amor.png"
+              alt="Aplicación digital Miel de Amor"
+            >
+
+            <div class="social-caption">
+              Identidad digital
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         RESULTADO FINAL
+         ===================================================== -->
+
+    <section class="result">
+
+      <div class="container">
+
+        <div class="result-inner reveal">
+
+          <div class="section-number">
+            Resultado final
+          </div>
+
+
+          <h2>
+            Una marca hecha
+            para sentirse.
+          </h2>
+
+
+          <p>
+
+            Miel de Amor reúne naturaleza, dulzura
+            y emoción en un sistema visual cálido
+            y reconocible, donde el packaging se
+            convierte en una extensión de la identidad.
+
+          </p>
+
+
+          <div class="result-quote">
+
+            Hecho con amor.
+
+          </div>
+
+
+          <a
+            href="../../index.html"
+            class="back-button"
+          >
+
+            ← Ver todos los proyectos
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- =====================================================
+       FOOTER
+       ===================================================== -->
+
+  <footer>
+
+    <div class="footer-inner">
+
+      <a href="../../index.html">
+        ← Volver a proyectos
+      </a>
+
+
+      <span>
+        © 2026 Daniela Pasmiño · Diseñadora Gráfica & Digital
+      </span>
+
+
+      <a href="#top">
+        Volver arriba ↑
+      </a>
+
+    </div>
+
+  </footer>
+
+
+
+  <!-- =====================================================
+       JAVASCRIPT
+       ANIMACIONES AL HACER SCROLL
+       ===================================================== -->
+
+  <script>
+
+    const revealElements =
+      document.querySelectorAll(".reveal");
+
+
+    const revealObserver =
+      new IntersectionObserver(
+
+        (entries) => {
+
+          entries.forEach((entry) => {
+
+            if (entry.isIntersecting) {
+
+              entry.target.classList.add("visible");
+
+              revealObserver.unobserve(
+                entry.target
+              );
+
+            }
+
+          });
+
+        },
+
+        {
+          threshold: 0.12
+        }
+
+      );
+
+
+    revealElements.forEach((element) => {
+
+      revealObserver.observe(element);
+
+    });
+
+  </script>
+
+
+</body>
+
+</html>

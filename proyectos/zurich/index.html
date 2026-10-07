@@ -1,0 +1,1620 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Zúrich · Daniela Pasmiño</title>
+
+<style>
+
+/* =========================================================
+   BASE
+========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #f7f5f0;
+  color: #18251b;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+
+/* =========================================================
+   CONTENEDOR
+========================================================= */
+
+.wrap {
+  max-width: 1180px;
+  margin: auto;
+  padding: 0 5% 100px;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.top {
+  height: 82px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 1px solid #dedbd3;
+}
+
+.back {
+  font-size: 13px;
+  color: #67665f;
+}
+
+.logo {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-icon {
+  display: block;
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.kicker {
+  margin: 76px 0 12px;
+
+  font-size: 11px;
+  letter-spacing: .17em;
+  font-weight: 700;
+
+  color: #8b7852;
+}
+
+h1 {
+  max-width: 850px;
+
+  margin: 0;
+
+  font: 400 clamp(52px, 7vw, 90px) / .92 Georgia, serif;
+
+  letter-spacing: -.055em;
+}
+
+.intro {
+  max-width: 690px;
+
+  margin: 28px 0 55px;
+
+  font-size: 17px;
+  line-height: 1.65;
+
+  color: #67665f;
+}
+
+
+/* =========================================================
+   IMAGEN PRINCIPAL
+========================================================= */
+
+.image-frame {
+  padding: 14px;
+
+  background: #fff;
+
+  border: 1px solid #dfdbd2;
+
+  border-radius: 20px;
+
+  box-shadow: 0 8px 25px rgba(30,25,18,.03);
+}
+
+.image-frame img {
+  display: block;
+
+  width: 100%;
+
+  border-radius: 11px;
+}
+
+
+/* =========================================================
+   SECCIONES
+========================================================= */
+
+.section {
+  margin-top: 145px;
+}
+
+.section-kicker {
+  margin: 0 0 12px;
+
+  font-size: 11px;
+  letter-spacing: .17em;
+  font-weight: 700;
+
+  color: #8b7852;
+}
+
+h2 {
+  max-width: 800px;
+
+  margin: 0 0 22px;
+
+  font: 400 clamp(38px, 5vw, 64px) / .98 Georgia, serif;
+
+  letter-spacing: -.045em;
+}
+
+.section-intro {
+  max-width: 700px;
+
+  margin: 0 0 45px;
+
+  font-size: 15px;
+  line-height: 1.7;
+
+  color: #686761;
+}
+
+
+/* =========================================================
+   CONCEPTO
+========================================================= */
+
+.concept-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 18px;
+}
+
+.concept-card {
+  padding: 35px;
+
+  background: #eeece3;
+
+  border: 1px solid #e0ddd3;
+
+  border-radius: 18px;
+}
+
+.concept-card h3 {
+  margin: 0 0 14px;
+
+  font: 400 29px Georgia, serif;
+}
+
+.concept-card p {
+  margin: 0;
+
+  font-size: 14px;
+  line-height: 1.7;
+
+  color: #686761;
+}
+
+
+/* =========================================================
+   SISTEMA VISUAL
+========================================================= */
+
+.visual-grid {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 18px;
+}
+
+.visual-card {
+  padding: 32px;
+
+  background: #fff;
+
+  border: 1px solid #dfdbd2;
+
+  border-radius: 18px;
+}
+
+.visual-card h3 {
+  margin: 0 0 20px;
+
+  font: 400 28px Georgia, serif;
+}
+
+.visual-card p {
+  margin: 0;
+
+  font-size: 14px;
+  line-height: 1.65;
+
+  color: #686761;
+}
+
+
+/* =========================================================
+   PALETA
+========================================================= */
+
+.palette {
+  display: grid;
+
+  grid-template-columns: repeat(5, 1fr);
+
+  gap: 8px;
+
+  margin-top: 28px;
+}
+
+.swatch {
+  min-height: 115px;
+
+  padding: 16px;
+
+  display: flex;
+  align-items: flex-end;
+
+  border-radius: 12px;
+
+  font-size: 11px;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   RECURSOS GRÁFICOS
+========================================================= */
+
+.resources-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  margin-top: 34px;
+  border-top: 1px solid #ddd7ca;
+  border-bottom: 1px solid #ddd7ca;
+}
+
+.resource {
+  padding: 26px 16px 28px;
+  text-align: center;
+  border-right: 1px solid #ddd7ca;
+  transition: transform .25s ease;
+}
+
+.resource:last-child {
+  border-right: none;
+}
+
+.resource:hover {
+  transform: translateY(-4px);
+}
+
+.resource-icon {
+  width: 58px;
+  height: 58px;
+  margin: 0 auto 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.resource-icon svg {
+  width: 52px;
+  height: 52px;
+  fill: none;
+  stroke: #102f4a;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.resource:nth-child(1) .resource-icon svg,
+.resource:nth-child(3) .resource-icon svg {
+  stroke: #b88b48;
+}
+
+.resource h4 {
+  margin: 0 0 8px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #18251b;
+}
+
+.resource p {
+  margin: 0;
+  font-size: 11px;
+  line-height: 1.45;
+  color: #686761;
+}
+
+
+/* =========================================================
+   PROCESO
+========================================================= */
+
+.process {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 12px;
+}
+
+.process-card {
+  padding: 26px;
+
+  background: #fff;
+
+  border: 1px solid #dfdbd2;
+
+  border-radius: 16px;
+}
+
+.process-number {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 20px;
+
+  border-radius: 50%;
+
+  background: #e8eadf;
+
+  color: #314d35;
+
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.process-card h3 {
+  margin: 0 0 10px;
+
+  font-size: 16px;
+}
+
+.process-card p {
+  margin: 0;
+
+  font-size: 12px;
+  line-height: 1.6;
+
+  color: #74716a;
+}
+
+
+/* =========================================================
+   DETALLES DE INFORMACIÓN
+========================================================= */
+
+.info-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 16px;
+}
+
+.info-card {
+  padding: 30px;
+
+  background: #eeece3;
+
+  border: 1px solid #dfdbd2;
+
+  border-radius: 17px;
+}
+
+.info-card h3 {
+  margin: 0 0 12px;
+
+  font: 400 25px Georgia, serif;
+}
+
+.info-card p {
+  margin: 0;
+
+  font-size: 13px;
+  line-height: 1.65;
+
+  /* Contraste corregido: era #686761 sobre #eeece3 (bajo contraste) */
+  color: #4b4840;
+}
+
+
+/* =========================================================
+   RESULTADO
+========================================================= */
+
+.result {
+  margin-top: 50px;
+  padding: 18px;
+
+  background: #fff;
+
+  border: 1px solid #dfdbd2;
+  border-radius: 20px;
+
+  box-shadow: 0 10px 30px rgba(30, 25, 18, .04);
+
+  overflow: hidden;
+}
+
+.result img {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  border-radius: 12px;
+
+  image-rendering: auto;
+}
+
+
+/* =========================================================
+   CIERRE
+========================================================= */
+
+.closing {
+  margin-top: 150px;
+
+  padding: 75px 35px;
+
+  text-align: center;
+
+  background: #314d35;
+
+  color: #fff;
+
+  border-radius: 24px;
+}
+
+.closing h2 {
+  max-width: 850px;
+
+  margin: 0 auto 24px;
+}
+
+.closing p {
+  max-width: 670px;
+
+  margin: auto;
+
+  font-size: 15px;
+  line-height: 1.7;
+
+  color: #edf0e9;
+}
+
+.button {
+  display: inline-block;
+
+  margin-top: 32px;
+
+  padding: 14px 23px;
+
+  background: #f1e9da;
+
+  color: #29412d;
+
+  border-radius: 9px;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  transition: .25s ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer {
+  margin-top: 80px;
+
+  padding-top: 25px;
+
+  border-top: 1px solid #dedbd3;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  font-size: 12px;
+
+  color: #77746d;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 800px) {
+
+  .wrap {
+    padding-bottom: 70px;
+  }
+
+  .top {
+    height: 68px;
+  }
+
+  .logo,
+  .logo-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .kicker {
+    margin-top: 55px;
+  }
+
+  .intro {
+    font-size: 15px;
+  }
+
+  .section {
+    margin-top: 95px;
+  }
+
+  .concept-grid,
+  .visual-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .process {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .palette {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .resources-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .resource:nth-child(2),
+  .resource:nth-child(4) {
+    border-right: none;
+  }
+
+  .resource:nth-child(3),
+  .resource:nth-child(4),
+  .resource:nth-child(5) {
+    border-top: 1px solid #ddd7ca;
+  }
+
+  .resource:nth-child(5) {
+    grid-column: 1 / -1;
+    border-right: none;
+  }
+
+  .closing {
+    margin-top: 100px;
+    padding: 55px 24px;
+  }
+
+  .footer {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+}
+
+@media (max-width: 500px) {
+
+  h1 {
+    font-size: 50px;
+  }
+
+  h2 {
+    font-size: 38px;
+  }
+
+  .process {
+    grid-template-columns: 1fr;
+  }
+
+  .palette {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .resources-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .resource {
+    border-right: none;
+    border-bottom: 1px solid #ddd7ca;
+  }
+
+  .resource:nth-child(3),
+  .resource:nth-child(4),
+  .resource:nth-child(5) {
+    border-top: none;
+  }
+
+  .resource:last-child {
+    border-bottom: none;
+  }
+
+}
+
+
+/* =========================================================
+   RESULTADO FINAL · ZÚRICH
+========================================================= */
+
+.final-result {
+  margin-top: 80px;
+  padding-bottom: 20px;
+}
+
+
+/* =========================================================
+   CONTENIDO PRINCIPAL
+========================================================= */
+
+.final-result-grid {
+  display: grid;
+
+  grid-template-columns: .82fr 1.18fr;
+
+  align-items: center;
+
+  gap: 70px;
+
+  max-width: 1140px;
+
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   TEXTO
+========================================================= */
+
+.final-copy {
+  padding-left: 10px;
+}
+
+.final-kicker {
+  margin: 0 0 28px;
+
+  color: #a17c3d;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: .18em;
+
+  text-transform: uppercase;
+}
+
+
+.final-copy h2 {
+  margin: 0;
+
+  color: #172f49;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(40px, 4.2vw, 59px);
+
+  font-weight: 400;
+
+  line-height: .98;
+
+  letter-spacing: -.045em;
+}
+
+
+.final-line {
+  width: 78px;
+
+  height: 2px;
+
+  margin: 32px 0 27px;
+
+  background: #bd9148;
+}
+
+
+.final-description {
+  max-width: 430px;
+
+  margin: 0;
+
+  color: #5f625f;
+
+  font-size: 16px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   COLLAGE
+========================================================= */
+
+.final-gallery {
+  display: grid;
+
+  grid-template-columns: 1fr .85fr;
+
+  gap: 12px;
+
+  height: 500px;
+}
+
+
+.final-gallery img {
+  display: block;
+
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: cover;
+
+  border-radius: 4px;
+}
+
+
+.final-image-main {
+  height: 500px;
+
+  overflow: hidden;
+}
+
+
+.final-image-side {
+  display: grid;
+
+  grid-template-rows: 1fr 1fr;
+
+  gap: 12px;
+}
+
+
+.final-image-side img {
+  min-height: 0;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   NAVEGACIÓN
+========================================================= */
+
+.final-navigation {
+  display: grid;
+
+  grid-template-columns: 1fr auto 1fr;
+
+  align-items: center;
+
+  max-width: 1140px;
+
+  margin: 45px auto 0;
+
+  padding-top: 27px;
+
+  border-top: 1px solid #d8d1c5;
+}
+
+
+.final-navigation a {
+  color: #172f49;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: .14em;
+
+  text-transform: uppercase;
+}
+
+
+.final-navigation a:nth-child(2) {
+  color: #a17c3d;
+
+  text-align: center;
+}
+
+
+.final-navigation a:last-child {
+  text-align: right;
+}
+
+
+.final-navigation span {
+  color: #a17c3d;
+
+  font-size: 19px;
+
+  margin: 0 7px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 850px) {
+
+  .final-result {
+    margin-top: 60px;
+  }
+
+  .final-result-grid {
+    grid-template-columns: 1fr;
+
+    gap: 45px;
+  }
+
+  .final-copy {
+    padding-left: 0;
+  }
+
+  .final-copy h2 {
+    font-size: 52px;
+  }
+
+  .final-gallery {
+    height: 450px;
+  }
+
+  .final-image-main {
+    height: 450px;
+  }
+
+}
+
+
+@media (max-width: 560px) {
+
+  .final-copy h2 {
+    font-size: 43px;
+  }
+
+  .final-description {
+    font-size: 15px;
+  }
+
+  .final-gallery {
+    grid-template-columns: 1fr;
+
+    height: auto;
+  }
+
+  .final-image-main {
+    height: 330px;
+  }
+
+  .final-image-side {
+    grid-template-columns: 1fr 1fr;
+
+    grid-template-rows: 170px;
+
+    gap: 10px;
+  }
+
+  .final-navigation {
+    grid-template-columns: 1fr;
+
+    gap: 18px;
+
+    text-align: center;
+  }
+
+  .final-navigation a:last-child {
+    text-align: center;
+  }
+
+}  
+
+</style>
+
+
+
+
+    <link rel="icon" type="image/png" href="zurich%20icono.png?v=2">
+
+</head>
+
+
+<body>
+
+<div class="wrap">
+
+
+  <!-- =====================================================
+       HEADER
+  ====================================================== -->
+
+  <header class="top">
+
+    <a
+      class="back"
+      href="../index.html"
+    >
+      ← Volver a proyectos
+    </a>
+
+    <a
+      class="logo"
+      href="../../index.html"
+      aria-label="Inicio"
+    >
+      <img
+        src="zurich%20icono.png"
+        alt=""
+        class="logo-icon"
+      >
+    </a>
+
+  </header>
+
+
+  <main>
+
+
+    <!-- ===================================================
+         01 · HERO
+    ==================================================== -->
+
+    <section>
+
+      <p class="kicker">
+        INFOGRAFÍA · DISEÑO EDITORIAL
+      </p>
+
+      <h1>
+        Zúrich:<br>
+        una ciudad contada<br>
+        visualmente.
+      </h1>
+
+      <p class="intro">
+        Una pieza editorial que transforma información
+        geográfica, cultural y turística en una experiencia
+        visual clara, atractiva y fácil de recorrer.
+      </p>
+
+
+      <div class="image-frame">
+
+        <img
+          src="../../proyectos/zurich/zurich.png"
+          alt="Infografía editorial sobre Zúrich"
+        >
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         02 · CONCEPTO
+    ==================================================== -->
+
+    <section class="section">
+
+      <p class="section-kicker">
+        01 · EL CONCEPTO
+      </p>
+
+      <h2>
+        Información que también se puede recorrer.
+      </h2>
+
+      <p class="section-intro">
+        El desafío fue organizar una gran cantidad de
+        información sobre Zúrich sin perder claridad,
+        ritmo visual ni atractivo editorial.
+      </p>
+
+
+      <div class="concept-grid">
+
+        <article class="concept-card">
+
+          <h3>
+            Una mirada editorial.
+          </h3>
+
+          <p>
+            La ciudad se presenta desde una perspectiva
+            visual que combina patrimonio, arquitectura,
+            naturaleza, cultura y estilo de vida.
+          </p>
+
+        </article>
+
+
+        <article class="concept-card">
+
+          <h3>
+            Diseñar para informar.
+          </h3>
+
+          <p>
+            La información se organiza mediante jerarquías,
+            módulos e imágenes que permiten encontrar
+            rápidamente los contenidos principales.
+          </p>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         03 · SISTEMA VISUAL
+    ==================================================== -->
+
+    <section class="section">
+
+      <p class="section-kicker">
+        02 · SISTEMA VISUAL
+      </p>
+
+      <h2>
+        Una identidad inspirada en Zúrich.
+      </h2>
+
+      <p class="section-intro">
+        La dirección visual combina una paleta sobria,
+        fotografía urbana y elementos gráficos para
+        construir una pieza contemporánea y editorial.
+      </p>
+
+
+      <div class="visual-grid">
+
+        <article class="visual-card">
+
+          <h3>
+            Paleta cromática.
+          </h3>
+
+          <p>
+            El azul profundo aporta carácter y contraste,
+            mientras los tonos crema y dorados aportan
+            calidez y una sensación editorial.
+          </p>
+
+
+          <div class="palette">
+
+            <div
+              class="swatch"
+              style="background:#102f4a;color:#fff;"
+            >
+              Azul
+            </div>
+
+            <div
+              class="swatch"
+              style="background:#f3eee2;color:#18251b;"
+            >
+              Crema
+            </div>
+
+            <div
+              class="swatch"
+              style="background:#d4c5aa;color:#18251b;"
+            >
+              Arena
+            </div>
+
+            <div
+              class="swatch"
+              style="background:#b88b48;color:#fff;"
+            >
+              Dorado
+            </div>
+
+            <div
+              class="swatch"
+              style="background:#314d35;color:#fff;"
+            >
+              Verde
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <article class="visual-card">
+
+          <h3>
+            Recursos gráficos.
+          </h3>
+
+          <p>
+            La composición combina fotografías,
+            mapas, iconografía y bloques de información
+            para crear diferentes niveles de lectura.
+          </p>
+
+          <div class="resources-grid">
+
+            <div class="resource">
+              <div class="resource-icon">
+                <svg viewBox="0 0 64 64" aria-hidden="true">
+                  <path d="M10 14l17-5 20 6 7-4v39l-17 5-20-6-7 4z"/>
+                  <path d="M27 9v40M47 15v40"/>
+                  <circle cx="39" cy="27" r="7"/>
+                  <path d="M39 20v-5M39 34v5"/>
+                </svg>
+              </div>
+              <h4>Mapas</h4>
+              <p>Referencias geográficas y ubicación.</p>
+            </div>
+
+            <div class="resource">
+              <div class="resource-icon">
+                <svg viewBox="0 0 64 64" aria-hidden="true">
+                  <path d="M17 53V24h30v29"/>
+                  <path d="M13 24h38"/>
+                  <path d="M22 24V15h20v9"/>
+                  <path d="M26 53V39h12v14"/>
+                  <path d="M12 53h40"/>
+                  <path d="M28 15V9h8v6"/>
+                </svg>
+              </div>
+              <h4>Iconografía</h4>
+              <p>Elementos culturales, arquitectura y lugares.</p>
+            </div>
+
+            <div class="resource">
+              <div class="resource-icon">
+                <svg viewBox="0 0 64 64" aria-hidden="true">
+                  <circle cx="32" cy="32" r="22"/>
+                  <path d="M32 10v22h22"/>
+                  <path d="M32 32l16-16"/>
+                </svg>
+              </div>
+              <h4>Datos</h4>
+              <p>Cifras y estadísticas clave.</p>
+            </div>
+
+            <div class="resource">
+              <div class="resource-icon">
+                <svg viewBox="0 0 64 64" aria-hidden="true">
+                  <rect x="9" y="20" width="46" height="32" rx="5"/>
+                  <path d="M21 20l4-7h14l4 7"/>
+                  <circle cx="32" cy="36" r="10"/>
+                  <circle cx="47" cy="27" r="2"/>
+                </svg>
+              </div>
+              <h4>Fotografía</h4>
+              <p>Imágenes urbanas y de entorno.</p>
+            </div>
+
+            <div class="resource">
+              <div class="resource-icon">
+                <svg viewBox="0 0 64 64" aria-hidden="true">
+                  <path d="M14 9h27l9 9v37H14z"/>
+                  <path d="M41 9v10h9"/>
+                  <path d="M22 29h20"/>
+                  <path d="M22 37h20"/>
+                  <path d="M22 45h14"/>
+                </svg>
+              </div>
+              <h4>Bloques</h4>
+              <p>Información organizada en módulos claros.</p>
+            </div>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         04 · PROCESO
+    ==================================================== -->
+
+    <section class="section">
+
+      <p class="section-kicker">
+        03 · PROCESO DE DISEÑO
+      </p>
+
+      <h2>
+        Del contenido a una composición visual.
+      </h2>
+
+      <p class="section-intro">
+        Antes de construir la pieza final, la información
+        se organizó en categorías para definir una
+        estructura clara y equilibrada.
+      </p>
+
+
+      <div class="process">
+
+        <article class="process-card">
+
+          <div class="process-number">
+            01
+          </div>
+
+          <h3>
+            Contenido
+          </h3>
+
+          <p>
+            Selección y organización de la información
+            relevante sobre la ciudad.
+          </p>
+
+        </article>
+
+
+        <article class="process-card">
+
+          <div class="process-number">
+            02
+          </div>
+
+          <h3>
+            Jerarquía
+          </h3>
+
+          <p>
+            Definición de títulos, categorías y niveles
+            de lectura.
+          </p>
+
+        </article>
+
+
+        <article class="process-card">
+
+          <div class="process-number">
+            03
+          </div>
+
+          <h3>
+            Composición
+          </h3>
+
+          <p>
+            Distribución de mapas, fotografías,
+            datos e iconografía.
+          </p>
+
+        </article>
+
+
+        <article class="process-card">
+
+          <div class="process-number">
+            04
+          </div>
+
+          <h3>
+            Refinamiento
+          </h3>
+
+          <p>
+            Ajuste visual para conseguir equilibrio,
+            legibilidad y coherencia.
+          </p>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         05 · DISEÑO DE INFORMACIÓN
+    ==================================================== -->
+
+    <section class="section">
+
+      <p class="section-kicker">
+        04 · DISEÑO DE INFORMACIÓN
+      </p>
+
+      <h2>
+        Cada bloque tiene una función.
+      </h2>
+
+      <p class="section-intro">
+        La información se dividió en módulos para facilitar
+        la navegación visual y evitar que la cantidad de
+        contenido se sintiera abrumadora.
+      </p>
+
+
+      <div class="info-grid">
+
+        <article class="info-card">
+
+          <h3>
+            Identidad
+          </h3>
+
+          <p>
+            Datos esenciales que permiten conocer
+            rápidamente la ciudad.
+          </p>
+
+        </article>
+
+
+        <article class="info-card">
+
+          <h3>
+            Ubicación
+          </h3>
+
+          <p>
+            Mapas y referencias espaciales para
+            contextualizar Zúrich.
+          </p>
+
+        </article>
+
+
+        <article class="info-card">
+
+          <h3>
+            Lugares
+          </h3>
+
+          <p>
+            Principales espacios y puntos de interés
+            representados mediante fotografía.
+          </p>
+
+        </article>
+
+
+        <article class="info-card">
+
+          <h3>
+            Cultura
+          </h3>
+
+          <p>
+            Patrimonio, estilo de vida y elementos que
+            construyen la identidad de la ciudad.
+          </p>
+
+        </article>
+
+
+        <article class="info-card">
+
+          <h3>
+            Gastronomía
+          </h3>
+
+          <p>
+            Sabores y preparaciones tradicionales
+            integrados dentro del recorrido.
+          </p>
+
+        </article>
+
+
+        <article class="info-card">
+
+          <h3>
+            Datos curiosos
+          </h3>
+
+          <p>
+            Pequeños contenidos que aportan descubrimiento
+            y hacen más entretenida la experiencia.
+          </p>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         06 · RESULTADO FINAL (mockup completo)
+    ==================================================== -->
+
+    <section class="section">
+
+      <p class="section-kicker">
+        05 · RESULTADO FINAL
+      </p>
+
+      <h2>
+        Una pieza editorial diseñada para explorar.
+      </h2>
+
+      <p class="section-intro">
+        El resultado reúne información, fotografía,
+        ilustración e identidad visual en una composición
+        pensada para comunicar de manera clara y memorable.
+      </p>
+
+
+      <div class="result">
+
+        <img
+          src="../../proyectos/zurich/final.jpg"
+          alt="Resultado final de la infografía editorial de Zúrich"
+        >
+
+      </div>
+
+    </section>
+
+
+<!-- =========================================================
+     07 · LA CIUDAD EN DETALLE (cierre fotográfico)
+========================================================= -->
+
+<section class="final-result">
+
+  <div class="final-result-grid">
+
+    <!-- TEXTO -->
+
+    <div class="final-copy">
+
+      <p class="final-kicker">
+        06 · LA CIUDAD EN DETALLE
+      </p>
+
+      <h2>
+        Una ciudad<br>
+        contada a través<br>
+        de sus detalles.
+      </h2>
+
+      <div class="final-line"></div>
+
+      <p class="final-description">
+        Zúrich reúne información, cultura y paisaje
+        en una experiencia visual pensada para explorar.
+      </p>
+
+    </div>
+
+
+    <!-- COLLAGE -->
+
+    <div class="final-gallery">
+
+      <div class="final-image-main">
+        <img
+          src="../../proyectos/zurich/grossmunster.webp"
+          alt="Grossmünster y Zúrich"
+        >
+      </div>
+
+      <div class="final-image-side">
+
+        <img
+          src="../../proyectos/zurich/trambia.jpg"
+          alt="Tranvía de Zúrich"
+        >
+
+        <img
+          src="../../proyectos/zurich/lago.webp"
+          alt="Lago de Zúrich"
+        >
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- NAVEGACIÓN -->
+
+  <nav class="final-navigation">
+
+    <a href="../turquia/index.html">
+      <span>←</span>
+      Proyecto anterior
+    </a>
+
+    <a href="../index.html">
+      Todos los proyectos
+    </a>
+
+    <a href="../redes/index.html">
+      Siguiente proyecto
+      <span>→</span>
+    </a>
+
+  </nav>
+
+</section>
+
+  </main>
+
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+
+  <footer class="footer">
+
+    <span>
+      © 2026 Daniela Pasmiño · Diseñadora Gráfica & Digital
+    </span>
+
+    <a href="../../index.html">
+      Volver al inicio ↑
+    </a>
+
+  </footer>
+
+
+</div>
+
+</body>
+
+</html>

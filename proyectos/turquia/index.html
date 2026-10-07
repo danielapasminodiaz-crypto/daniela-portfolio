@@ -1,0 +1,3396 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Turquía · Guía editorial · Daniela Pasmiño</title>
+
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+    <!-- tus fuentes -->
+    ...
+
+</head>
+
+
+    <!-- =====================================================
+         TIPOGRAFÍAS
+    ====================================================== -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <!--
+        Libre Bodoni:
+        tipografía editorial utilizada para títulos.
+
+        Montserrat:
+        textos, navegación y pequeños datos.
+    -->
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Libre+Bodoni:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <style>
+
+        /* =====================================================
+           VARIABLES
+        ====================================================== */
+
+        :root {
+
+            --ink: #2B2620;
+
+            --cream: #F6F1E9;
+
+            --sand: #E7D9BE;
+
+            --terracotta: #B85F3D;
+
+            --teal: #1F6B63;
+
+            --navy: #20344A;
+
+            --white: #FFFDFC;
+
+            --muted: #6B6154;
+
+            --line: rgba(43, 38, 32, 0.15);
+
+            --max-width: 1240px;
+
+        }
+
+
+        /* =====================================================
+           RESET
+        ====================================================== */
+
+        * {
+
+            box-sizing: border-box;
+
+            margin: 0;
+
+            padding: 0;
+
+        }
+
+
+        html {
+
+            scroll-behavior: smooth;
+
+        }
+
+
+        body {
+
+            background: var(--cream);
+
+            color: var(--ink);
+
+            font-family: "Montserrat", Arial, sans-serif;
+
+            line-height: 1.6;
+
+        }
+
+
+        img {
+
+            display: block;
+
+            width: 100%;
+
+            max-width: 100%;
+
+        }
+
+
+        a {
+
+            color: inherit;
+
+            text-decoration: none;
+
+        }
+
+
+        button {
+
+            font-family: inherit;
+
+        }
+
+
+        /* =====================================================
+           CONTENEDOR
+        ====================================================== */
+
+        .container {
+
+            width: min(
+                calc(100% - 10vw),
+                var(--max-width)
+            );
+
+            margin: 0 auto;
+
+        }
+
+
+        /* =====================================================
+           NAVEGACIÓN
+        ====================================================== */
+
+        .topbar {
+
+            position: fixed;
+
+            top: 0;
+
+            left: 0;
+
+            width: 100%;
+
+            z-index: 1000;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            padding: 25px 5vw;
+
+            background: rgba(246, 241, 233, 0.35);
+
+            backdrop-filter: blur(4px);
+
+            transition:
+                background 0.3s ease,
+                padding 0.3s ease,
+                box-shadow 0.3s ease;
+
+        }
+
+
+        .topbar.scrolled {
+
+            padding-top: 15px;
+
+            padding-bottom: 15px;
+
+            background: rgba(246, 241, 233, 0.94);
+
+            backdrop-filter: blur(10px);
+
+            box-shadow: 0 1px 0 var(--line);
+
+        }
+
+
+        .brand {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 2px;
+
+            font-size: 10px;
+
+            letter-spacing: 0.12em;
+
+            text-transform: uppercase;
+
+        }
+
+
+        .brand strong {
+
+            font-size: 12px;
+
+            font-weight: 700;
+
+        }
+/* =====================================================
+   OJO TURCO · DETALLE DE IDENTIDAD
+===================================================== */
+
+.brand-name {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.turkish-eye {
+    width: 15px;
+    height: 15px;
+    flex-shrink: 0;
+    display: block;
+}
+
+
+        .nav {
+
+            display: flex;
+
+            gap: 30px;
+
+        }
+
+
+        .nav a {
+
+            font-size: 10px;
+
+            font-weight: 600;
+
+            letter-spacing: 0.12em;
+
+            text-transform: uppercase;
+
+            transition: opacity 0.2s ease;
+
+        }
+
+
+        .nav a:hover {
+
+            opacity: 0.5;
+
+        }
+
+
+        /* =====================================================
+           MENÚ MÓVIL
+        ====================================================== */
+
+        .nav-toggle {
+
+            display: none;
+
+            width: 36px;
+
+            height: 36px;
+
+            border: none;
+
+            background: transparent;
+
+            cursor: pointer;
+
+        }
+
+
+        .nav-toggle span,
+        .nav-toggle span::before,
+        .nav-toggle span::after {
+
+            content: "";
+
+            display: block;
+
+            width: 22px;
+
+            height: 2px;
+
+            background: var(--ink);
+
+            position: relative;
+
+        }
+
+
+        .nav-toggle span::before {
+
+            position: absolute;
+
+            top: -7px;
+
+        }
+
+
+        .nav-toggle span::after {
+
+            position: absolute;
+
+            top: 7px;
+
+        }
+
+
+        /* =====================================================
+           HERO · PORTADA EDITORIAL
+        ====================================================== */
+
+        .hero {
+
+            position: relative;
+
+            min-height: 760px;
+
+            overflow: hidden;
+
+            display: flex;
+
+            align-items: center;
+
+        }
+
+
+        /* -----------------------------------------------------
+           IMAGEN DE PORTADA
+        ----------------------------------------------------- */
+
+        .hero-image {
+
+            position: absolute;
+
+            inset: 0;
+
+            width: 100%;
+
+            height: 100%;
+
+            z-index: 0;
+
+        }
+
+
+        .hero-image-frame {
+
+            position: absolute;
+
+            inset: 0;
+
+            width: 100%;
+
+            height: 100%;
+
+            overflow: hidden;
+
+            background: var(--sand);
+
+        }
+
+
+        .hero-image img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+            object-position: center center;
+
+        }
+        
+        
+        /* =====================================================
+   SUAVIZAR EL ÁREA DEL TÍTULO
+===================================================== */
+
+.hero-image-frame::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 1;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(246, 241, 233, 0.12) 0%,
+            rgba(246, 241, 233, 0.05) 28%,
+            rgba(246, 241, 233, 0) 52%
+        );
+
+}
+
+
+        /*
+            La imagen generada ya contiene el degradado
+            crema hacia la izquierda.
+
+            Por eso NO agregamos otro degradado encima.
+        */
+
+
+        .hero-image-frame::before {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 25px;
+
+            border: 1px solid rgba(
+                255,
+                255,
+                255,
+                0.55
+            );
+
+            z-index: 2;
+
+            pointer-events: none;
+
+        }
+
+
+        /* =====================================================
+           CONTENIDO DEL HERO
+        ====================================================== */
+
+        .hero .container {
+
+            position: relative;
+
+            z-index: 3;
+
+            min-height: 760px;
+
+            display: flex;
+
+            align-items: center;
+
+        }
+
+
+        .hero-grid {
+
+            width: 100%;
+
+            display: block;
+
+        }
+
+
+        .hero-copy {
+
+            width: 48%;
+
+            max-width: 620px;
+
+            padding-top: 45px;
+
+        }
+
+
+        /* =====================================================
+           VOLVER A PROYECTOS
+        ====================================================== */
+
+        .back-link {
+
+            position: absolute;
+
+            top: 120px;
+
+            left: 0;
+
+            z-index: 5;
+
+            display: inline-flex;
+
+            color: var(--muted);
+
+            font-size: 10px;
+
+            font-weight: 600;
+
+            letter-spacing: 0.12em;
+
+            text-transform: uppercase;
+
+        }
+
+
+        .back-link:hover {
+
+            color: var(--terracotta);
+
+        }
+
+
+        /* =====================================================
+           ETIQUETA DEL PROYECTO
+        ====================================================== */
+
+        .hero-number {
+
+            margin-bottom: 18px;
+
+            color: var(--terracotta);
+
+            font-size: 10px;
+
+            font-weight: 700;
+
+            letter-spacing: 0.18em;
+
+            text-transform: uppercase;
+
+        }
+
+
+        /* =====================================================
+           TÍTULO TURQUÍA
+        ====================================================== */
+/* =====================================================
+   TÍTULO PRINCIPAL · TURQUÍA
+===================================================== */
+.hero h1 {
+
+    /*
+        Libre Bodoni mantiene el carácter editorial de la referencia,
+        pero tiene formas más cerradas y legibles que Bodoni Moda.
+    */
+
+    font-family: "Libre Bodoni", Georgia, serif;
+
+    font-size: clamp(
+        72px,
+        7.5vw,
+        118px
+    );
+
+    font-weight: 500;
+
+    line-height: 0.9;
+
+    letter-spacing: -0.025em;
+
+    color: #A94F32;
+
+    text-transform: uppercase;
+
+    opacity: 1;
+
+    filter: none;
+
+    /*
+        Evita que los trazos finos se pierdan sobre la fotografía.
+    */
+
+    -webkit-font-smoothing: antialiased;
+
+    text-rendering: geometricPrecision;
+
+    font-kerning: normal;
+
+}
+        
+        .hero-copy {
+    width: 48%;
+    max-width: 620px;
+    padding-top: 45px;
+
+    position: relative;
+    z-index: 5;
+}
+
+        /*
+    No agregamos una caja detrás del título.
+    La fotografía ya tiene el degradado crema integrado.
+*/
+
+        /*
+            La referencia utiliza el título como una
+            sola palabra grande.
+
+            No dividimos TURQUÍA en dos líneas.
+        */
+
+
+        /* =====================================================
+           FRASE EDITORIAL
+        ====================================================== */
+
+        .hero-tagline {
+
+            /*
+                La frase funciona como subtítulo editorial.
+                Es más pequeña que TURQUÍA para mantener
+                una jerarquía visual clara.
+            */
+
+            max-width: 480px;
+
+            margin-top: 20px;
+
+            font-family:
+                "Libre Bodoni",
+                Georgia,
+                serif;
+
+            font-size: clamp(
+                22px,
+                2vw,
+                29px
+            );
+
+            font-weight: 400;
+
+            line-height: 1.15;
+
+            letter-spacing: -0.015em;
+
+            color: var(--ink);
+
+        }
+
+
+        /* =====================================================
+           DESCRIPCIÓN
+        ====================================================== */
+
+        .hero-subtitle {
+
+            max-width: 430px;
+
+            margin-top: 20px;
+
+            color: var(--ink);
+
+            font-size: 13px;
+
+            line-height: 1.8;
+
+        }
+
+
+        /* =====================================================
+           META
+        ====================================================== */
+
+        .hero-meta {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 10px 25px;
+
+            margin-top: 28px;
+
+        }
+
+
+        .hero-meta span {
+
+            font-size: 9px;
+
+            font-weight: 700;
+
+            letter-spacing: 0.13em;
+
+            text-transform: uppercase;
+
+        }
+
+
+        /* =====================================================
+           PIE DE FOTO
+        ====================================================== */
+
+        .hero-caption {
+
+            position: absolute;
+
+            left: 5vw;
+
+            right: 5vw;
+
+            bottom: 25px;
+
+            z-index: 4;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            color: rgba(
+                43,
+                38,
+                32,
+                0.65
+            );
+
+            font-size: 9px;
+
+            letter-spacing: 0.1em;
+
+            text-transform: uppercase;
+
+        }
+
+
+        /* =====================================================
+           FRASE DESTACADA
+        ====================================================== */
+
+        .intro-statement {
+
+            padding: 120px 0;
+
+            background: var(--ink);
+
+            color: var(--cream);
+
+        }
+
+
+        .statement-grid {
+
+            display: grid;
+
+            grid-template-columns: 1fr 2fr;
+
+            gap: 60px;
+
+            align-items: start;
+
+        }
+
+
+        .section-number {
+
+            font-size: 10px;
+
+            font-weight: 700;
+
+            letter-spacing: 0.16em;
+
+            text-transform: uppercase;
+
+            color: var(--terracotta);
+
+        }
+
+
+        .statement-grid h2 {
+
+            max-width: 850px;
+
+            font-family: "Libre Bodoni", Georgia, serif;
+
+            font-size: clamp(
+                45px,
+                6vw,
+                82px
+            );
+
+            font-weight: 400;
+
+            line-height: 0.95;
+
+        }
+
+
+        .statement-grid h2 em {
+
+            color: var(--sand);
+
+        }
+
+
+        /* =====================================================
+           SECCIONES GENERALES
+        ====================================================== */
+
+        .section {
+
+            padding: 120px 0;
+
+            border-bottom: 1px solid var(--line);
+
+        }
+
+
+        .section-header {
+
+            max-width: 800px;
+
+            margin-bottom: 60px;
+
+        }
+
+
+        .section-header h2 {
+
+            margin-top: 18px;
+
+            font-family: "Libre Bodoni", Georgia, serif;
+
+            font-size: clamp(
+                42px,
+                5vw,
+                70px
+            );
+
+            font-weight: 400;
+
+            line-height: 0.98;
+
+        }
+
+
+        .section-intro {
+
+            max-width: 620px;
+
+            margin-top: 25px;
+
+            color: var(--muted);
+
+            font-size: 13px;
+
+            line-height: 1.9;
+
+        }
+
+
+        /* =====================================================
+           01 · CONCEPTO
+        ====================================================== */
+
+        .concept-grid {
+
+            display: grid;
+
+            /*
+                Damos más protagonismo a la fotografía
+                y reducimos el espacio entre texto e imagen.
+            */
+            grid-template-columns: 0.8fr 1.2fr;
+
+            gap: 50px;
+
+            align-items: center;
+
+        }
+
+
+        .concept-copy h3 {
+
+            margin-bottom: 25px;
+
+            font-family: "Libre Bodoni", Georgia, serif;
+
+            font-size: 42px;
+
+            font-weight: 400;
+
+        }
+
+
+        .concept-copy p {
+
+            max-width: 560px;
+
+            margin-bottom: 18px;
+
+            color: var(--muted);
+
+            font-size: 13px;
+
+            line-height: 1.9;
+
+        }
+
+
+        .concept-quote {
+
+            margin-top: 40px;
+
+            padding-left: 25px;
+
+            border-left: 2px solid var(--terracotta);
+
+            font-family: "Libre Bodoni", Georgia, serif;
+
+            font-size: 28px;
+
+            font-style: italic;
+
+        }
+
+
+        .concept-image {
+
+            position: relative;
+
+        }
+
+
+        .concept-image img {
+
+            /*
+                Mantiene la proporción vertical de la fotografía
+                sin deformarla.
+            */
+            width: 100%;
+            aspect-ratio: 4 / 5;
+            object-fit: cover;
+
+        }
+
+
+        /* =====================================================
+           02 · INVESTIGACIÓN VISUAL
+        ====================================================== */
+
+        .research {
+
+            background: #EEE4D4;
+
+        }
+
+
+        .research-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                1.3fr
+                0.7fr
+                0.7fr;
+
+            gap: 15px;
+
+            margin-top: 50px;
+
+        }
+
+
+        .research-image {
+
+            overflow: hidden;
+
+            background: var(--sand);
+
+        }
+
+
+        .research-image img {
+
+            height: 100%;
+
+            min-height: 300px;
+
+            object-fit: cover;
+
+            transition:
+                transform 0.5s ease;
+
+        }
+
+
+        .research-image:hover img {
+
+            transform: scale(1.03);
+
+        }
+
+
+        .research-image.large {
+
+            grid-row: span 2;
+
+        }
+
+
+        .research-image.large img {
+
+            min-height: 615px;
+
+        }
+
+
+        /* =====================================================
+           PALETA
+        ====================================================== */
+
+        .palette {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(5, 1fr);
+
+            margin-top: 70px;
+
+        }
+
+
+        .color {
+
+            min-height: 180px;
+
+            padding: 18px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: flex-end;
+
+        }
+
+
+        .color-name {
+
+            font-size: 10px;
+
+            font-weight: 700;
+
+            letter-spacing: 0.1em;
+
+            text-transform: uppercase;
+
+        }
+
+
+        .color-code {
+
+            margin-top: 5px;
+
+            font-size: 9px;
+
+            opacity: 0.7;
+
+        }
+
+
+        .color-sand {
+
+            background: var(--sand);
+
+        }
+
+
+        .color-terracotta {
+
+            background: var(--terracotta);
+
+            color: white;
+
+        }
+
+
+        .color-teal {
+
+            background: var(--teal);
+
+            color: white;
+
+        }
+
+
+        .color-navy {
+
+            background: var(--navy);
+
+            color: white;
+
+        }
+
+
+        .color-cream {
+
+            background: var(--cream);
+
+        }
+
+
+        /* =====================================================
+           03 · SISTEMA EDITORIAL
+        ====================================================== */
+
+        .system-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 1px;
+
+            background: var(--line);
+
+            border: 1px solid var(--line);
+
+            margin-top: 60px;
+
+        }
+
+
+        .system-card {
+
+            min-height: 300px;
+
+            padding: 40px;
+
+            background: var(--cream);
+
+        }
+
+
+        .system-card-number {
+
+            color: var(--terracotta);
+
+            font-family:
+                "Bodoni Moda",
+                Georgia,
+                serif;
+
+            font-size: 42px;
+
+        }
+
+
+        .system-card h3 {
+
+            margin-top: 45px;
+
+            font-family:
+                "Bodoni Moda",
+                Georgia,
+                serif;
+
+            font-size: 30px;
+
+            font-weight: 400;
+
+        }
+
+
+        .system-card p {
+
+            margin-top: 12px;
+
+            color: var(--muted);
+
+            font-size: 12px;
+
+            line-height: 1.8;
+
+        }
+
+
+        /* =====================================================
+           TIPOGRAFÍA
+        ====================================================== */
+
+        .type-showcase {
+
+            margin-top: 60px;
+
+            padding: 60px;
+
+            background: var(--white);
+
+        }
+
+
+        .type-label {
+
+            color: var(--muted);
+
+            font-size: 9px;
+
+            font-weight: 700;
+
+            letter-spacing: 0.15em;
+
+            text-transform: uppercase;
+
+        }
+
+
+        .type-display {
+
+            margin-top: 25px;
+
+            font-family:
+                "Bodoni Moda",
+                Georgia,
+                serif;
+
+            font-size: clamp(
+                55px,
+                8vw,
+                110px
+            );
+
+            line-height: 0.9;
+
+        }
+
+
+        .type-display em {
+
+            color: var(--terracotta);
+
+        }
+
+
+        .type-secondary {
+
+            margin-top: 50px;
+
+            padding-top: 30px;
+
+            border-top: 1px solid var(--line);
+
+            font-size: 12px;
+
+            letter-spacing: 0.12em;
+
+            text-transform: uppercase;
+
+        }
+
+
+        /* =====================================================
+           04 · DISEÑO DE PÁGINAS
+        ====================================================== */
+
+        /* =====================================================
+   04 · DISEÑO DE PÁGINAS
+====================================================== */
+
+.pages-cover {
+
+    display: grid;
+
+    grid-template-columns: 0.48fr 0.52fr;
+
+    gap: 70px;
+
+    align-items: center;
+
+    margin-top: 60px;
+}
+
+
+.pages-cover-image img {
+
+    width: 100%;
+
+    height: auto;
+
+    display: block;
+
+    filter:
+        drop-shadow(
+            0 24px 50px
+            rgba(43, 38, 32, 0.16)
+        );
+}
+
+
+.pages-cover-note h3 {
+
+    margin-top: 18px;
+
+    font-family: "Libre Bodoni", Georgia, serif;
+
+    font-size: clamp(30px, 3vw, 44px);
+
+    font-weight: 400;
+
+    line-height: 1.05;
+}
+
+
+.pages-cover-note p {
+
+    max-width: 420px;
+
+    margin-top: 20px;
+
+    color: var(--muted);
+
+    font-size: 13px;
+
+    line-height: 1.9;
+}
+
+
+.pages-cover-meta {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px 28px;
+
+    margin-top: 28px;
+
+    padding-top: 22px;
+
+    border-top: 1px solid var(--line);
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.13em;
+
+    text-transform: uppercase;
+}
+
+
+/* -----------------------------------------------------
+   DOBLES PAGINAS
+
+   Las cuatro comparten la misma proporcion,
+   por eso calzan perfecto en una grilla 2 x 2.
+----------------------------------------------------- */
+
+.spreads-grid {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 45px 36px;
+
+    margin-top: 90px;
+}
+
+
+.spread img {
+
+    width: 100%;
+
+    height: auto;
+
+    display: block;
+
+    filter:
+        drop-shadow(
+            0 18px 38px
+            rgba(43, 38, 32, 0.13)
+        );
+
+    transition: transform 0.5s ease;
+}
+
+
+.spread:hover img {
+
+    transform: translateY(-4px);
+}
+
+
+.spread figcaption {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-top: 16px;
+
+    color: var(--muted);
+
+    font-size: 9px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.13em;
+
+    text-transform: uppercase;
+}
+
+
+.spread figcaption span:last-child {
+
+    color: var(--terracotta);
+}
+
+        /* =====================================================
+           05 · ADAPTACIÓN DIGITAL
+        ====================================================== */
+
+        .digital-section {
+
+            background: var(--navy);
+
+            color: var(--cream);
+
+        }
+
+
+        .digital-section .section-intro {
+
+            color: rgba(
+                246,
+                241,
+                233,
+                0.65
+            );
+
+        }
+
+
+        .digital-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 20px;
+
+            margin-top: 60px;
+
+            align-items: end;
+
+        }
+
+
+        .device {
+
+            background: #161F29;
+
+            border: 6px solid #10161C;
+
+            border-radius: 14px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 20px 50px
+                rgba(0,0,0,0.2);
+
+        }
+
+
+        .device img {
+
+            aspect-ratio: 3 / 4;
+
+            object-fit: cover;
+
+        }
+
+
+        .device:nth-child(2) {
+
+            transform:
+                translateY(-35px);
+
+        }
+
+
+        .device:nth-child(3) {
+
+            transform:
+                translateY(-70px);
+
+        }
+
+
+        .device:nth-child(4) {
+
+            transform:
+                translateY(-20px);
+
+        }
+
+
+        /* =====================================================
+           06 · APLICACIÓN FÍSICA
+        ====================================================== */
+
+        .physical-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                1.3fr
+                0.85fr;
+
+            gap: 15px;
+
+            margin-top: 60px;
+
+        }
+
+
+        .physical-main {
+
+            overflow: hidden;
+
+            background: var(--sand);
+
+        }
+
+
+        .physical-main img {
+
+            width: 100%;
+
+            height: 100%;
+
+            min-height: 500px;
+
+            object-fit: cover;
+
+            transition:
+                transform 0.5s ease;
+
+        }
+
+
+        .physical-main:hover img {
+
+            transform: scale(1.025);
+
+        }
+
+
+        .physical-side {
+
+            display: grid;
+
+            grid-template-rows:
+                repeat(3, 1fr);
+
+            gap: 15px;
+
+        }
+
+
+        .physical-image {
+
+            overflow: hidden;
+
+            background: var(--sand);
+
+        }
+
+
+        .physical-image img {
+
+            width: 100%;
+
+            height: 100%;
+
+            min-height: 155px;
+
+            object-fit: cover;
+
+            transition:
+                transform 0.5s ease;
+
+        }
+
+
+        .physical-image:hover img {
+
+            transform: scale(1.025);
+
+        }
+
+
+        /* =====================================================
+   07 · RESULTADO FINAL
+====================================================== */
+
+.result {
+    padding: 120px 0 130px;
+    background: var(--terracotta);
+    color: white;
+}
+
+.result-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 80px;
+    align-items: center;
+}
+
+/* IMAGEN FINAL */
+
+.result-image {
+    margin-top: 0;
+    overflow: visible;
+}
+
+.result-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+
+    filter:
+        drop-shadow(
+            0 28px 45px
+            rgba(43, 38, 32, 0.22)
+        );
+}
+
+/* TEXTO */
+
+.result-copy {
+    padding-right: 10px;
+}
+
+.result-copy h2 {
+    font-family:
+        "Libre Bodoni",
+        Georgia,
+        serif;
+
+    font-size: clamp(
+        42px,
+        4.5vw,
+        68px
+    );
+
+    font-weight: 400;
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+}
+
+.result-copy p {
+    max-width: 560px;
+    margin-top: 30px;
+
+    color: rgba(
+        255,
+        255,
+        255,
+        0.82
+    );
+
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.result .section-number {
+    color: var(--sand);
+}
+
+/*
+   El título se mantiene en dos líneas para darle
+   una presencia editorial más limpia y menos apilada.
+*/
+
+.result h2 {
+    font-family:
+        "Libre Bodoni",
+        Georgia,
+        serif;
+
+    font-size: clamp(
+        42px,
+        4.5vw,
+        68px
+    );
+
+    font-weight: 400;
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+}
+
+.result-copy p {
+    max-width: 560px;
+    margin-top: 30px;
+
+    color: rgba(
+        255,
+        255,
+        255,
+        0.8
+    );
+
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+
+        /* =====================================================
+           NAVEGACIÓN ENTRE PROYECTOS
+        ====================================================== */
+
+        .project-nav {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+
+            padding: 35px 5vw;
+
+            border-bottom:
+                1px solid var(--line);
+
+        }
+
+
+        .project-nav a {
+
+            font-size: 10px;
+
+            font-weight: 700;
+
+            letter-spacing: 0.12em;
+
+            text-transform: uppercase;
+
+        }
+
+
+        .project-nav a:nth-child(2) {
+
+            text-align: center;
+
+        }
+
+
+        .project-nav a:nth-child(3) {
+
+            text-align: right;
+
+        }
+
+
+        .project-nav a:hover {
+
+            color: var(--terracotta);
+
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ====================================================== */
+
+        footer {
+
+            padding: 30px 5vw;
+
+        }
+
+
+        .footer-inner {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 20px;
+
+            padding-top: 20px;
+
+            font-size: 9px;
+
+            color: var(--muted);
+
+            letter-spacing: 0.08em;
+
+            text-transform: uppercase;
+
+        }
+
+
+        .footer-inner a:hover {
+
+            color: var(--ink);
+
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ====================================================== */
+
+        @media (max-width: 900px) {
+
+            .nav {
+
+                display: none;
+
+            }
+
+
+            .nav-toggle {
+
+                display: block;
+
+            }
+
+
+            .hero {
+
+                min-height: 760px;
+
+            }
+
+
+            .hero .container {
+
+                min-height: 760px;
+
+                align-items: flex-end;
+
+                padding-bottom: 100px;
+
+            }
+
+
+            .hero-copy {
+
+                width: 70%;
+
+            }
+
+
+            .hero h1 {
+
+                font-size: clamp(
+                    65px,
+                    14vw,
+                    105px
+                );
+
+            }
+
+
+            .statement-grid,
+            .concept-grid,
+            .result-grid {
+
+                grid-template-columns: 1fr;
+
+                gap: 40px;
+
+            }
+
+
+            .research-grid {
+
+                grid-template-columns:
+                    1fr 1fr;
+
+            }
+
+
+            .research-image.large {
+
+                grid-column: span 2;
+
+                grid-row: auto;
+
+            }
+
+
+            .research-image.large img {
+
+                min-height: 450px;
+
+            }
+
+
+            .palette {
+
+                grid-template-columns:
+                    repeat(3, 1fr);
+
+            }
+
+
+            .system-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .pages-cover {
+
+                grid-template-columns: 1fr;
+
+                gap: 40px;
+
+            }
+
+
+            .spreads-grid {
+
+                margin-top: 60px;
+
+                gap: 35px 24px;
+
+            }
+
+
+            .digital-grid {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+            }
+
+
+            .physical-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .physical-main img {
+
+                min-height: 380px;
+
+            }
+
+
+            .physical-side {
+
+                grid-template-columns:
+                    repeat(3, 1fr);
+
+                grid-template-rows: none;
+
+            }
+
+
+            .physical-image img {
+
+                min-height: 220px;
+
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .container {
+
+                width:
+                    calc(100% - 12vw);
+
+            }
+
+
+            .topbar {
+
+                padding:
+                    20px 6vw;
+
+            }
+
+
+            .hero {
+
+                min-height: 760px;
+
+            }
+
+
+            .hero .container {
+
+                min-height: 760px;
+
+                padding-bottom: 90px;
+
+            }
+
+
+            .hero-copy {
+
+                width: 100%;
+
+            }
+
+
+            .hero h1 {
+
+                font-size: 67px;
+
+            }
+
+
+            .hero-tagline {
+
+                max-width: 360px;
+
+                font-size: 25px;
+
+                line-height: 1.15;
+
+            }
+
+
+            .hero-subtitle {
+
+                max-width: 340px;
+
+                margin-top: 18px;
+
+            }
+
+
+            .back-link {
+
+                top: 105px;
+
+            }
+
+
+            .hero-image-frame::before {
+
+                inset: 12px;
+
+            }
+
+
+            .hero-caption {
+
+                bottom: 18px;
+
+                left: 6vw;
+
+                right: 6vw;
+
+            }
+
+
+            .section {
+
+                padding: 80px 0;
+
+            }
+
+
+            .intro-statement {
+
+                padding: 80px 0;
+
+            }
+
+
+            .palette {
+
+                grid-template-columns:
+                    1fr 1fr;
+
+            }
+
+
+            .color {
+
+                min-height: 140px;
+
+            }
+
+
+            .research-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .research-image.large {
+
+                grid-column: auto;
+
+            }
+
+
+            .research-image.large img {
+
+                min-height: 350px;
+
+            }
+
+
+            .spreads-grid {
+
+                grid-template-columns: 1fr;
+
+                gap: 35px;
+
+            }
+
+
+            .spread figcaption {
+
+                flex-direction: column;
+
+                gap: 4px;
+
+            }
+
+
+            .digital-grid {
+
+                grid-template-columns:
+                    1fr 1fr;
+
+            }
+
+
+            .device:nth-child(2),
+            .device:nth-child(3),
+            .device:nth-child(4) {
+
+                transform: none;
+
+            }
+
+
+            .physical-main img {
+
+                min-height: 300px;
+
+            }
+
+
+            .physical-side {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .physical-image img {
+
+                min-height: 240px;
+
+            }
+
+
+            .project-nav {
+
+                grid-template-columns: 1fr;
+
+                gap: 18px;
+
+            }
+
+
+            .project-nav a,
+            .project-nav a:nth-child(2),
+            .project-nav a:nth-child(3) {
+
+                text-align: center;
+
+            }
+
+
+            .footer-inner {
+
+                flex-direction: column;
+
+                align-items: flex-start;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         NAVEGACIÓN
+    ====================================================== -->
+
+    <header
+        class="topbar"
+        id="topbar"
+    >
+
+        <a
+            href="../../index.html"
+            class="brand"
+        >
+
+           <strong class="brand-name">
+    Daniela Pasmiño
+
+    <svg
+        class="turkish-eye"
+        viewBox="0 0 32 32"
+        aria-hidden="true"
+    >
+        <circle cx="16" cy="16" r="13" fill="#1F6B63"/>
+        <circle cx="16" cy="16" r="9" fill="#F6F1E9"/>
+        <circle cx="16" cy="16" r="5.5" fill="#B85F3D"/>
+        <circle cx="16" cy="16" r="2.5" fill="#2B2620"/>
+    </svg>
+</strong>
+
+            <span>
+                Diseñadora Gráfica & Digital
+            </span>
+
+        </a>
+
+
+        <nav class="nav">
+
+            <a href="../../index.html#proyectos">
+                Proyectos
+            </a>
+
+            <a href="../../index.html#sobre-mi">
+                Sobre mí
+            </a>
+
+            <a href="../../index.html#enfoque">
+                Enfoque
+            </a>
+
+            <a href="../../index.html#contacto">
+                Contacto
+            </a>
+
+        </nav>
+
+
+        <button
+            class="nav-toggle"
+            id="navToggle"
+            aria-label="Abrir menú"
+        >
+
+            <span></span>
+
+        </button>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         HERO · PORTADA
+    ====================================================== -->
+
+    <main>
+
+        <section class="hero">
+
+
+            <!-- =================================================
+                 IMAGEN DE FONDO
+            ================================================== -->
+
+            <div class="hero-image">
+
+                <div class="hero-image-frame">
+
+                    <!--
+                        IMPORTANTE:
+
+                        Esta es la nueva imagen panorámica
+                        con el degradado crema integrado.
+
+                        Archivo:
+                        proyectos/turquia/portada.png
+                    -->
+
+                    <img
+                        src="portada.png"
+                        alt="Estambul y Hagia Sophia al atardecer"
+                    >
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 CONTENIDO DE PORTADA
+            ================================================== -->
+
+            <div class="container">
+
+
+                <!-- VOLVER A PROYECTOS -->
+
+                <a
+                    href="../../index.html#proyectos"
+                    class="back-link"
+                >
+                    ← Volver a proyectos
+                </a>
+
+
+                <div class="hero-grid">
+
+
+                    <div class="hero-copy">
+
+
+                        <!-- CATEGORÍA -->
+
+                        <p class="hero-number">
+
+                            Diseño editorial
+                            ·
+                            Dirección de arte
+
+                        </p>
+
+
+
+                        <!-- =================================================
+                             TÍTULO PRINCIPAL
+                        ================================================== -->
+
+                        <h1>
+                            Turquía
+                        </h1>
+
+
+                        <!-- FRASE EDITORIAL -->
+
+                        <p class="hero-tagline">
+
+                            Donde Oriente y Occidente
+                            se encuentran.
+
+                        </p>
+
+
+                        <!-- DESCRIPCIÓN -->
+
+                        <p class="hero-subtitle">
+
+                            Una guía editorial inspirada...
+
+                        </p>
+
+
+
+                        <!-- METADATA -->
+
+                        <div class="hero-meta">
+
+                            <span>
+                                Editorial
+                            </span>
+
+                            <span>
+                                Narrativa visual
+                            </span>
+
+                            <span>
+                                Diseño gráfico
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 PIE DE PORTADA
+            ================================================== -->
+
+            <div class="hero-caption">
+
+                <span>
+                    Guía editorial
+                </span>
+
+                <span>
+                    01 / 07
+                </span>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             FRASE PRINCIPAL
+        ================================================== -->
+
+        <section class="intro-statement">
+
+            <div class="container">
+
+                <div class="statement-grid">
+
+
+                    <div>
+
+                        <p class="section-number">
+                            El concepto
+                        </p>
+
+                    </div>
+
+
+                    <h2>
+
+                        <em>Turquía</em>
+                        no se visita,
+                        <br>
+                        se vive.
+
+                    </h2>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             01 · CONCEPTO
+        ================================================== -->
+
+        <section class="section">
+
+            <div class="container">
+
+
+                <div class="section-header">
+
+                    <p class="section-number">
+                        01 · La idea
+                    </p>
+
+                    <h2>
+                        Una mirada editorial
+                        sobre Turquía.
+                    </h2>
+
+                    <p class="section-intro">
+
+                        La revista Turquía nace como un proyecto
+                        editorial inspirado en la riqueza cultural
+                        y visual de este país único.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="concept-grid">
+
+
+                    <div class="concept-copy">
+
+                        <h3>
+                            Una experiencia
+                            para recorrer.
+                        </h3>
+
+
+                        <p>
+
+                            Desde Estambul hasta Capadocia,
+                            cada página busca capturar la esencia
+                            de un lugar que entrelaza Oriente,
+                            tradición y modernidad.
+
+                        </p>
+
+
+                        <p>
+
+                            La propuesta organiza el contenido
+                            mediante una composición editorial
+                            que combina fotografía, tipografía,
+                            color y bloques informativos.
+
+                        </p>
+
+
+                        <div class="concept-quote">
+
+                            “Turquía no se visita,
+                            se vive.”
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="concept-image">
+
+                        <img
+                            src="concepto_visual.png.png"
+                            alt="Concepto visual de Turquía"
+                        >
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             02 · INVESTIGACIÓN VISUAL
+        ================================================== -->
+
+        <section
+            class="section research"
+        >
+
+            <div class="container">
+
+
+                <div class="section-header">
+
+                    <p class="section-number">
+                        02 · Universo visual
+                    </p>
+
+                    <h2>
+                        Inspiración,
+                        color y territorio.
+                    </h2>
+
+                    <p class="section-intro">
+
+                        La dirección visual toma como referencia
+                        elementos culturales, arquitectónicos,
+                        ornamentales y cromáticos asociados
+                        a Turquía.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="research-grid">
+
+
+                    <div class="research-image large">
+
+                        <img
+                            src="arquitectura%20de%20turquia.png"
+                            alt="Arquitectura de Turquía"
+                        >
+
+                    </div>
+
+
+                    <div class="research-image">
+
+                        <img
+                            src="Patrones%20ornamentales%20turcos.png"
+                            alt="Patrones ornamentales turcos"
+                        >
+
+                    </div>
+
+
+                    <div class="research-image">
+
+                        <img
+                            src="Texturas%20de%20Turqu%C3%ADa.png"
+                            alt="Texturas de Turquía"
+                        >
+
+                    </div>
+
+
+                    <div class="research-image">
+
+                        <img
+                            src="Paisaje%20de%20Turqu%C3%ADa.png"
+                            alt="Paisaje de Turquía"
+                        >
+
+                    </div>
+
+
+                    <div class="research-image">
+
+                        <img
+                            src="Cultura%20visual%20de%20Turqu%C3%ADa.png"
+                            alt="Cultura visual de Turquía"
+                        >
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- PALETA -->
+
+                <div class="palette">
+
+
+                    <div class="color color-sand">
+
+                        <span class="color-name">
+                            Arena
+                        </span>
+
+                        <span class="color-code">
+                            #E7D9BE
+                        </span>
+
+                    </div>
+
+
+                    <div class="color color-terracotta">
+
+                        <span class="color-name">
+                            Terracota
+                        </span>
+
+                        <span class="color-code">
+                            #B85F3D
+                        </span>
+
+                    </div>
+
+
+                    <div class="color color-teal">
+
+                        <span class="color-name">
+                            Teal
+                        </span>
+
+                        <span class="color-code">
+                            #1F6B63
+                        </span>
+
+                    </div>
+
+
+                    <div class="color color-navy">
+
+                        <span class="color-name">
+                            Azul profundo
+                        </span>
+
+                        <span class="color-code">
+                            #20344A
+                        </span>
+
+                    </div>
+
+
+                    <div class="color color-cream">
+
+                        <span class="color-name">
+                            Papel
+                        </span>
+
+                        <span class="color-code">
+                            #F6F1E9
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             03 · SISTEMA EDITORIAL
+        ================================================== -->
+
+        <section class="section">
+
+            <div class="container">
+
+
+                <div class="section-header">
+
+                    <p class="section-number">
+                        03 · Sistema editorial
+                    </p>
+
+                    <h2>
+                        Una estructura
+                        para contar.
+                    </h2>
+
+                    <p class="section-intro">
+
+                        La propuesta editorial utiliza retículas,
+                        jerarquías tipográficas y recursos gráficos
+                        para organizar la información y construir
+                        diferentes niveles de lectura.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="system-grid">
+
+
+                    <article class="system-card">
+
+                        <span class="system-card-number">
+                            01
+                        </span>
+
+                        <h3>
+                            Retícula
+                        </h3>
+
+                        <p>
+
+                            Una estructura modular permite
+                            distribuir fotografías, textos
+                            y elementos informativos manteniendo
+                            equilibrio y ritmo.
+
+                        </p>
+
+                    </article>
+
+
+
+                    <article class="system-card">
+
+                        <span class="system-card-number">
+                            02
+                        </span>
+
+                        <h3>
+                            Jerarquía
+                        </h3>
+
+                        <p>
+
+                            Títulos, subtítulos y cuerpos de texto
+                            construyen diferentes niveles de lectura
+                            dentro de cada página.
+
+                        </p>
+
+                    </article>
+
+
+
+                    <article class="system-card">
+
+                        <span class="system-card-number">
+                            03
+                        </span>
+
+                        <h3>
+                            Fotografía
+                        </h3>
+
+                        <p>
+
+                            La fotografía adquiere protagonismo
+                            y funciona como elemento narrativo
+                            dentro de la composición.
+
+                        </p>
+
+                    </article>
+
+
+                </div>
+
+
+
+                <!-- TIPOGRAFÍA -->
+
+                <div class="type-showcase">
+
+                    <p class="type-label">
+                        Tipografía principal
+                    </p>
+
+
+                    <div class="type-display">
+
+                        Oriente,
+                        <em>tradición</em>
+                        y modernidad.
+
+                    </div>
+
+
+                    <p class="type-secondary">
+
+                        Libre Bodoni ·
+                        Montserrat
+
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             04 · DISEÑO DE PÁGINAS
+        ================================================== -->
+
+        <section class="section">
+
+            <div class="container">
+
+
+                <div class="section-header">
+
+                    <p class="section-number">
+                        04 · Diseño editorial
+                    </p>
+
+                    <h2>
+                        Cada página
+                        cuenta una parte.
+                    </h2>
+
+                    <p class="section-intro">
+
+                        Aplicación del sistema editorial
+                        en las distintas páginas y contenidos
+                        de la revista.
+
+                    </p>
+
+                </div>
+
+
+
+                <!-- PORTADA -->
+
+                <div class="pages-cover">
+
+                    <div class="pages-cover-image">
+
+                        <img
+                            src="portada%20turquia.png"
+                            alt="Portada revista Turquía"
+                        >
+
+                    </div>
+
+
+                    <div class="pages-cover-note">
+
+                        <p class="section-number">
+                            Portada · Nº 01 · 2024
+                        </p>
+
+                        <h3>
+                            Un destino que despierta
+                            todos los sentidos.
+                        </h3>
+
+                        <p>
+                            La portada reúne los elementos centrales del
+                            sistema: una fotografía de gran formato, el
+                            logotipo en Libre Bodoni y un sello circular
+                            que acompaña la identidad de la revista.
+                        </p>
+
+                        <div class="pages-cover-meta">
+                            <span>Historia</span>
+                            <span>Cultura</span>
+                            <span>Paisajes</span>
+                            <span>Gastronomía</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- DOBLES PÁGINAS -->
+
+                <div class="spreads-grid">
+
+
+                    <figure class="spread">
+
+                        <img
+                            src="estanbul.png"
+                            alt="Doble página editorial de Estambul"
+                        >
+
+                        <figcaption>
+                            <span>Estambul · Donde dos mundos se encuentran</span>
+                            <span>02 / 03</span>
+                        </figcaption>
+
+                    </figure>
+
+
+                    <figure class="spread">
+
+                        <img
+                            src="capadocia.png"
+                            alt="Doble página editorial de Capadocia"
+                        >
+
+                        <figcaption>
+                            <span>Capadocia · Un paisaje que parece soñado</span>
+                            <span>04 / 05</span>
+                        </figcaption>
+
+                    </figure>
+
+
+                    <figure class="spread">
+
+                        <img
+                            src="costa%20de%20turquia.png"
+                            alt="Doble página editorial de la costa de Turquía"
+                        >
+
+                        <figcaption>
+                            <span>Costa Egea · Aguas turquesa, historias infinitas</span>
+                            <span>06 / 07</span>
+                        </figcaption>
+
+                    </figure>
+
+
+                    <figure class="spread">
+
+                        <img
+                            src="sabores%20de%20turquia.png"
+                            alt="Doble página editorial de gastronomía turca"
+                        >
+
+                        <figcaption>
+                            <span>Gastronomía · Una tradición que se comparte</span>
+                            <span>08 / 09</span>
+                        </figcaption>
+
+                    </figure>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             05 · ADAPTACIÓN DIGITAL
+        ================================================== -->
+
+        <section
+            class="section digital-section"
+        >
+
+            <div class="container">
+
+
+                <div class="section-header">
+
+                    <p class="section-number">
+                        05 · Adaptación digital
+                    </p>
+
+                    <h2>
+                        Del papel
+                        a la pantalla.
+                    </h2>
+
+                    <p class="section-intro">
+
+                        La propuesta editorial también puede
+                        trasladarse a un formato digital,
+                        manteniendo la jerarquía visual
+                        y la narrativa del proyecto.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="digital-grid">
+
+
+                    <div class="device">
+
+                        <img
+                            src="Portada%20digital%20Turquia.png"
+                            alt="Portada digital Turquía"
+                        >
+
+                    </div>
+
+
+                    <div class="device">
+
+                        <img
+                            src="Estambul%20versi%C3%B3n%20digital.png"
+                            alt="Estambul versión digital"
+                        >
+
+                    </div>
+
+
+                    <div class="device">
+
+                        <img
+                            src="Capadocia%20versi%C3%B3n%20digital.png"
+                            alt="Capadocia versión digital"
+                        >
+
+                    </div>
+
+
+                    <div class="device">
+
+                        <img
+                            src="Turqu%C3%ADa%20versi%C3%B3n%20digital.png"
+                            alt="Turquía versión digital"
+                        >
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             06 · APLICACIÓN FÍSICA
+        ================================================== -->
+
+        <section class="section">
+
+            <div class="container">
+
+
+                <div class="section-header">
+
+                    <p class="section-number">
+                        06 · Aplicación física
+                    </p>
+
+                    <h2>
+                        Una revista
+                        para tocar y recorrer.
+                    </h2>
+
+                    <p class="section-intro">
+
+                        La aplicación física permite llevar
+                        el sistema editorial al objeto impreso
+                        y reforzar la experiencia de lectura.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="physical-grid">
+
+
+                    <div class="physical-main">
+
+                        <img
+                            src="Revista%20Turqu%C3%ADa%20impresa.png"
+                            alt="Revista Turquía impresa"
+                        >
+
+                    </div>
+
+
+                    <div class="physical-side">
+
+
+                        <div class="physical-image">
+
+                            <img
+                                src="Revista%20Turqu%C3%ADa%20abierta.png"
+                                alt="Revista Turquía abierta"
+                            >
+
+                        </div>
+
+
+                        <div class="physical-image">
+
+                            <img
+                                src="Detalle%20editorial%20Turqu%C3%ADa.png"
+                                alt="Detalle editorial Turquía"
+                            >
+
+                        </div>
+
+
+                        <div class="physical-image">
+
+                            <img
+                                src="Detalle%20de%20p%C3%A1ginas%20Turqu%C3%ADa.png"
+                                alt="Detalle de páginas Turquía"
+                            >
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             07 · RESULTADO FINAL
+        ================================================== -->
+
+        <section class="result">
+
+            <div class="container">
+
+                <div class="result-grid">
+
+                    <!-- IMAGEN FINAL -->
+
+                    <div class="result-image">
+
+                        <img
+                            src="Resultado%20final%20proyecto%20Turqu%C3%ADa.png"
+                            alt="Resultado final proyecto Turquía"
+                        >
+
+                    </div>
+
+
+                    <!-- TEXTO -->
+
+                    <div class="result-copy">
+
+                        <p class="section-number">
+                            07 · Resultado final
+                        </p>
+
+                        <h2>
+                            Una mirada<br>
+                            visual sobre Turquía.
+                        </h2>
+
+                        <p>
+                            El resultado reúne contenido,
+                            fotografía, tipografía y recursos
+                            gráficos en una propuesta editorial
+                            pensada para comunicar y conectar
+                            al lector con la esencia de Turquía.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         NAVEGACIÓN ENTRE PROYECTOS
+    ====================================================== -->
+
+    <nav class="project-nav">
+
+        <a href="../isl/index.html">
+            ← Proyecto anterior
+        </a>
+
+
+        <a href="../../index.html#proyectos">
+            Todos los proyectos
+        </a>
+
+
+        <a href="../cafe/index.html">
+            Siguiente proyecto →
+        </a>
+
+    </nav>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer>
+
+        <div class="footer-inner">
+
+            <a href="../../index.html">
+                ← Volver a proyectos
+            </a>
+
+
+            <span>
+                © 2026 Daniela Pasmiño ·
+                Diseñadora Gráfica & Digital
+            </span>
+
+
+            <a href="#">
+                Volver arriba ↑
+            </a>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script>
+
+
+        /* =====================================================
+           NAVBAR AL HACER SCROLL
+        ====================================================== */
+
+        const topbar =
+            document.getElementById("topbar");
+
+
+        window.addEventListener(
+            "scroll",
+            function () {
+
+                if (window.scrollY > 40) {
+
+                    topbar.classList.add(
+                        "scrolled"
+                    );
+
+                } else {
+
+                    topbar.classList.remove(
+                        "scrolled"
+                    );
+
+                }
+
+            }
+        );
+
+
+        /* =====================================================
+           MENÚ MÓVIL
+        ====================================================== */
+
+        const navToggle =
+            document.getElementById("navToggle");
+
+
+        navToggle.addEventListener(
+            "click",
+            function () {
+
+                document
+                    .querySelector(".nav")
+                    .classList.toggle(
+                        "mobile-open"
+                    );
+
+            }
+        );
+
+
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LÚA Botanicals · Redes Sociales</title>
+
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:#f7f3ec;
+  color:#3a2d28;
+  font-family:Arial,Helvetica,sans-serif;
+}
+a{color:inherit;text-decoration:none}
+img{display:block;width:100%}
+
+:root{
+  --marfil:#F7F3EC;
+  --nude:#E7D4CC;
+  --arcilla:#C98F82;
+  --cacao:#3A2D28;
+  --champagne:#C5A06A;
+  --line:#DED6CE;
+  --muted:#756B65;
+}
+
+.wrap{
+  max-width:1440px;
+  margin:auto;
+}
+
+/* HEADER / HERO */
+.hero{
+  min-height:500px;
+  display:grid;
+  grid-template-columns:30% 58% 12%;
+  background:var(--marfil);
+  border-bottom:1px solid var(--line);
+}
+.hero-copy{
+  padding:34px 7% 42px 9%;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.back{
+  font-size:13px;
+  margin-bottom:58px;
+  color:var(--cacao);
+}
+.kicker,.section-number{
+  font-size:11px;
+  letter-spacing:.19em;
+  text-transform:uppercase;
+  color:var(--arcilla);
+  font-weight:700;
+}
+.hero h1{
+  margin:27px 0 0;
+  font-family:Georgia,"Times New Roman",serif;
+  font-weight:400;
+  font-size:clamp(56px,5.2vw,86px);
+  line-height:.82;
+  letter-spacing:-.055em;
+}
+.hero h1 span{
+  display:block;
+  font-size:.63em;
+  line-height:1;
+  margin-top:7px;
+}
+.hero-copy .rule{
+  width:42px;
+  height:1px;
+  background:var(--arcilla);
+  margin:30px 0 25px;
+}
+.hero-copy p{
+  max-width:330px;
+  margin:0;
+  font-size:14px;
+  line-height:1.65;
+}
+.hero-image{min-height:500px}
+.hero-image img{
+  height:100%;
+  min-height:500px;
+  object-fit:cover;
+}
+.hero-rail{
+  border-left:1px solid var(--line);
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+.rail-logo{
+  font-family:Georgia,serif;
+  font-size:27px;
+  line-height:.8;
+  margin-top:27px;
+  text-align:center;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:7px;
+}
+
+.lua-header-icon{
+  width:34px;
+  height:34px;
+  object-fit:cover;
+  border-radius:50%;
+}
+.rail-logo small{
+  display:block;
+  font-family:Arial,sans-serif;
+  font-size:7px;
+  letter-spacing:.25em;
+  margin-top:8px;
+}
+.rail-section{
+  margin-top:105px;
+  color:var(--arcilla);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+.rail-section strong{
+  font-size:18px;
+  font-weight:400;
+}
+.rail-line{
+  width:24px;
+  height:1px;
+  background:var(--arcilla);
+  margin:13px 0 15px;
+}
+.rail-word{
+  writing-mode:vertical-rl;
+  transform:rotate(180deg);
+  font-size:9px;
+  letter-spacing:.24em;
+}
+
+/* COMMON SECTIONS */
+.section{
+  padding:58px 6%;
+  border-bottom:1px solid var(--line);
+}
+.section-grid{
+  display:grid;
+  grid-template-columns:22% 1fr;
+  gap:45px;
+}
+.section-title h2{
+  margin:16px 0 0;
+  font-family:Georgia,"Times New Roman",serif;
+  font-weight:400;
+  font-size:clamp(35px,3.1vw,52px);
+  line-height:.98;
+  letter-spacing:-.045em;
+}
+.section-copy{
+  max-width:370px;
+  margin-top:25px;
+  font-size:13px;
+  line-height:1.7;
+}
+
+/* 02 */
+.direction{
+  background:#f2e4df;
+}
+.direction-content{
+  display:grid;
+  grid-template-columns:1fr 190px;
+  gap:25px;
+  align-items:center;
+}
+.moodboard{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  height:240px;
+}
+.moodboard img{
+  height:100%;
+  object-fit:cover;
+  border-right:2px solid var(--marfil);
+}
+.palette{
+  display:grid;
+  gap:10px;
+}
+.swatch{
+  display:grid;
+  grid-template-columns:45px 1fr;
+  align-items:center;
+  gap:12px;
+  font-size:10px;
+}
+.swatch i{
+  display:block;
+  height:30px;
+}
+.s1 i{background:#F7F3EC}.s2 i{background:#E7D4CC}
+.s3 i{background:#C98F82}.s4 i{background:#3A2D28}
+.s5 i{background:#C5A06A}
+
+/* 03 */
+.social{
+  background:var(--marfil);
+}
+.social-content{
+  display:grid;
+  grid-template-columns:22% 1fr;
+  gap:45px;
+}
+.feed{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:9px;
+  align-items:stretch;
+}
+.post{
+  overflow:hidden;
+}
+.post img{
+  height:230px;
+  object-fit:cover;
+}
+.post:nth-child(4) img{
+  object-position:center;
+}
+.post:nth-child(5) img{
+  object-position:center;
+}
+
+/* 04 */
+.content{
+  background:#f8f3eb;
+}
+.content-showcase{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+  align-items:start;
+}
+
+.content-image{
+  width:100%;
+}
+
+.content-image img{
+  width:100%;
+  height:auto;
+  display:block;
+}
+
+/* 05 */
+.application{
+  background:var(--marfil);
+  padding:0 0 0 6%;
+}
+
+.application-showcase{
+  display:grid;
+  grid-template-columns:22% 1fr;
+  gap:45px;
+  align-items:stretch;
+  min-height:420px;
+}
+
+.application-showcase .section-title{
+  padding:58px 0;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.application-image{
+  width:100%;
+  height:420px;
+  overflow:hidden;
+}
+
+.application-image img{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+  object-position:center;
+}
+/* 06 */
+.result{
+  display:grid;
+  grid-template-columns:45% 55%;
+  min-height:290px;
+}
+.result-image{
+  min-height:290px;
+}
+.result-image img{
+  height:100%;
+  min-height:290px;
+  object-fit:cover;
+}
+.result-copy{
+  background:var(--arcilla);
+  padding:48px 7%;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.result-copy .section-number{
+  color:#fff;
+}
+.result-copy h2{
+  max-width:610px;
+  margin:22px 0 0;
+  color:#fff;
+  font-family:Georgia,"Times New Roman",serif;
+  font-weight:400;
+  font-size:clamp(34px,3.6vw,55px);
+  line-height:.98;
+  letter-spacing:-.045em;
+}
+.result-copy p{
+  max-width:580px;
+  color:#fff;
+  font-size:13px;
+  line-height:1.6;
+  margin:22px 0 0;
+}
+
+/* NAV */
+.project-nav{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  padding:22px 6%;
+  border-bottom:1px solid var(--line);
+  font-size:10px;
+  letter-spacing:.18em;
+  font-weight:700;
+  color:var(--cacao);
+}
+.project-nav a:nth-child(2){
+  text-align:center;
+  color:#9D7650;
+}
+.project-nav a:last-child{text-align:right}
+
+footer{
+  display:flex;
+  justify-content:space-between;
+  padding:20px 6% 35px;
+  font-size:10px;
+  color:var(--muted);
+}
+
+/* MOBILE */
+@media(max-width:850px){
+  .hero{
+    grid-template-columns:1fr;
+  }
+  .hero-copy{padding:30px 7% 45px}
+  .back{margin-bottom:45px}
+  .hero-image,.hero-image img{min-height:420px;height:420px}
+  .hero-rail{
+    display:none;
+  }
+  .section,.project-nav{
+    padding-left:7%;
+    padding-right:7%;
+  }
+  .section-grid,
+  .social-content,
+  .application-showcase{
+    grid-template-columns:1fr;
+    gap:28px;
+  }
+  .direction-content{
+    grid-template-columns:1fr;
+  }
+  .moodboard{
+    height:190px;
+  }
+  .palette{
+    grid-template-columns:repeat(5,1fr);
+  }
+  .swatch{
+    grid-template-columns:1fr;
+  }
+  .feed{
+    grid-template-columns:repeat(2,1fr);
+  }
+  .post img{height:220px}
+  .content-showcase{
+    grid-template-columns:1fr;
+  }
+  .result{
+    grid-template-columns:1fr;
+  }
+  .result-image,.result-image img{
+    min-height:300px;
+    height:300px;
+  }
+  .project-nav{
+    grid-template-columns:1fr;
+    gap:16px;
+  }
+  .project-nav a,
+  .project-nav a:nth-child(2),
+  .project-nav a:last-child{
+    text-align:left;
+  }
+  footer{
+    flex-direction:column;
+    gap:12px;
+  }
+
+.application{
+  padding:0 7%;
+}
+
+.application-showcase{
+  grid-template-columns:1fr;
+  gap:28px;
+  min-height:auto;
+}
+
+.application-showcase .section-title{
+  padding:45px 0 0;
+}
+
+.application-image{
+  height:auto;
+}
+
+.application-image img{
+  width:100%;
+  height:auto;
+  object-fit:contain;
+}
+}
+</style>
+<link rel="icon" type="image/png" href="lua-icono.png?v=2">
+</head>
+
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <div class="hero-copy">
+    <a class="back" href="../index.html">← &nbsp; Volver a proyectos</a>
+
+    <div class="kicker">Diseño Digital · Redes Sociales</div>
+
+    <h1>LÚA<span>BOTANICALS</span></h1>
+
+    <div class="rule"></div>
+
+    <p>
+      Identidad visual y sistema de contenidos
+      para redes sociales de una marca de skincare
+      natural, femenina y consciente.
+    </p>
+  </div>
+
+  <div class="hero-image">
+    <img src="../../proyectos/lua/lua-hero.png" alt="LÚA Botanicals">
+  </div>
+
+  <aside class="hero-rail">
+    <div class="rail-logo">
+      <img class="lua-header-icon" src="lua-icono.png" alt="">
+      <span>LÚA</span>
+      <small>BOTANICALS</small>
+    </div>
+    <div class="rail-section">
+      <strong>01</strong>
+      <div class="rail-line"></div>
+      <span class="rail-word">CONCEPTO</span>
+    </div>
+  </aside>
+</header>
+
+<section class="section direction">
+  <div class="section-grid">
+    <div class="section-title">
+      <div class="section-number">02 · DIRECCIÓN DE ARTE</div>
+      <h2>Belleza que nace<br>de lo esencial.</h2>
+      <p class="section-copy">
+        La dirección visual combina tonos suaves,
+        texturas naturales, luz cálida y composiciones
+        minimalistas para transmitir calma, cuidado
+        y autenticidad.
+      </p>
+    </div>
+
+    <div class="direction-content">
+      <div class="moodboard">
+        <img src="../../proyectos/lua/lua-post-01.png" alt="LÚA textura y producto">
+        <img src="../../proyectos/lua/lua-post-02.png" alt="LÚA producto">
+        <img src="../../proyectos/lua/lua-post-03.png" alt="LÚA belleza">
+        <img src="../../proyectos/lua/lua-moodboard.png" alt="LÚA dirección de arte">
+      </div>
+
+      <div class="palette" aria-label="Paleta cromática">
+        <div class="swatch s1"><i></i><span>Marfil<br>#F7F3EC</span></div>
+        <div class="swatch s2"><i></i><span>Nude rosado<br>#E7D4CC</span></div>
+        <div class="swatch s3"><i></i><span>Rosa arcilla<br>#C98F82</span></div>
+        <div class="swatch s4"><i></i><span>Cacao<br>#3A2D28</span></div>
+        <div class="swatch s5"><i></i><span>Champagne<br>#C5A06A</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section social">
+  <div class="social-content">
+    <div class="section-title">
+      <div class="section-number">03 · SISTEMA PARA REDES</div>
+      <h2>Un sistema flexible<br>para comunicar la marca.</h2>
+      <p class="section-copy">
+        Diseñado para adaptarse a distintos tipos de
+        contenido manteniendo una identidad visual
+        coherente y reconocible.
+      </p>
+      <p class="section-copy" style="color:var(--arcilla);font-size:11px;">
+        Ver feed completo →
+      </p>
+    </div>
+
+    <div class="feed">
+      <article class="post"><img src="../../proyectos/lua/Publicaci%C3%B3n%20L%C3%9AA.png" alt="Publicación LÚA"></article>
+      <article class="post"><img src="../../proyectos/lua/lua-post-02.jpg.png" alt="Contenido de ingredientes LÚA"></article>
+      <article class="post"><img src="../../proyectos/lua/Rutina%20L%C3%9AA.png" alt="Rutina LÚA"></article>
+      <article class="post"><img src="../../proyectos/lua/Contenido%20editorial%20L%C3%9AA.png" alt="Contenido editorial LÚA"></article>
+      <article class="post"><img src="../../proyectos/lua/Sistema%20visual%20L%C3%9AA.png" alt="Sistema visual LÚA"></article>
+    </div>
+  </div>
+</section>
+
+<section class="section content">
+  <div class="section-grid">
+
+    <div class="section-title">
+      <div class="section-number">04 · CONTENIDO</div>
+      <h2>Carruseles, stories<br>y contenido educativo.</h2>
+      <p class="section-copy">
+        Se diseñan piezas para informar, inspirar y
+        conectar con la comunidad, adaptando el mensaje
+        a cada formato de la plataforma sin perder
+        la identidad visual.
+      </p>
+    </div>
+
+    <div class="content-showcase">
+
+      <div class="content-image">
+        <img
+          src="../../proyectos/lua/lua-stories.png"
+          alt="Stories de LÚA Botanicals">
+      </div>
+
+      <div class="content-image">
+        <img
+          src="../../proyectos/lua/lua_carrusel_1536x1024_sin_distorsion%20(1)%20(1).png"
+          alt="Carrusel educativo de LÚA Botanicals">
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section class="section application">
+  <div class="application-showcase">
+    <div class="section-title">
+      <div class="section-number">05 · APLICACIÓN</div>
+      <h2>El sistema en acción.</h2>
+      <p class="section-copy">
+        Las piezas se adaptan a distintos formatos y
+        canales, manteniendo una estética coherente
+        y reconocible en todo el feed.
+      </p>
+    </div>
+
+    <div class="application-image">
+      <img src="../../proyectos/lua/1.jpg" alt="Aplicación del sistema visual LÚA">
+    </div>
+  </div>
+</section>
+
+<section class="result">
+  <div class="result-image">
+    <img src="../../proyectos/lua/L%C3%9AA%20Botanicals.png" alt="LÚA Botanicals">
+  </div>
+
+  <div class="result-copy">
+    <div class="section-number">06 · RESULTADO FINAL</div>
+    <h2>Una presencia digital<br>tan natural como la marca.</h2>
+    <p>
+      LÚA transforma su esencia en un sistema visual
+      coherente, atractivo y preparado para redes sociales.
+    </p>
+  </div>
+</section>
+
+<nav class="project-nav">
+  <a href="../miel/index.html">← &nbsp; PROYECTO ANTERIOR</a>
+  <a href="../index.html">TODOS LOS PROYECTOS</a>
+  <a href="../todoperro/index.html">SIGUIENTE PROYECTO &nbsp; →</a>
+</nav>
+
+<footer>
+  <span>© 2026 Daniela Pasmiño · Diseñadora Gráfica & Digital</span>
+  <a href="../../index.html">Volver al inicio ↑</a>
+</footer>
+
+</div>
+</body>
+</html>

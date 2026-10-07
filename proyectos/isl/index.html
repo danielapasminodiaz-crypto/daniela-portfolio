@@ -1,0 +1,2709 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gráfica Institucional 8M · ISL · Daniela Pasmiño</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
+    <style>
+
+        /* =========================================================
+           VARIABLES
+        ========================================================= */
+
+        :root {
+
+            --crema: #f7f4ef;
+
+            --crema-2: #eee9e1;
+
+            --morado: #48206f;
+
+            --morado-oscuro: #32154f;
+
+            --morado-claro: #a88bc2;
+
+            --turquesa: #12c6bb;
+
+            --turquesa-oscuro: #08aaa2;
+
+            --texto: #443d48;
+
+            --blanco: #ffffff;
+
+        }
+
+
+        /* =========================================================
+           RESET
+        ========================================================= */
+
+        * {
+
+            margin: 0;
+
+            padding: 0;
+
+            box-sizing: border-box;
+
+        }
+
+
+        html {
+
+            scroll-behavior: smooth;
+
+        }
+
+
+        body {
+
+            background: var(--crema);
+
+            color: var(--texto);
+
+            font-family: "Inter", Arial, sans-serif;
+
+            line-height: 1.45;
+
+        }
+
+
+        img {
+
+            display: block;
+
+            max-width: 100%;
+
+        }
+
+
+        a {
+
+            color: inherit;
+
+            text-decoration: none;
+
+        }
+
+
+        /* =========================================================
+           CONTENEDOR
+        ========================================================= */
+
+        .container {
+
+            width: min(1500px, calc(100% - 70px));
+
+            margin: 0 auto;
+
+        }
+
+
+        /* =========================================================
+           NAVEGACIÓN
+        ========================================================= */
+
+        .topbar {
+
+            height: 72px;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            padding: 0 35px;
+
+            border-bottom: 1px solid rgba(72, 32, 111, .12);
+
+            background: var(--crema);
+
+        }
+
+
+        .brand {
+
+            display: flex;
+
+            flex-direction: row;
+
+            align-items: center;
+
+            gap: 10px;
+
+        }
+
+
+        .brand-icon {
+
+            width: 30px;
+
+            height: 30px;
+
+            object-fit: cover;
+
+            border-radius: 50%;
+
+            flex: 0 0 30px;
+
+        }
+
+
+        .brand-text {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 2px;
+
+        }
+
+
+        .brand strong {
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+            color: var(--morado);
+
+        }
+
+
+        .brand span {
+
+            font-size: 9px;
+
+            letter-spacing: .12em;
+
+            text-transform: uppercase;
+
+            color: #817884;
+
+        }
+
+
+        .back {
+
+            font-size: 12px;
+
+            color: var(--morado);
+
+            transition: .25s ease;
+
+        }
+
+
+        .back:hover {
+
+            opacity: .6;
+
+        }
+
+
+        /* =========================================================
+           HERO / HEADER · ISL
+           FOTO COMPLETA + TEXTOS LATERALES
+        ========================================================= */
+
+        .hero {
+
+            position: relative;
+
+            width: 100%;
+
+            aspect-ratio: 3 / 1;
+
+            min-height: 0;
+
+            overflow: hidden;
+
+            background: var(--crema);
+
+            isolation: isolate;
+
+        }
+
+
+        /* =========================================================
+           IMAGEN COMPLETA DEL LIENZO
+        ========================================================= */
+
+        .hero-photo {
+
+            position: absolute;
+
+            inset: 0;
+
+            z-index: 1;
+
+            overflow: hidden;
+
+        }
+
+
+        .hero-photo img {
+
+            width: 100%;
+
+            height: 100%;
+
+            max-width: none;
+
+            display: block;
+
+            object-fit: cover;
+
+            object-position: center center;
+
+        }
+
+
+        /* =========================================================
+           PANEL CREMA · IZQUIERDA
+        ========================================================= */
+
+        .hero-copy {
+
+            position: absolute;
+
+            left: 0;
+
+            top: 0;
+
+            bottom: 0;
+
+            width: 39%;
+
+            z-index: 5;
+
+            padding: 50px 45px 45px 6vw;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            background: transparent;
+
+        }
+
+
+        .hero-copy > * {
+
+            position: relative;
+
+            z-index: 10;
+
+        }
+
+
+        /* =========================================================
+           TEXTO IZQUIERDO
+        ========================================================= */
+
+        .eyebrow {
+
+            color: var(--morado);
+
+            font-size: 11px;
+
+            letter-spacing: .11em;
+
+            text-transform: uppercase;
+
+            margin-bottom: 18px;
+
+            font-weight: 600;
+
+        }
+
+
+        .hero h1 {
+
+            margin: 0 0 25px;
+
+            max-width: 520px;
+
+            font-family: "Cormorant Garamond", Georgia, serif;
+
+            font-size: clamp(54px, 5vw, 84px);
+
+            font-weight: 500;
+
+            line-height: .86;
+
+            letter-spacing: -.045em;
+
+            color: var(--morado);
+
+        }
+
+
+        .hero-text {
+
+            max-width: 500px;
+
+            margin: 0 0 25px;
+
+            font-size: 13px;
+
+            line-height: 1.45;
+
+            color: var(--texto);
+
+        }
+
+
+        .tools {
+
+            display: flex;
+
+            align-items: center;
+
+            flex-wrap: wrap;
+
+            gap: 14px;
+
+            max-width: 500px;
+
+            font-size: 9px;
+
+            color: var(--morado);
+
+        }
+
+
+        .tools span:first-child {
+
+            font-size: 8px;
+
+            font-weight: 600;
+
+            letter-spacing: .10em;
+
+        }
+
+
+        /* =========================================================
+           PANEL MORADO · DERECHA
+        ========================================================= */
+
+        .hero-quote {
+
+            position: absolute;
+
+            right: 0;
+
+            top: 0;
+
+            bottom: 0;
+
+            width: 23%;
+
+            z-index: 6;
+
+            padding: 55px 4vw 45px 3.5vw;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: flex-start;
+
+            background: transparent;
+
+            color: var(--blanco);
+
+        }
+
+
+        .hero-quote p {
+
+            position: relative;
+
+            z-index: 10;
+
+            max-width: 285px;
+
+            margin: 0;
+
+            font-family: "Cormorant Garamond", Georgia, serif;
+
+            font-size: clamp(28px, 2.35vw, 40px);
+
+            font-weight: 500;
+
+            line-height: 1.03;
+
+            color: var(--blanco);
+
+        }
+
+
+        .hero-quote p::after {
+
+            content: "";
+
+            display: block;
+
+            width: 42px;
+
+            height: 2px;
+
+            margin-top: 27px;
+
+            background: var(--blanco);
+
+        }
+
+
+        /* =========================================================
+           SECCIONES GENERALES
+        ========================================================= */
+
+        .section {
+
+            position: relative;
+
+            padding: 75px 0;
+
+            background: var(--crema);
+
+        }
+
+
+        .section-number {
+
+            color: var(--morado);
+
+            font-family: "Cormorant Garamond", Georgia, serif;
+
+            font-size: 16px;
+
+            margin-bottom: 5px;
+
+        }
+
+
+        .section-title {
+
+            font-family: "Cormorant Garamond", Georgia, serif;
+
+            color: var(--morado);
+
+            font-size: clamp(43px, 5vw, 72px);
+
+            line-height: .9;
+
+            font-weight: 500;
+
+            letter-spacing: -.03em;
+
+        }
+
+
+        .section-intro {
+
+            font-size: 14px;
+
+            max-width: 600px;
+
+            margin-top: 18px;
+
+        }
+
+
+        /* =========================================================
+           01 EL PROYECTO
+        ========================================================= */
+
+        .project-section {
+
+            padding: 75px 0 65px;
+
+        }
+
+
+        .project-grid {
+
+            display: grid;
+
+            grid-template-columns: 34% 66%;
+
+            gap: 35px;
+
+        }
+
+
+        .project-description {
+
+            padding-left: 10px;
+
+        }
+
+
+        .project-description p {
+
+            font-size: 14px;
+
+            max-width: 510px;
+
+            margin-top: 22px;
+
+        }
+
+
+        .project-cards {
+
+            display: grid;
+
+            grid-template-columns: repeat(4, 1fr);
+
+            border-left: 1px solid rgba(72, 32, 111, .18);
+
+        }
+
+
+        .project-card {
+
+            padding: 0 25px;
+
+            border-right: 1px solid rgba(72, 32, 111, .18);
+
+        }
+
+
+        .card-icon {
+
+            width: 55px;
+
+            height: 55px;
+
+            border-radius: 50%;
+
+            background: #f2eaf7;
+
+            border: 1px solid #d9c7e6;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            color: var(--morado);
+
+            font-size: 23px;
+
+            margin-bottom: 17px;
+
+        }
+
+
+        .project-card h3 {
+
+            color: var(--morado);
+
+            font-size: 14px;
+
+            margin-bottom: 7px;
+
+        }
+
+
+        .project-card p {
+
+            font-size: 11px;
+
+            line-height: 1.45;
+
+        }
+
+
+        /* =========================================================
+           02 SISTEMA GRÁFICO
+        ========================================================= */
+
+        .system-section {
+
+            padding: 55px 0 70px;
+
+        }
+
+
+        .system-grid {
+
+            display: grid;
+
+            grid-template-columns: 28% 72%;
+
+            gap: 35px;
+
+            align-items: center;
+
+        }
+
+
+        .system-copy {
+
+            padding-left: 10px;
+
+        }
+
+
+        .system-copy p {
+
+            margin-top: 20px;
+
+            font-size: 14px;
+
+            max-width: 420px;
+
+        }
+
+
+        .system-showcase {
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr) 1.35fr;
+
+            gap: 12px;
+
+            align-items: stretch;
+
+        }
+
+
+        .system-card {
+
+            background: var(--morado);
+
+            min-height: 175px;
+
+            padding: 10px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+        }
+
+
+        .system-card img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: contain;
+
+        }
+
+
+        .palette {
+
+            background: var(--crema-2);
+
+            padding: 18px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            gap: 15px;
+
+        }
+
+
+        .palette-label {
+
+            font-size: 10px;
+
+            color: var(--morado);
+
+        }
+
+
+        .colors {
+
+            display: flex;
+
+            gap: 7px;
+
+        }
+
+
+        .color {
+
+            width: 38px;
+
+            height: 38px;
+
+            border-radius: 6px;
+
+        }
+
+
+        .color.one {
+
+            background: #48206f;
+
+        }
+
+
+        .color.two {
+
+            background: #a88bc2;
+
+        }
+
+
+        .color.three {
+
+            background: #e8dff0;
+
+        }
+
+
+        .color.four {
+
+            background: #12c6bb;
+
+        }
+
+
+        .waves {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 2px;
+
+        }
+
+
+        .wave {
+
+            width: 70px;
+
+            height: 15px;
+
+            border-top: 7px solid var(--turquesa);
+
+            border-radius: 50%;
+
+        }
+
+
+        /* =========================================================
+           03 LIENZO
+        ========================================================= */
+
+        .lienzo-section {
+
+            padding: 60px 0;
+
+            border-left: 10px solid var(--morado);
+
+        }
+
+
+        .lienzo-grid {
+
+            display: grid;
+
+            grid-template-columns: 28% 72%;
+
+            gap: 35px;
+
+        }
+
+
+        .lienzo-copy {
+
+            padding-left: 20px;
+
+        }
+
+
+        .lienzo-copy p {
+
+            margin-top: 22px;
+
+            font-size: 14px;
+
+        }
+
+
+        .details {
+
+            margin-top: 20px;
+
+            font-size: 12px;
+
+            line-height: 1.8;
+
+        }
+
+
+        .details strong {
+
+            color: var(--morado);
+
+        }
+
+
+        .lienzo-gallery {
+
+            display: grid;
+
+            grid-template-columns: repeat(4, 1fr);
+
+            grid-template-rows: 430px;
+
+            gap: 10px;
+
+            align-items: stretch;
+
+        }
+
+
+        .lienzo-gallery figure {
+
+            overflow: hidden;
+
+            background: var(--morado);
+
+            min-width: 0;
+
+        }
+
+
+        .lienzo-gallery img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+            object-position: center;
+
+        }
+
+
+        /* =========================================================
+           04 APLICACIONES
+        ========================================================= */
+
+        .applications-section {
+
+            padding: 60px 0;
+
+            border-left: 10px solid var(--morado);
+
+        }
+
+
+        .applications-grid {
+
+            margin-top: 25px;
+
+            display: grid;
+
+            grid-template-columns: 1.1fr 1.1fr 1fr 1fr;
+
+            gap: 12px;
+
+        }
+
+
+        .application {
+
+            background: var(--blanco);
+
+            padding: 9px;
+
+            box-shadow: 0 8px 25px rgba(72, 32, 111, .08);
+
+        }
+
+
+        .application img {
+
+            width: 100%;
+
+            height: 260px;
+
+            object-fit: contain;
+
+            background: #f6f3ef;
+
+        }
+
+
+        .application figcaption {
+
+            color: var(--morado);
+
+            font-size: 10px;
+
+            padding: 10px 5px 4px;
+
+            text-align: center;
+
+        }
+
+
+        /* =========================================================
+           05 LÁMINAS
+        ========================================================= */
+
+        .laminas-section {
+
+            padding: 65px 0;
+
+            border-left: 10px solid var(--morado);
+
+        }
+
+
+        .laminas-grid {
+
+            display: grid;
+
+            grid-template-columns: 27% 73%;
+
+            gap: 35px;
+
+            align-items: start;
+
+        }
+
+
+        .laminas-copy {
+
+            padding-left: 20px;
+
+        }
+
+
+        .laminas-copy p {
+
+            margin-top: 20px;
+
+            font-size: 14px;
+
+        }
+
+
+        .laminas-main {
+
+            background: #21172c;
+
+            padding: 10px;
+
+        }
+
+
+        .laminas-main img {
+
+            width: 100%;
+
+            height: 420px;
+
+            object-fit: cover;
+
+        }
+
+
+        .laminas-strip {
+
+            display: grid;
+
+            grid-template-columns: repeat(11, 1fr);
+
+            gap: 6px;
+
+            margin-top: 10px;
+
+        }
+
+
+        .lamina-thumb {
+
+            height: 105px;
+
+            background: var(--morado);
+
+            overflow: hidden;
+
+        }
+
+
+        .lamina-thumb img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+        }
+
+
+        .lamina-more {
+
+            height: 105px;
+
+            background: var(--morado);
+
+            color: var(--blanco);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            font-size: 10px;
+
+            padding: 10px;
+
+        }
+
+
+        /* =========================================================
+           06 PANTALLAS
+        ========================================================= */
+
+        .screens-section {
+
+            padding: 65px 0;
+
+            border-left: 10px solid var(--morado);
+
+        }
+
+
+        .screens-grid {
+
+            display: grid;
+
+            grid-template-columns: 28% 72%;
+
+            gap: 35px;
+
+        }
+
+
+        .screens-copy {
+
+            padding-left: 20px;
+
+        }
+
+
+        .screens-copy p {
+
+            margin-top: 20px;
+
+            font-size: 14px;
+
+        }
+
+
+        .screens-gallery {
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 10px;
+
+        }
+
+
+        .screen-photo {
+
+            background: var(--morado);
+
+            height: 310px;
+
+            overflow: hidden;
+
+        }
+
+
+        .screen-photo img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+        }
+
+
+        /* =========================================================
+           07 RESULTADO
+        ========================================================= */
+
+        .result-section {
+
+            background: var(--morado);
+
+            color: var(--blanco);
+
+            padding: 70px 0 85px;
+
+        }
+
+
+        .result-section {
+
+            background: var(--morado);
+
+            color: var(--blanco);
+
+            padding: 70px 0 80px;
+
+        }
+
+
+        .result-grid {
+
+            display: grid;
+
+            grid-template-columns: 27% 59% 14%;
+
+            gap: 24px;
+
+            align-items: center;
+
+        }
+
+
+        .result-copy {
+
+            padding-left: 20px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+        }
+
+
+        .result-copy .section-number {
+
+            color: #d9c6e5;
+
+            margin-bottom: 8px;
+
+        }
+
+
+        .result-copy .section-title {
+
+            color: var(--blanco);
+
+            font-size: clamp(48px, 4.7vw, 72px);
+
+            line-height: .88;
+
+            max-width: 360px;
+
+        }
+
+
+        .result-copy p {
+
+            color: #e8deed;
+
+            font-size: 13px;
+
+            line-height: 1.5;
+
+            margin-top: 24px;
+
+            max-width: 390px;
+
+        }
+
+
+        .result-gallery {
+
+            display: grid;
+
+            grid-template-columns: 1.1fr .9fr .9fr;
+
+            grid-template-rows: 1fr 1fr;
+
+            gap: 12px;
+
+            width: 100%;
+
+            min-width: 0;
+
+            height: 360px;
+
+        }
+
+
+        .result-gallery figure {
+
+            position: relative;
+
+            overflow: hidden;
+
+            min-width: 0;
+
+            min-height: 0;
+
+            border-radius: 6px;
+
+            background: #32154f;
+
+        }
+
+
+        /* Imagen protagonista: lienzo a la izquierda, ocupa las 2 filas */
+        .result-gallery figure:nth-child(1) {
+            grid-column: 1;
+            grid-row: 1 / 3;
+        }
+
+        .result-gallery figure:nth-child(2) {
+            grid-column: 2;
+            grid-row: 1;
+        }
+
+        .result-gallery figure:nth-child(3) {
+            grid-column: 3;
+            grid-row: 1;
+        }
+
+        .result-gallery figure:nth-child(4) {
+            grid-column: 2 / 4;
+            grid-row: 2;
+        }
+
+
+        .result-gallery img {
+
+            width: 100%;
+
+            height: 100%;
+
+            display: block;
+
+            object-fit: cover;
+
+            object-position: center;
+
+            transition: transform .6s ease;
+
+        }
+
+
+        .result-gallery figure:hover img {
+
+            transform: scale(1.04);
+
+        }
+
+
+        .result-quote {
+
+            padding-left: 22px;
+
+            border-left: 1px solid rgba(255, 255, 255, .25);
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            font-family: "Cormorant Garamond", Georgia, serif;
+
+            font-size: clamp(27px, 2.15vw, 38px);
+
+            line-height: 1.04;
+
+            font-style: italic;
+
+            color: #f0e8f4;
+
+        }
+
+
+        .result-quote::before {
+
+            content: "“";
+
+            display: block;
+
+            font-size: 55px;
+
+            line-height: .45;
+
+            color: #a88bc2;
+
+            margin-bottom: 22px;
+
+        }
+
+
+        .result-quote::after {
+
+            content: "";
+
+            display: block;
+
+            width: 42px;
+
+            height: 2px;
+
+            background: #f0e8f4;
+
+            margin-top: 25px;
+
+        }
+
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+
+        footer {
+
+            background: var(--morado-oscuro);
+
+            color: var(--blanco);
+
+            padding: 25px 0;
+
+        }
+
+
+        .footer-inner {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            gap: 20px;
+
+        }
+
+
+        .footer-inner a {
+
+            font-size: 12px;
+
+        }
+
+
+        .footer-inner span {
+
+            font-size: 10px;
+
+            color: #cdbbd8;
+
+        }
+
+
+        /* =========================================================
+           ANIMACIÓN
+        ========================================================= */
+
+        .reveal {
+
+            opacity: 0;
+
+            transform: translateY(20px);
+
+            transition: .7s ease;
+
+        }
+
+
+        .reveal.visible {
+
+            opacity: 1;
+
+            transform: translateY(0);
+
+        }
+
+
+        /* =========================================================
+           TABLET
+        ========================================================= */
+
+        @media (max-width: 1000px) {
+
+            .project-grid,
+            .system-grid,
+            .lienzo-grid,
+            .laminas-grid,
+            .screens-grid,
+            .result-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+
+
+            .project-cards {
+
+                margin-top: 30px;
+
+            }
+
+
+            .system-showcase {
+
+                grid-template-columns: repeat(3, 1fr);
+
+            }
+
+
+            .palette {
+
+                grid-column: 1 / 4;
+
+            }
+
+
+            .applications-grid {
+
+                grid-template-columns: repeat(2, 1fr);
+
+            }
+
+
+            .laminas-strip {
+
+                grid-template-columns: repeat(6, 1fr);
+
+            }
+
+        }
+
+
+        /* =========================================================
+           MOBILE
+        ========================================================= */
+
+        @media (max-width: 650px) {
+
+            .hero {
+
+                aspect-ratio: 3 / 1;
+
+            }
+
+
+            .hero-copy {
+
+                width: 43%;
+
+                padding: 18px 15px 18px 20px;
+
+                justify-content: center;
+
+            }
+
+
+            .hero-quote {
+
+                width: 25%;
+
+                padding: 18px 14px;
+
+                align-items: center;
+
+            }
+
+
+            .eyebrow {
+
+                font-size: 6px;
+
+                margin-bottom: 7px;
+
+            }
+
+
+            .hero h1 {
+
+                font-size: clamp(22px, 5vw, 34px);
+
+                margin-bottom: 10px;
+
+                line-height: .88;
+
+            }
+
+
+            .hero-text {
+
+                font-size: 6px;
+
+                line-height: 1.35;
+
+                margin-bottom: 9px;
+
+                max-width: 95%;
+
+            }
+
+
+            .tools {
+
+                gap: 5px;
+
+                font-size: 5px;
+
+            }
+
+
+            .tools span:first-child {
+
+                font-size: 5px;
+
+            }
+
+
+            .hero-quote p {
+
+                max-width: 100%;
+
+                font-size: clamp(12px, 2.8vw, 19px);
+
+                line-height: 1.02;
+
+            }
+
+
+            .hero-quote p::after {
+
+                width: 18px;
+
+                height: 1px;
+
+                margin-top: 10px;
+
+            }
+
+
+            .container {
+
+                width: calc(100% - 30px);
+
+            }
+
+
+            .topbar {
+
+                padding: 0 15px;
+
+            }
+
+
+            .brand-text > span {
+
+                display: none;
+
+            }
+
+
+            .project-cards {
+
+                grid-template-columns: 1fr 1fr;
+
+            }
+
+
+            .project-card {
+
+                padding: 20px 15px;
+
+            }
+
+
+            .system-showcase {
+
+                grid-template-columns: 1fr 1fr;
+
+            }
+
+
+            .palette {
+
+                grid-column: 1 / 3;
+
+            }
+
+
+            .lienzo-gallery {
+
+                grid-template-columns: 1fr 1fr;
+
+                grid-template-rows: repeat(2, 220px);
+
+            }
+
+
+            .applications-grid {
+
+                grid-template-columns: 1fr 1fr;
+
+            }
+
+
+            .application img {
+
+                height: 190px;
+
+            }
+
+
+            .laminas-main img {
+
+                height: 280px;
+
+            }
+
+
+            .laminas-strip {
+
+                grid-template-columns: repeat(4, 1fr);
+
+            }
+
+
+            .screens-gallery {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .screen-photo {
+
+                height: 270px;
+
+            }
+
+
+            .result-gallery {
+
+                grid-template-columns: 1fr 1fr;
+
+                grid-template-rows: 260px 150px 170px;
+
+                height: auto;
+
+            }
+
+
+            .result-gallery figure:nth-child(1) {
+                grid-column: 1 / 3;
+                grid-row: 1;
+            }
+
+            .result-gallery figure:nth-child(2) {
+                grid-column: 1;
+                grid-row: 2;
+            }
+
+            .result-gallery figure:nth-child(3) {
+                grid-column: 2;
+                grid-row: 2;
+            }
+
+            .result-gallery figure:nth-child(4) {
+                grid-column: 1 / 3;
+                grid-row: 3;
+            }
+
+
+            .result-quote {
+
+                border-left: 0;
+
+                border-top: 1px solid rgba(255, 255, 255, .25);
+
+                padding: 25px 0 0;
+
+                margin-top: 5px;
+
+            }
+
+
+            .hero-copy,
+            .hero-quote {
+                transform: none;
+            }
+
+            .footer-inner {
+
+                flex-direction: column;
+
+                align-items: flex-start;
+
+            }
+
+        }
+
+    </style>
+
+    <link rel="icon" type="image/jpeg" href="isl-icono.jpg">
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================================
+         NAVEGACIÓN
+    ========================================================= -->
+
+    <header class="topbar">
+
+        <a
+            href="../../index.html"
+            class="brand"
+        >
+
+            <img
+                src="isl-icono.jpg"
+                alt=""
+                class="brand-icon"
+            >
+
+            <span class="brand-text">
+
+                <strong>
+                    Daniela Pasmiño
+                </strong>
+
+                <span>
+                    Diseño gráfico · Dirección de arte
+                </span>
+
+            </span>
+
+        </a>
+
+
+        <a
+            href="../../index.html#proyectos"
+            class="back"
+        >
+            ← Volver a proyectos
+        </a>
+
+    </header>
+
+
+    <main>
+
+
+        <!-- =====================================================
+             HERO / HEADER
+        ===================================================== -->
+
+        <section class="hero">
+
+
+            <!-- =================================================
+                 IMAGEN COMPLETA
+            ================================================= -->
+
+            <div class="hero-photo">
+
+                <img
+                    src="Banner%208M%20en%20edificio%20moderno.png"
+                    alt="Lienzo institucional ISL instalado en la fachada"
+                >
+
+            </div>
+
+
+            <!-- =================================================
+                 IZQUIERDA · INFORMACIÓN
+            ================================================= -->
+
+            <div class="hero-copy">
+
+                <div class="eyebrow">
+                    Proyecto
+                </div>
+
+
+                <h1>
+                    Gráfica<br>
+                    Institucional<br>
+                    8M · ISL
+                </h1>
+
+
+                <p class="hero-text">
+
+                    Una campaña gráfica que conmemora, visibiliza
+                    y reafirma el compromiso del Instituto de Seguridad
+                    Laboral con la equidad de género, a través de una
+                    narrativa histórica y educativa sobre los aportes
+                    de las mujeres en Chile.
+
+                </p>
+
+
+                <div class="tools">
+
+                    <span>
+                        HERRAMIENTAS
+                    </span>
+
+                    <span>
+                        Ai&nbsp;&nbsp; Adobe Illustrator
+                    </span>
+
+                    <span>
+                        Ps&nbsp;&nbsp; Adobe Photoshop
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 DERECHA · FRASE
+            ================================================= -->
+
+            <div class="hero-quote">
+
+                <p>
+
+                    “Una gráfica que rescata
+                    la historia, visibiliza
+                    la lucha y proyecta un
+                    mensaje de igualdad para
+                    el presente y futuro.”
+
+                </p>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- =====================================================
+             01 EL PROYECTO
+        ===================================================== -->
+
+        <section class="section project-section">
+
+            <div class="container">
+
+                <div class="project-grid">
+
+
+                    <div class="project-description">
+
+                        <div class="section-number">
+                            01
+                        </div>
+
+                        <h2 class="section-title">
+                            El proyecto
+                        </h2>
+
+
+                        <p>
+
+                            El Día Internacional de la Mujer (8M) es una
+                            instancia clave para visibilizar la importancia
+                            de la equidad de género, la seguridad social y
+                            el compromiso institucional con las personas.
+                            Esta campaña buscó transmitir un mensaje claro,
+                            respetuoso y coherente con los valores del ISL.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="project-cards">
+
+
+                        <article class="project-card reveal">
+
+                            <div class="card-icon">
+                                ◎
+                            </div>
+
+                            <h3>
+                                Objetivo
+                            </h3>
+
+                            <p>
+                                Comunicar un mensaje institucional
+                                en el contexto del 8M.
+                            </p>
+
+                        </article>
+
+
+                        <article class="project-card reveal">
+
+                            <div class="card-icon">
+                                ♧
+                            </div>
+
+                            <h3>
+                                Desafío
+                            </h3>
+
+                            <p>
+                                Transmitir un mensaje claro,
+                                respetuoso y coherente con
+                                los valores institucionales.
+                            </p>
+
+                        </article>
+
+
+                        <article class="project-card reveal">
+
+                            <div class="card-icon">
+                                ⚙
+                            </div>
+
+                            <h3>
+                                Resultado
+                            </h3>
+
+                            <p>
+                                Una pieza visual efectiva,
+                                con alcance en espacios físicos,
+                                digitales y de alta visibilidad.
+                            </p>
+
+                        </article>
+
+
+                        <article class="project-card reveal">
+
+                            <div class="card-icon">
+                                ♡
+                            </div>
+
+                            <h3>
+                                Impacto
+                            </h3>
+
+                            <p>
+                                Mensajes de equidad, respeto
+                                y compromiso adaptados
+                                a distintos soportes.
+                            </p>
+
+                        </article>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             02 SISTEMA GRÁFICO
+        ===================================================== -->
+
+        <section class="section system-section">
+
+            <div class="container">
+
+
+                <div class="system-grid">
+
+
+                    <div class="system-copy">
+
+                        <div class="section-number">
+                            02
+                        </div>
+
+                        <h2 class="section-title">
+                            Sistema gráfico
+                        </h2>
+
+
+                        <p>
+
+                            Se desarrolló una propuesta gráfica con énfasis
+                            en jerarquía tipográfica, color simbólico y
+                            elementos visuales que refuerzan el mensaje
+                            de unidad, equidad y visibilidad.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="system-showcase">
+
+
+                        <div class="system-card reveal">
+
+                            <img
+                                src="Logotipo%20ISL%20sobre%20fondo%20p%C3%BArpura.jpg"
+                                alt="Identidad ISL"
+                            >
+
+                        </div>
+
+
+                        <div class="system-card reveal">
+
+                            <img
+                                src="Seguridad%20Social%20con%20Equidad%20de%20G%C3%A9nero.jpg"
+                                alt="Sistema gráfico ISL"
+                            >
+
+                        </div>
+
+
+                        <div class="system-card reveal">
+
+                            <img
+                                src="Cartel%20moderno%208M%20en%20p%C3%BArpura%20y%20turquesa.jpg"
+                                alt="Elementos visuales del proyecto"
+                            >
+
+                        </div>
+
+
+                        <div class="palette reveal">
+
+                            <span class="palette-label">
+                                Paleta cromática
+                            </span>
+
+
+                            <div class="colors">
+
+                                <span class="color one"></span>
+
+                                <span class="color two"></span>
+
+                                <span class="color three"></span>
+
+                                <span class="color four"></span>
+
+                            </div>
+
+
+                            <span class="palette-label">
+                                Elementos gráficos
+                            </span>
+
+
+                            <div class="waves">
+
+                                <span class="wave"></span>
+
+                                <span class="wave"></span>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             03 LIENZO INSTITUCIONAL
+        ===================================================== -->
+
+        <section class="section lienzo-section">
+
+            <div class="container">
+
+
+                <div class="lienzo-grid">
+
+
+                    <div class="lienzo-copy">
+
+                        <div class="section-number">
+                            03
+                        </div>
+
+
+                        <h2 class="section-title">
+                            Lienzo institucional
+                            en fachada
+                        </h2>
+
+
+                        <p>
+
+                            El diseño fue implementado en gran formato sobre
+                            tela MESH, instalado en la fachada del edificio
+                            institucional del ISL. La pieza refuerza
+                            visualmente el mensaje de equidad de género
+                            en un contexto urbano real y visible.
+
+                        </p>
+
+
+                        <div class="details">
+
+                            <strong>
+                                Formato:
+                            </strong>
+
+                            Lienzo en tela MESH (16 × 5 m)
+
+                            <br>
+
+
+                            <strong>
+                                Ubicación:
+                            </strong>
+
+                            Fachada del edificio institucional del ISL
+
+                            <br>
+
+
+                            <strong>
+                                Rol:
+                            </strong>
+
+                            Diseño gráfico completo
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="lienzo-gallery">
+
+
+                        <figure class="reveal">
+
+                            <img
+                                src="Fachada%20moderna%20con%20gran%20banner%208M.png"
+                                alt="Lienzo institucional ISL"
+                            >
+
+                        </figure>
+
+
+                        <figure class="reveal">
+
+                            <img
+                                src="Gran%20pancarta%20morada%20del%20ISL%20en%20fachada%20urbana.png"
+                                alt="Aplicación institucional ISL"
+                            >
+
+                        </figure>
+
+
+                        <figure class="reveal">
+
+                            <img
+                                src="Edificio%20urbano%20con%20pancarta%20morada%208M.png"
+                                alt="Gráfica ISL"
+                            >
+
+                        </figure>
+
+
+                        <figure class="reveal">
+
+                            <img
+                                src="Fachada%20urbana%20con%20pancarta%20morada%208M.png"
+                                alt="Identidad ISL"
+                            >
+
+                        </figure>
+
+
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             04 APLICACIONES
+        ===================================================== -->
+
+        <section class="section applications-section">
+
+            <div class="container">
+
+
+                <div class="section-number">
+                    04
+                </div>
+
+
+                <h2 class="section-title">
+                    Aplicaciones
+                </h2>
+
+
+                <p class="section-intro">
+
+                    El sistema gráfico fue adaptado a distintos soportes
+                    institucionales, manteniendo la coherencia visual y
+                    claridad comunicacional.
+
+                </p>
+
+
+                <div class="applications-grid">
+
+
+                    <figure class="application reveal">
+
+                        <img
+                            src="pendon_institucional_800x650.jpg"
+                            alt="Pendón institucional"
+                        >
+
+                        <figcaption>
+                            Pendón institucional
+                        </figcaption>
+
+                    </figure>
+
+
+                    <figure class="application reveal">
+
+                        <img
+                            src="Pulseras%20ISL%20por%20la%20Equidad%20de%20G%C3%A9nero.png"
+                            alt="Pulseras ISL"
+                        >
+
+                        <figcaption>
+                            Pulseras institucionales
+                        </figcaption>
+
+                    </figure>
+
+
+                    <figure class="application reveal">
+
+                        <img
+                            src="Calendario%20de%20escritorio%20Seguridad%20Social.png"
+                            alt="Calendario institucional"
+                        >
+
+                        <figcaption>
+                            Calendario institucional 
+                        </figcaption>
+
+                    </figure>
+
+
+                    <figure class="application reveal">
+
+                        <img
+                            src="Calendario%20de%20escritorio%20ISL%202024-2025.png"
+                            alt="Calendario institucional"
+                        >
+
+                        <figcaption>
+                            Calendario anual  
+                        </figcaption>
+
+                    </figure>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             05 LÁMINAS IMPRESAS
+        ===================================================== -->
+
+        <section class="section laminas-section">
+
+            <div class="container">
+
+
+                <div class="laminas-grid">
+
+
+                    <div class="laminas-copy">
+
+                        <div class="section-number">
+                            05
+                        </div>
+
+
+                        <h2 class="section-title">
+                            Láminas impresas
+                            y exhibición
+                        </h2>
+
+
+                        <p>
+
+                            Se diseñó una serie de 17 láminas informativas
+                            que recorren hitos de la historia de las mujeres
+                            en Chile, con una línea gráfica unificada,
+                            jerarquía visual clara y un lenguaje cercano.
+                            Las piezas fueron impresas y enmarcadas para
+                            ser exhibidas en el edificio institucional
+                            del ISL.
+
+                        </p>
+
+                    </div>
+
+
+                    <div>
+
+
+                        <div class="laminas-main reveal">
+
+                            <img
+                                src="Historia%20del%20voto%20femenino%20en%20Chile.png"
+                                alt="Láminas impresas instaladas en el edificio"
+                            >
+
+                        </div>
+
+
+                       
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             06 PROYECCIÓN
+        ===================================================== -->
+
+        <section class="section screens-section">
+
+            <div class="container">
+
+
+                <div class="screens-grid">
+
+
+                    <div class="screens-copy">
+
+                        <div class="section-number">
+                            06
+                        </div>
+
+
+                        <h2 class="section-title">
+                            Proyección
+                            en pantallas
+                        </h2>
+
+
+                        <p>
+
+                            Las piezas gráficas también fueron adaptadas
+                            para ser proyectadas en pantallas durante
+                            el evento de conmemoración, permitiendo
+                            ampliar el alcance del mensaje a una
+                            audiencia mayor.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="screens-gallery">
+
+
+                        <figure class="screen-photo reveal">
+
+                            <img
+                                src="pantalla%202.jpg"
+                                alt="Gráfica proyectada en pantalla"
+                            >
+
+                        </figure>
+
+
+                        <figure class="screen-photo reveal">
+
+                            <img
+                                src="pantalla%203.jpg"
+                                alt="Proyección durante el evento"
+                            >
+
+                        </figure>
+
+
+                        <figure class="screen-photo reveal">
+
+                            <img
+                                src="pantalla1.jpg"
+                                alt="Pantalla del evento"
+                            >
+
+                        </figure>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             07 RESULTADO FINAL
+        ===================================================== -->
+
+        <section class="result-section">
+
+            <div class="container">
+
+
+                <div class="result-grid">
+
+
+                    <div class="result-copy">
+
+                        <div class="section-number">
+                            07
+                        </div>
+
+
+                        <h2 class="section-title">
+                            Resultado final
+                        </h2>
+
+
+                        <p>
+
+                            Una gráfica institucional coherente y de alto
+                            impacto, que combina historia, educación y
+                            comunicación visual para seguir promoviendo
+                            una sociedad más justa e igualitaria.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="result-gallery">
+
+
+                        <figure class="reveal">
+                            <img
+                                src="Banner%201.jpg"
+                                alt="Lienzo ISL en fachada"
+                            >
+                        </figure>
+
+
+                        <figure class="reveal">
+                            <img
+                                src="Pulseras%20ISL%20por%20la%20Equidad%20de%20G%C3%A9nero.png"
+                                alt="Pulseras ISL"
+                            >
+                        </figure>
+
+
+                        <figure class="reveal">
+                            <img
+                                src="pendon_institucional_800x650.jpg"
+                                alt="Pendón ISL"
+                            >
+                        </figure>
+
+
+                        <figure class="reveal">
+                            <img
+                                src="Historia%20del%20voto%20femenino%20en%20Chile.png"
+                                alt="Láminas ISL"
+                            >
+                        </figure>
+
+
+                    </div>
+
+
+                    <div class="result-quote">
+
+                        Diseño que comunica,
+                        inspira y genera impacto
+                        en espacios reales.
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================= -->
+
+    <footer>
+
+        <div class="container footer-inner">
+
+
+            <a href="../../index.html">
+                ← Volver al portafolio
+            </a>
+
+
+            <span>
+                © Daniela Pasmiño · Diseño gráfico institucional
+            </span>
+
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================================================
+         JAVASCRIPT
+    ========================================================= -->
+
+    <script>
+
+        const revealElements =
+            document.querySelectorAll(".reveal");
+
+
+        const observer =
+            new IntersectionObserver(
+
+                (entries) => {
+
+                    entries.forEach(
+
+                        (entry) => {
+
+                            if (entry.isIntersecting) {
+
+                                entry.target.classList.add("visible");
+
+                                observer.unobserve(entry.target);
+
+                            }
+
+                        }
+
+                    );
+
+                },
+
+                {
+                    threshold: 0.12
+                }
+
+            );
+
+
+        revealElements.forEach(
+
+            (element) => {
+
+                observer.observe(element);
+
+            }
+
+        );
+
+    </script>
+
+
+</body>
+
+</html>
