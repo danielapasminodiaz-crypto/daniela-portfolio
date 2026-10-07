@@ -836,6 +836,10 @@ footer {
         display: none;
     }
 
+    .topbar {
+        padding: 14px 4%;
+    }
+
     .hero {
         aspect-ratio: auto;
         display: block;
@@ -844,7 +848,8 @@ footer {
 
     .hero-image {
         position: relative;
-        height: 380px;
+        aspect-ratio: 1927 / 816;
+        height: auto;
     }
 
     .hero-copy {
@@ -922,10 +927,6 @@ footer {
 }
 
     @media (max-width:600px) {
-      .hero-image {
-        height: 300px;
-      }
-
       .hero-copy {
         padding: 32px 7% 40px;
       }
