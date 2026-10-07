@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -785,7 +786,7 @@
    ========================================================= */
 
 footer {
-  padding: 25px 5%;
+  padding: 50px 5% 55px;
   background: var(--paper);
 }
 
@@ -793,51 +794,32 @@ footer {
   width: min(1280px, 100%);
   margin: 0 auto;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  row-gap: 12px;
-  column-gap: 24px;
-  padding: 22px 0;
-  border-top: 1px solid #d8ccc0;
-  color: #8a7768;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: .1em;
-  text-transform: uppercase;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .footer-inner a {
-  transition: color .2s ease;
+  transition: opacity .2s ease;
+}
+
+.footer-back,
+.footer-top {
+  color: var(--espresso);
+  font-size: 15px;
+  font-weight: 700;
 }
 
 .footer-back:hover,
-.footer-links a:hover {
-  color: var(--espresso);
-}
-
-.footer-links {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  order: 2;
-  margin: 0 auto;
-}
-
-.footer-sep {
-  color: #cbb9a7;
+.footer-top:hover {
+  opacity: .6;
 }
 
 .footer-copy {
-  order: 3;
-  color: #b3a494;
-  font-size: 9px;
+  color: #8a7768;
+  font-size: 13px;
   font-weight: 400;
-  letter-spacing: .06em;
-}
-
-.footer-back {
-  order: 1;
+  letter-spacing: 0;
+  text-transform: none;
 }
 
 
@@ -846,6 +828,63 @@ footer {
 --------------------------------------------------------- */
 
 @media (max-width: 900px) {
+
+    .section {
+        padding: 70px 6%;
+    }
+
+    .hero-copy {
+        width: 100%;
+        padding: 110px 7% 40px;
+    }
+
+    .hero-title {
+        font-size: 48px;
+    }
+
+    .hero-title span {
+        font-size: 32px;
+    }
+
+    .concept-grid,
+    .identity-grid,
+    .logo-block,
+    .application-area,
+    .packaging-layout,
+    .packaging-gallery {
+        grid-template-columns: 1fr;
+        gap: 36px;
+    }
+
+    .identity-column {
+        min-height: auto;
+        padding: 45px 7%;
+    }
+
+    .identity-column + .identity-column {
+        border-left: none;
+        border-top: 1px solid #d9cec3;
+    }
+
+    .mood-heading {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .mood-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .palette {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .applications-heading {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
 
     .resultado-final {
         grid-template-columns: 1fr;
@@ -865,6 +904,42 @@ footer {
 }
 
     @media (max-width:600px) {
+      .hero {
+        aspect-ratio: auto;
+        min-height: 560px;
+      }
+
+      .hero-copy {
+        padding: 100px 7% 36px;
+      }
+
+      .hero-title {
+        font-size: 38px;
+      }
+
+      .hero-title span {
+        font-size: 26px;
+      }
+
+      .mood-grid { grid-template-columns: repeat(2, 1fr); }
+      .mood-grid img { height: 150px; }
+
+      .palette { grid-template-columns: repeat(2, 1fr); }
+
+      .type-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      .packaging-side {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+      }
+
+      .packaging-side img:first-child {
+        grid-column: 1;
+      }
+
       .applications { padding:60px 6%; }
       .application-grid { grid-template-columns:1fr 1fr; }
       .application-grid img { height:190px; }
@@ -877,16 +952,6 @@ footer {
       .project-prev { grid-column:1; grid-row:2; }
       .project-next { grid-column:2; grid-row:2; }
 
-      .footer-inner {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 14px;
-      }
-
-      .footer-links {
-        margin: 0;
-      }
     }
   </style>
   <style>
@@ -920,7 +985,7 @@ footer {
        ========================================================= -->
 
   <main>
-<section class="hero">
+<section class="hero" id="inicio">
 
   <!-- IMAGEN COMPLETA DEL HERO -->
   <div class="hero-image">
@@ -1374,16 +1439,16 @@ footer {
       <div class="footer-inner">
 
         <a href="../index.html" class="footer-back">
-          ← Volver a proyectos
+          ← Volver al portafolio
         </a>
 
-        <div class="footer-links">
-          <a href="../index.html#proyectos">Todos los proyectos</a>
-          <span class="footer-sep" aria-hidden="true">·</span>
-          <a href="../index.html#contacto">Contacto</a>
-        </div>
+        <span class="footer-copy">
+          © 2026 Daniela Pasmiño · Diseñadora Gráfica &amp; Digital
+        </span>
 
-        <span class="footer-copy">© 2026 Daniela Pasmiño</span>
+        <a href="#inicio" class="footer-top">
+          Volver arriba ↑
+        </a>
 
       </div>
     </footer>
