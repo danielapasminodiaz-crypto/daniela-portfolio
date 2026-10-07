@@ -1,0 +1,1388 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href="assets/dp-favicon.png?v=4">
+  <title>Daniela Pasmiño · Diseñadora Gráfica & Digital</title>
+
+  <style>
+    /* =========================================================
+       RESET Y BASE
+    ========================================================= */
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f7f5f0;
+      color: #171717;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    /* =========================================================
+       COLORES
+    ========================================================= */
+    :root {
+      --negro: #0c0c0d;
+      --negro-suave: #151515;
+      --blanco: #ffffff;
+      --crema: #f7f5f0;
+      --dorado: #c99a4b;
+      --dorado-suave: #e0bd82;
+      --gris: #6b6964;
+      --linea: #ddd8cf;
+    }
+
+    /* =========================================================
+       HEADER
+    ========================================================= */
+    .header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 20;
+
+      height: 88px;
+      padding: 0 5%;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      color: var(--blanco);
+    }
+
+    .logo {
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--dorado);
+      font-size: 54px;
+      line-height: .8;
+      letter-spacing: -10px;
+      width: 70px;
+    }
+
+    .logo span:last-child {
+      position: relative;
+      left: 9px;
+      top: 7px;
+    }
+
+    .nav {
+      display: flex;
+      gap: 52px;
+      margin-left: auto;
+      margin-right: 70px;
+      font-size: 14px;
+    }
+
+    .nav a {
+      transition: color .25s ease;
+    }
+
+    .nav a:hover {
+      color: var(--dorado-suave);
+    }
+
+    .language {
+      border: 0;
+      background: transparent;
+      color: var(--blanco);
+      cursor: pointer;
+      font-size: 13px;
+    }
+
+    .language .active {
+      color: var(--dorado-suave);
+    }
+
+    /* =========================================================
+       HERO
+    ========================================================= */
+    .hero {
+      min-height: 650px;
+      position: relative;
+      overflow: hidden;
+
+      display: grid;
+      grid-template-columns: 43% 57%;
+      align-items: center;
+
+      padding: 125px 5% 70px;
+
+      color: var(--blanco);
+      background:
+        radial-gradient(
+          circle at 78% 48%,
+          rgba(104, 77, 38, .22),
+          transparent 38%
+        ),
+        #0c0c0d;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 5;
+      max-width: 550px;
+    }
+
+    .eyebrow {
+      color: var(--dorado-suave);
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: .18em;
+      margin: 0 0 16px;
+    }
+
+    .hero h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(62px, 6vw, 100px);
+      font-weight: 400;
+      line-height: .9;
+      letter-spacing: -.045em;
+      margin: 0 0 22px;
+    }
+
+    .role {
+      color: var(--dorado-suave);
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: .16em;
+      margin: 0 0 24px;
+    }
+
+    .hero-description {
+      max-width: 470px;
+      color: #e7e5e1;
+      font-size: 17px;
+      margin: 0 0 32px;
+    }
+
+    .hero-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 35px;
+
+      padding: 14px 20px;
+      border: 1px solid var(--dorado);
+      border-radius: 7px;
+
+      color: var(--blanco);
+      font-size: 13px;
+      font-weight: 600;
+
+      transition:
+        background .25s ease,
+        color .25s ease,
+        transform .25s ease;
+    }
+
+    .hero-button:hover {
+      background: var(--dorado);
+      color: #111;
+      transform: translateY(-2px);
+    }
+
+    /* Imagen del Hero:
+       NO tiene un cuadrado propio.
+       Se funde con el fondo negro mediante máscaras. */
+    .hero-image-wrap {
+      position: absolute;
+      top: 80px;
+      right: -2%;
+      width: 67%;
+      height: calc(100% - 55px);
+
+      z-index: 2;
+
+      pointer-events: none;
+
+      -webkit-mask-image:
+        linear-gradient(
+          to left,
+          black 72%,
+          rgba(0,0,0,.85) 84%,
+          transparent 100%
+        ),
+        linear-gradient(
+          to bottom,
+          transparent 0%,
+          black 10%,
+          black 88%,
+          transparent 100%
+        );
+
+      -webkit-mask-composite: intersect;
+      mask-image:
+        linear-gradient(
+          to left,
+          black 72%,
+          rgba(0,0,0,.85) 84%,
+          transparent 100%
+        ),
+        linear-gradient(
+          to bottom,
+          transparent 0%,
+          black 10%,
+          black 88%,
+          transparent 100%
+        );
+
+      mask-composite: intersect;
+    }
+
+    .hero-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      mix-blend-mode: normal;
+      display: block;
+    }
+
+    /* =========================================================
+       FRANJA: SOBRE MÍ / ENFOQUE / HERRAMIENTAS
+    ========================================================= */
+    .intro {
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr;
+
+      padding: 42px 5% 38px;
+
+      background: var(--crema);
+      border-bottom: 1px solid var(--linea);
+    }
+
+    .intro-column {
+      padding: 0 30px;
+    }
+
+    .intro-column:first-child {
+      padding-left: 0;
+    }
+
+    .intro-column:last-child {
+      padding-right: 0;
+    }
+
+    .intro-column + .intro-column {
+      border-left: 1px solid var(--linea);
+    }
+
+    .section-title {
+      margin: 0 0 9px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: .14em;
+    }
+
+    .gold-line {
+      width: 26px;
+      height: 2px;
+      background: var(--dorado);
+      margin-bottom: 18px;
+    }
+
+    .about-text {
+      font-size: 13px;
+      color: #44413d;
+      margin: 0;
+    }
+
+    .text-link {
+      display: inline-flex;
+      gap: 12px;
+      margin-top: 14px;
+
+      color: #a87835;
+      font-size: 13px;
+    }
+
+    /* -------------------------
+       Mi enfoque
+    ------------------------- */
+    .steps {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .step {
+      flex: 1;
+      min-width: 0;
+      text-align: center;
+      position: relative;
+    }
+
+    .step:not(:last-child)::after {
+      content: "";
+      position: absolute;
+
+      top: 23px;
+      right: -15%;
+      width: 30%;
+
+      border-top: 1px dotted #d2c1a5;
+    }
+
+    .step-icon {
+      width: 46px;
+      height: 46px;
+      margin: 0 auto 10px;
+
+      display: grid;
+      place-items: center;
+
+      border: 1px solid #d9c8aa;
+      border-radius: 50%;
+
+      color: #a87835;
+      font-size: 22px;
+    }
+
+    .step-number {
+      display: block;
+      color: #a87835;
+      font-size: 11px;
+    }
+
+    .step-name {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      margin: 2px 0;
+    }
+
+    .step-description {
+      display: block;
+      color: #6b6862;
+      font-size: 10px;
+      line-height: 1.4;
+    }
+
+    /* -------------------------
+       Herramientas
+    ------------------------- */
+    .tools {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px 10px;
+    }
+
+    .tool {
+      text-align: center;
+    }
+
+    .tool-icon {
+      width: 38px;
+      height: 38px;
+      margin: 0 auto 6px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 7px;
+
+      color: white;
+      font-weight: 700;
+      font-size: 17px;
+    }
+
+    .tool-name {
+      color: #5d5953;
+      font-size: 9px;
+    }
+
+    .photoshop { background: #001e36; }
+    .illustrator { background: #3b1700; }
+    .indesign { background: #4b0018; }
+    .xd { background: #280040; }
+    .figma { background: #222; }
+    .webflow { background: #2559e8; }
+    .notion {
+      background: white;
+      color: #111;
+      border: 1px solid #111;
+    }
+
+    /* =========================================================
+       PROYECTOS
+    ========================================================= */
+    .projects {
+      padding: 42px 5% 52px;
+      background: #fbfaf7;
+    }
+
+    .projects-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      margin-bottom: 24px;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 14px;
+    }
+
+    .project-card {
+      overflow: hidden;
+      background: white;
+      border-radius: 12px;
+
+      box-shadow: 0 5px 16px rgba(30,25,18,.07);
+
+      transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 30px rgba(30,25,18,.13);
+    }
+
+    .project-image {
+    height: 205px;
+    position: relative;
+    overflow: hidden;
+    background: #eee;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+
+    object-fit: cover;
+    object-position: center;
+
+    transition: transform .4s ease;
+}
+      
+   
+
+.project-card:hover .project-image img {
+    transform: scale(1.05);
+}
+
+    .project-image::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to top,
+        rgba(0,0,0,.35),
+        transparent 60%
+      );
+    }
+
+    .project-image span {
+      position: relative;
+      z-index: 2;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 19px;
+    }
+
+    .todo { background: linear-gradient(135deg,#d7dfca,#8ca26e); }
+    .museo { background: linear-gradient(135deg,#2d2924,#806b54); }
+    .isl { background: linear-gradient(135deg,#dce8f7,#2b65ad); }
+    .turquia { background: linear-gradient(135deg,#8294a0,#2c3144); }
+    .cafe { background: linear-gradient(135deg,#1e382d,#0c1a14); }
+    .miel { background: linear-gradient(135deg,#e8c99b,#a56d27); }
+
+    .project-info {
+      position: relative;
+      padding: 12px 13px 15px;
+    }
+
+    .project-info h3 {
+      font-size: 14px;
+      margin: 0 0 3px;
+    }
+
+    .project-info p {
+      margin: 0;
+      color: #77736c;
+      font-size: 10px;
+    }
+
+    .project-arrow {
+      position: absolute;
+      right: 13px;
+      bottom: 13px;
+      font-size: 17px;
+    }
+
+    /* =========================================================
+       TODO PERRO DESTACADO
+    ========================================================= */
+    .featured {
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 34% 66%;
+      align-items: center;
+      min-height: 520px;
+      padding: 72px 5%;
+      background: #edf1e4;
+      color: #171717;
+    }
+
+    .featured::before {
+      content: "";
+      position: absolute;
+      width: 520px;
+      height: 520px;
+      right: 10%;
+      top: -180px;
+      border-radius: 50%;
+      background: rgba(170, 190, 139, .10);
+      filter: blur(20px);
+    }
+
+    .featured-content {
+      position: relative;
+      z-index: 2;
+      max-width: 390px;
+      padding-right: 35px;
+    }
+
+    .featured .section-title {
+      color: #171717;
+    }
+
+    .featured h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(52px, 5vw, 76px);
+      font-weight: 400;
+      line-height: .95;
+      letter-spacing: -.04em;
+      margin: 0 0 10px;
+    }
+
+    .featured-role {
+      color: #315638;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: .08em;
+      margin: 0 0 20px;
+    }
+
+    .featured-description {
+      color: #4d5349;
+      font-size: 14px;
+      line-height: 1.75;
+      margin: 0;
+    }
+
+    .dark-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 25px;
+    margin-top: 25px;
+    padding: 13px 18px;
+
+    border: 1px solid #171717;
+    border-radius: 6px;
+
+    background: #171717;
+    color: #e0bd82;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+    .dark-button:hover {
+      background: #c99a4b;
+      color: #111;
+      transform: translateY(-2px);
+    }
+
+    .todo-mockup {
+      position: relative;
+      z-index: 2;
+      min-height: 370px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px 0 20px 30px;
+    }
+
+    .todo-mockup img {
+      width: min(760px, 100%);
+      height: auto;
+      display: block;
+      filter: drop-shadow(0 25px 35px rgba(30,45,30,.18));
+      transition: transform .35s ease;
+    }
+
+    .todo-mockup:hover img {
+      transform: translateY(-4px);
+    }
+
+    /* =========================================================
+       FOOTER
+    ========================================================= */
+    .footer {
+    display: grid;
+    grid-template-columns: 42% 58%;
+    align-items: center;
+
+    padding: 55px 5%;
+
+    color: white;
+    background: var(--negro);
+}
+      
+      
+      .footer-email {
+    color: #ddd9d3;
+    text-decoration: none;
+    font-size: 13px;
+    transition: color .25s ease;
+}
+
+.footer-email:hover {
+    color: #e0bd82;
+}
+      
+      .footer-contact {
+    max-width: 520px;
+}
+
+.footer-details {
+    margin-top: 22px;
+}
+
+.footer-details .footer-text {
+    margin: 8px 0;
+}
+
+    .footer-title {
+      color: var(--dorado-suave);
+      font-size: 13px;
+      letter-spacing: .14em;
+      font-weight: 600;
+    }
+
+    .footer-text {
+      color: #ddd9d3;
+      font-size: 13px;
+    }
+
+    .socials {
+      display: flex;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .social {
+      width: 35px;
+      height: 35px;
+
+      display: grid;
+      place-items: center;
+
+      border: 1px solid #75613e;
+      border-radius: 50%;
+
+      color: var(--dorado-suave);
+      font-size: 12px;
+    }
+
+   .footer-brand {
+    min-height: 220px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    border-left: 1px solid #403e3a;
+    padding-left: 40px;
+    text-align: center;
+}
+
+    .footer-dp {
+      color: var(--dorado);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 64px;
+      letter-spacing: -11px;
+    }
+
+    .footer-dp span:last-child {
+      position: relative;
+      left: 10px;
+      top: 8px;
+    }
+
+    .footer-brand p,
+    .back-top {
+      color: #ccc8c2;
+      font-size: 12px;
+    }
+
+    /* =========================================================
+       RESPONSIVE
+    ========================================================= */
+    @media (max-width: 1100px) {
+      .projects-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .intro {
+        grid-template-columns: 1fr 2fr;
+      }
+
+      .tools-column {
+        grid-column: 1 / -1;
+        border-left: 0 !important;
+        border-top: 1px solid var(--linea);
+        margin-top: 28px;
+        padding-top: 28px;
+      }
+
+      .tools {
+        display: flex;
+        gap: 25px;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .header {
+        height: 72px;
+        padding: 0 6%;
+      }
+
+      .nav {
+        gap: 16px;
+        margin: 0;
+        font-size: 11px;
+      }
+
+      .language {
+        display: none;
+      }
+
+      .hero {
+        min-height: 760px;
+        display: block;
+        padding: 120px 6% 45px;
+      }
+
+      .hero h1 {
+        font-size: 60px;
+      }
+
+      .hero-image-wrap {
+        top: 355px;
+        right: -12%;
+        width: 125%;
+        height: 430px;
+
+        -webkit-mask-image:
+          linear-gradient(to bottom, transparent 0%, black 16%, black 82%, transparent 100%);
+        mask-image:
+          linear-gradient(to bottom, transparent 0%, black 16%, black 82%, transparent 100%);
+      }
+
+      .intro {
+        display: block;
+        padding: 35px 6%;
+      }
+
+      .intro-column {
+        padding: 0 !important;
+      }
+
+      .intro-column + .intro-column {
+        border-left: 0;
+        border-top: 1px solid var(--linea);
+        margin-top: 30px;
+        padding-top: 28px !important;
+      }
+
+      .steps {
+        overflow-x: auto;
+        padding-bottom: 8px;
+      }
+
+      .step {
+        min-width: 95px;
+      }
+
+      .step:not(:last-child)::after {
+        display: none;
+      }
+
+      .tools {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .projects {
+        padding: 35px 6%;
+      }
+
+      .projects-heading {
+        display: block;
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .featured {
+        display: block;
+        padding: 55px 6%;
+      }
+
+      .featured-content {
+        max-width: none;
+        padding-right: 0;
+      }
+
+      .todo-mockup {
+        margin-top: 35px;
+        padding-left: 0;
+      }
+
+      .todo-browser {
+        width: 100%;
+      }
+
+      .todo-process {
+        position: static;
+        justify-content: center;
+        margin-top: 18px;
+      }
+
+      .footer {
+        display: block;
+        padding: 38px 6%;
+      }
+
+      .footer-brand {
+        border-left: 0;
+        border-top: 1px solid #403e3a;
+        margin-top: 30px;
+        padding: 25px 0 0;
+        text-align: left;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .nav a:nth-child(2),
+      .nav a:nth-child(3) {
+        display: none;
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .project-image {
+        height: 220px;
+      }
+
+      .tools {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .featured h2 {
+        font-size: 48px;
+      }
+
+      .todo-browser {
+        height: 255px;
+        border-width: 4px;
+      }
+
+      .todo-site {
+        padding: 15px 17px;
+      }
+
+      .todo-nav-links {
+        display: none;
+      }
+
+      .todo-hero-copy {
+        width: 58%;
+        margin-top: 28px;
+      }
+
+      .todo-hero-copy h3 {
+        font-size: 23px;
+      }
+
+      .todo-house {
+        width: 45%;
+        height: 65%;
+      }
+
+      .todo-process span {
+        font-size: 7px;
+        padding: 5px 7px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =======================================================
+       HEADER
+  ======================================================== -->
+  <header class="header">
+
+    <a href="#inicio" class="logo" aria-label="Inicio">
+      <span>D</span><span>P</span>
+    </a>
+
+    <nav class="nav" aria-label="Navegación principal">
+      <a href="#proyectos">Proyectos</a>
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#enfoque">Enfoque</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+
+    
+
+  </header>
+
+
+  <main id="inicio">
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+    <section class="hero">
+
+      <div class="hero-content">
+
+        <p class="eyebrow">HOLA, SOY</p>
+
+        <h1>
+          Daniela<br>
+          Pasmiño
+        </h1>
+
+        <p class="role">
+          DISEÑADORA GRÁFICA &amp; DIGITAL
+        </p>
+
+        <p class="hero-description">
+          Diseño experiencias visuales que conectan
+          marcas, productos y personas.
+        </p>
+
+        <a href="#proyectos" class="hero-button">
+          Ver proyectos <span>→</span>
+        </a>
+
+      </div>
+
+      <div class="hero-image-wrap">
+        <img
+          src="assets/hero%20lapto.png"
+          alt="Espacio de trabajo de diseño con computador"
+          class="hero-image"
+        >
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         SOBRE MÍ / ENFOQUE / HERRAMIENTAS
+    ====================================================== -->
+    <section class="intro">
+
+      <!-- SOBRE MÍ -->
+      <article class="intro-column" id="sobre-mi">
+
+        <h2 class="section-title">SOBRE MÍ</h2>
+        <div class="gold-line"></div>
+
+        <p class="about-text">
+          Soy diseñadora gráfica titulada, apasionada por crear soluciones visuales que combinan creatividad, estrategia y diseño digital. Me interesa transformar ideas en experiencias claras, funcionales y pensadas para las personas.
+        </p>
+
+        <a href="#contacto" class="text-link">
+          Conoce más sobre mí <span>→</span>
+        </a>
+
+      </article>
+
+
+      <!-- MI ENFOQUE -->
+      <article class="intro-column" id="enfoque">
+
+        <h2 class="section-title">MI ENFOQUE</h2>
+        <div class="gold-line"></div>
+
+        <div class="steps">
+
+          <div class="step">
+            <div class="step-icon">♡</div>
+            <span class="step-number">01</span>
+            <span class="step-name">Comprender</span>
+            <span class="step-description">Conozco las necesidades y objetivos.</span>
+          </div>
+
+          <div class="step">
+            <div class="step-icon">⌕</div>
+            <span class="step-number">02</span>
+            <span class="step-name">Investigar</span>
+            <span class="step-description">Analizo el contexto y encuentro oportunidades.</span>
+          </div>
+
+          <div class="step">
+            <div class="step-icon">♧</div>
+            <span class="step-number">03</span>
+            <span class="step-name">Idear</span>
+            <span class="step-description">Genero ideas.</span>
+          </div>
+
+          <div class="step">
+            <div class="step-icon">✎</div>
+            <span class="step-number">04</span>
+            <span class="step-name">Diseñar</span>
+            <span class="step-description">Doy forma.</span>
+          </div>
+
+          <div class="step">
+            <div class="step-icon">▯</div>
+            <span class="step-number">05</span>
+            <span class="step-name">Prototipar</span>
+            <span class="step-description">Creo experiencias.</span>
+          </div>
+
+          <div class="step">
+            <div class="step-icon">↻</div>
+            <span class="step-number">06</span>
+            <span class="step-name">Iterar</span>
+            <span class="step-description">Mejoro y evoluciono.</span>
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- HERRAMIENTAS -->
+      <article class="intro-column tools-column">
+
+        <h2 class="section-title">HERRAMIENTAS</h2>
+        <div class="gold-line"></div>
+
+        <div class="tools">
+
+          <div class="tool">
+            <div class="tool-icon photoshop">Ps</div>
+            <span class="tool-name">Photoshop</span>
+          </div>
+
+          <div class="tool">
+            <div class="tool-icon illustrator">Ai</div>
+            <span class="tool-name">Illustrator</span>
+          </div>
+
+          <div class="tool">
+            <div class="tool-icon indesign">Id</div>
+            <span class="tool-name">InDesign</span>
+          </div>
+
+          <div class="tool">
+            <div class="tool-icon xd">Xd</div>
+            <span class="tool-name">Adobe XD</span>
+          </div>
+
+          <div class="tool">
+            <div class="tool-icon figma">F</div>
+            <span class="tool-name">Figma</span>
+          </div>
+
+          <div class="tool">
+            <div class="tool-icon webflow">W</div>
+            <span class="tool-name">Webflow</span>
+          </div>
+
+          <div class="tool">
+            <div class="tool-icon notion">N</div>
+            <span class="tool-name">Notion</span>
+          </div>
+
+        </div>
+
+      </article>
+
+    </section>
+
+
+    <!-- =====================================================
+         PROYECTOS
+    ====================================================== -->
+    <section class="projects" id="proyectos">
+
+      <div class="projects-heading">
+
+        <div>
+          <h2 class="section-title">PROYECTOS DESTACADOS</h2>
+          <div class="gold-line"></div>
+        </div>
+
+        <a href="proyectos/index.html" class="text-link">
+          Ver todos los proyectos <span>→</span>
+        </a>
+
+      </div>
+
+
+     <div class="projects-grid">
+
+    <!-- TODO PERRO -->
+    <a href="proyectos/todoperro/index.html" class="project-card">
+        <div class="project-image todo-image">
+            <img src="assets/ventanita4.png" alt="Proyecto TodoPerro">
+        </div>
+
+        <div class="project-info">
+            <h3>TodoPerro</h3>
+            <p>UX/UI · Diseño Web</p>
+            <span class="project-arrow">→</span>
+        </div>
+    </a>
+
+
+    <!-- MUSEO -->
+    <a href="proyectos/museo/index.html" class="project-card">
+        <div class="project-image">
+            <img src="assets/museo%20ventanita.png" alt="Proyecto Museo">
+        </div>
+
+        <div class="project-info">
+            <h3>Museo</h3>
+            <p>Diseño Digital · UX/UI</p>
+            <span class="project-arrow">→</span>
+        </div>
+    </a>
+
+
+    <!-- ISL -->
+    <a href="proyectos/isl/index.html" class="project-card">
+        <div class="project-image">
+            <img src="assets/islventanita.png" alt="Proyecto ISL">
+        </div>
+
+        <div class="project-info">
+            <h3>ISL</h3>
+            <p>Diseño Institucional</p>
+            <span class="project-arrow">→</span>
+        </div>
+    </a>
+
+
+    <!-- TURQUÍA -->
+    <a href="proyectos/turquia/index.html" class="project-card">
+        <div class="project-image">
+            <img src="assets/turquia%20ventanita.png" alt="Proyecto Turquía">
+        </div>
+
+        <div class="project-info">
+            <h3>Turquía</h3>
+            <p>Diseño Editorial</p>
+            <span class="project-arrow">→</span>
+        </div>
+    </a>
+
+
+    <!-- EL CAFÉ DE TUS OJOS -->
+    <a href="proyectos/cafe/index.html" class="project-card">
+        <div class="project-image">
+            <img src="assets/el%20cafe%20de%20tus%20ojos%20ventanita.png" alt="Proyecto El Café de tus Ojos">
+        </div>
+
+        <div class="project-info">
+            <h3>El Café de tus Ojos</h3>
+            <p>Branding</p>
+            <span class="project-arrow">→</span>
+        </div>
+    </a>
+
+
+    <!-- MIEL DE AMOR -->
+    <a href="proyectos/miel/index.html" class="project-card">
+        <div class="project-image">
+            <img src="assets/miel%20ventanita.png" alt="Proyecto Miel de Amor">
+        </div>
+
+        <div class="project-info">
+            <h3>Miel de Amor</h3>
+            <p>Branding · Packaging</p>
+            <span class="project-arrow">→</span>
+        </div>
+    </a>
+
+</div>
+
+    </section>
+
+
+    <!-- =====================================================
+         TODO PERRO DESTACADO
+    ====================================================== -->
+    <section class="featured">
+
+      <div class="featured-content">
+        <p class="section-title">PROYECTO DESTACADO</p>
+        <div class="gold-line"></div>
+
+        <h2>TodoPerro</h2>
+
+        <p class="featured-role">
+          DISEÑO UX/UI · SITIO WEB
+        </p>
+
+        <p class="featured-description">
+          Diseñé una experiencia digital para una marca de casas personalizadas para perros, buscando que el proceso de elección y compra fuera claro, simple y cercano.
+        </p>
+
+        <a href="proyectos/todoperro/index.html" class="dark-button">
+          Ver proyecto completo <span>→</span>
+        </a>
+      </div>
+
+      <div class="todo-mockup">
+        <img
+          src="assets/loki.png"
+          alt="Mockup del sitio web TodoPerro en computador y celular"
+        >
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =======================================================
+       FOOTER
+  ======================================================== -->
+ <footer class="footer" id="contacto">
+
+    <!-- CONTACTO -->
+    <div class="footer-contact">
+
+        <p class="footer-title">
+            ¿TRABAJAMOS JUNTOS?
+        </p>
+
+        <p class="footer-text">
+            Estoy abierta a nuevos proyectos y oportunidades.
+            <br>
+            ¡Hablemos de tu próxima idea!
+        </p>
+
+        <div class="footer-details">
+<a
+    href="mailto:danielapasminodiaz@gmail.com"
+    class="footer-email"
+>
+    ✉ &nbsp; danielapasminodiaz@gmail.com
+</a>
+
+            <p class="footer-text">
+                📍 &nbsp; Chile
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- MARCA -->
+    <div class="footer-brand">
+
+        <div class="footer-dp">
+            <span>D</span><span>P</span>
+        </div>
+
+        <p>
+            © 2026 Daniela Pasmiño<br>
+            Diseñadora Gráfica &amp; Digital
+        </p>
+
+        <a href="#inicio" class="back-top">
+            Volver arriba ↑
+        </a>
+
+    </div>
+
+</footer>
+
+
+  <!-- =======================================================
+       JAVASCRIPT
+  ======================================================== -->
+  <script>
+
+    // Navegación suave para los enlaces internos
+    document.querySelectorAll('a[href^="#"]').forEach(function(link) {
+
+      link.addEventListener("click", function(event) {
+
+        const target = document.querySelector(
+          link.getAttribute("href")
+        );
+
+        if (target) {
+          event.preventDefault();
+
+          target.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+          });
+        }
+
+      });
+
+    });
+
+
+    // El header adquiere un fondo ligeramente más sólido al hacer scroll
+    const header = document.querySelector(".header");
+
+    window.addEventListener("scroll", function() {
+
+      if (window.scrollY > 40) {
+        header.style.background = "rgba(12,12,13,.88)";
+        header.style.backdropFilter = "blur(10px)";
+      } else {
+        header.style.background = "transparent";
+        header.style.backdropFilter = "none";
+      }
+
+    });
+
+  </script>
+
+</body>
+</html>
