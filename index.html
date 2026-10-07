@@ -793,17 +793,19 @@
       }
 
       .hero-image-wrap {
-        top: 405px;
-        right: -12%;
-        width: 125%;
-        height: 430px;
+  position: relative;
+  top: auto;
+  right: auto;
+  width: 125%;
+  height: 430px;
+  margin-left: -12%;
+  margin-top: 35px;
 
-        -webkit-mask-image:
-          linear-gradient(to bottom, transparent 0%, black 16%, black 82%, transparent 100%);
-        mask-image:
-          linear-gradient(to bottom, transparent 0%, black 16%, black 82%, transparent 100%);
-      }
-
+  -webkit-mask-image:
+    linear-gradient(to bottom, transparent 0%, black 16%, black 82%, transparent 100%);
+  mask-image:
+    linear-gradient(to bottom, transparent 0%, black 16%, black 82%, transparent 100%);
+}
       .intro {
         display: block;
         padding: 35px 6%;
