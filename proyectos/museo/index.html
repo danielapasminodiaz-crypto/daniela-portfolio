@@ -1376,16 +1376,57 @@
         ========================================================= */
 
         footer {
-            padding: 35px 0;
-
-            display: flex;
-            justify-content: space-between;
-            gap: 20px;
-            flex-wrap: wrap;
-
+            padding: 0;
+            display: block;
             font-size: 0.72rem;
-
             color: var(--gris);
+        }
+
+        .footer-inner {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px 24px;
+            padding: 22px 0 50px;
+            border-top: 1px solid rgba(17, 17, 17, 0.14);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .footer-back,
+        .footer-top {
+            color: var(--gris);
+            transition: color 0.2s ease;
+        }
+
+        .footer-back:hover,
+        .footer-top:hover {
+            color: var(--rojo);
+        }
+
+        .footer-back { order: 1; }
+
+        .footer-copy {
+            order: 2;
+            color: #9a9488;
+            font-size: 9px;
+            font-weight: 400;
+            letter-spacing: 0.06em;
+            text-transform: none;
+        }
+
+        .footer-top { order: 3; }
+
+        @media (max-width: 600px) {
+            .footer-inner {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 14px;
+            }
         }
 
 
@@ -1576,6 +1617,7 @@
 
             .hero {
                 min-height: 650px;
+                background-position: 72% center;
             }
 
 
@@ -1651,7 +1693,7 @@
 </head>
 
 
-<body>
+<body id="inicio">
 
 
     <!-- =========================================================
@@ -2537,35 +2579,28 @@
 
 
     <!-- =========================================================
-         NAVEGACIÓN ENTRE PROYECTOS
+        Footer 
     ========================================================= -->
 
-    <div class="container">
 
-        <div class="project-navigation">
-
-            <a href="../index.html">
-                ← Volver al portafolio
-            </a>
-
-
-            <a href="../isl/index.html">
-                Siguiente proyecto →
-            </a>
-
-        </div>
 
 
         <footer>
+            <div class="footer-inner">
 
-            <span>
-                © Portafolio de Daniela Pasmiño
-            </span>
+                <a href="../index.html" class="footer-back">
+                    ← Volver a proyectos
+                </a>
 
-            <span>
-                UI & UX · Diseño editorial · Identidad visual
-            </span>
+                <span class="footer-copy">
+                    © 2026 Daniela Pasmiño · Diseñadora Gráfica &amp; Digital
+                </span>
 
+                <a href="#inicio" class="footer-top">
+                    Volver arriba ↑
+                </a>
+
+            </div>
         </footer>
 
     </div>
