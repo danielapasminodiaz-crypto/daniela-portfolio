@@ -381,7 +381,7 @@
     ------------------------- */
     .tools {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 14px 10px;
     }
 
@@ -412,14 +412,9 @@
     .photoshop { background: #001e36; }
     .illustrator { background: #3b1700; }
     .indesign { background: #4b0018; }
-    .xd { background: #280040; }
     .figma { background: #222; }
-    .webflow { background: #2559e8; }
-    .notion {
-      background: white;
-      color: #111;
-      border: 1px solid #111;
-    }
+    .claude { background: #B87553; }
+    .office { background: #D83B01; }
 
     /* =========================================================
        PROYECTOS
@@ -761,8 +756,9 @@
       }
 
       .tools {
-        display: flex;
-        gap: 25px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px 10px;
       }
     }
 
@@ -837,7 +833,7 @@
 
       .tools {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 1fr);
       }
 
       .projects {
@@ -906,7 +902,7 @@
       }
 
       .tools {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 1fr);
       }
 
       .featured h2 {
@@ -1099,13 +1095,13 @@
         <div class="tools">
 
           <div class="tool">
-            <div class="tool-icon photoshop">Ps</div>
-            <span class="tool-name">Photoshop</span>
+            <div class="tool-icon illustrator">Ai</div>
+            <span class="tool-name">Illustrator</span>
           </div>
 
           <div class="tool">
-            <div class="tool-icon illustrator">Ai</div>
-            <span class="tool-name">Illustrator</span>
+            <div class="tool-icon photoshop">Ps</div>
+            <span class="tool-name">Photoshop</span>
           </div>
 
           <div class="tool">
@@ -1114,23 +1110,18 @@
           </div>
 
           <div class="tool">
-            <div class="tool-icon xd">Xd</div>
-            <span class="tool-name">Adobe XD</span>
-          </div>
-
-          <div class="tool">
             <div class="tool-icon figma">F</div>
             <span class="tool-name">Figma</span>
           </div>
 
           <div class="tool">
-            <div class="tool-icon webflow">W</div>
-            <span class="tool-name">Webflow</span>
+            <div class="tool-icon claude">C</div>
+            <span class="tool-name">Claude</span>
           </div>
 
           <div class="tool">
-            <div class="tool-icon notion">N</div>
-            <span class="tool-name">Notion</span>
+            <div class="tool-icon office">O</div>
+            <span class="tool-name">Office</span>
           </div>
 
         </div>
