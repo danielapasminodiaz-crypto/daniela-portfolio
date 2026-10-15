@@ -982,6 +982,31 @@
 
             .nav-toggle {
                 display: block;
+                flex-shrink: 0;
+            }
+
+            .nav.mobile-open {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                display: flex;
+                flex-direction: column;
+                gap: 0;
+                padding: 8px 6vw 16px;
+                background: rgba(246, 241, 233, 0.98);
+                backdrop-filter: blur(12px);
+                box-shadow: 0 10px 24px rgba(43, 38, 32, 0.10);
+            }
+
+            .nav.mobile-open a {
+                padding: 14px 0;
+                border-bottom: 1px solid var(--line);
+                font-size: 11px;
+            }
+
+            .nav.mobile-open a:last-child {
+                border-bottom: none;
             }
 
             .hero {
@@ -1078,28 +1103,66 @@
                 min-height: 760px;
             }
 
+            /* En móvil, el degradado se adapta al recorte vertical de la foto. */
+            .hero-image-frame::after {
+                background: linear-gradient(
+                    180deg,
+                    rgba(246, 241, 233, 0.48) 0%,
+                    rgba(246, 241, 233, 0.72) 48%,
+                    rgba(246, 241, 233, 0.84) 100%
+                );
+            }
+
             .hero .container {
                 min-height: 760px;
-                padding-bottom: 90px;
+                align-items: flex-start;
+                padding-top: 155px;
+                padding-bottom: 95px;
             }
 
             .hero-copy {
                 width: 100%;
+                max-width: 100%;
+                padding: 18px 16px 20px;
+                background: rgba(246, 241, 233, 0.76);
+                border: 1px solid rgba(255, 253, 252, 0.65);
+                border-radius: 4px;
+                backdrop-filter: blur(2px);
+            }
+
+            .hero-number {
+                margin-bottom: 12px;
+                font-size: 9px;
+                line-height: 1.6;
             }
 
             .hero h1 {
-                font-size: 67px;
+                font-size: clamp(48px, 13vw, 67px);
+                line-height: 0.98;
+                overflow-wrap: anywhere;
             }
 
             .hero-tagline {
                 max-width: 360px;
-                font-size: 25px;
-                line-height: 1.15;
+                margin-top: 16px;
+                font-size: clamp(22px, 6vw, 25px);
+                line-height: 1.2;
             }
 
             .hero-subtitle {
                 max-width: 340px;
-                margin-top: 18px;
+                margin-top: 14px;
+                font-size: 12px;
+                line-height: 1.75;
+            }
+
+            .hero-meta {
+                gap: 10px 16px;
+                margin-top: 20px;
+            }
+
+            .hero-meta span {
+                font-size: 8px;
             }
 
             .back-link {
@@ -1230,13 +1293,13 @@
 
         <nav class="nav">
 
-            <a href="../../index.html#proyectos">Proyectos</a>
+            <a href="#la-idea">La idea</a>
 
-            <a href="../../index.html#sobre-mi">Sobre mí</a>
+            <a href="#diseno-editorial">Diseño editorial</a>
 
-            <a href="../../index.html#enfoque">Enfoque</a>
+            <a href="#adaptacion-digital">Adaptación digital</a>
 
-            <a href="../../index.html#contacto">Contacto</a>
+            <a href="#aplicacion-fisica">Aplicación física</a>
 
         </nav>
 
@@ -1363,7 +1426,7 @@
              01 · CONCEPTO
         ====================================================== -->
 
-        <section class="section">
+        <section class="section" id="la-idea">
 
             <div class="container">
 
@@ -1636,7 +1699,7 @@
              04 · DISEÑO DE PÁGINAS
         ====================================================== -->
 
-        <section class="section">
+        <section class="section" id="diseno-editorial">
 
             <div class="container">
 
@@ -1761,7 +1824,7 @@
              05 · ADAPTACIÓN DIGITAL
         ====================================================== -->
 
-        <section class="section digital-section">
+        <section class="section digital-section" id="adaptacion-digital">
 
             <div class="container">
 
@@ -1828,7 +1891,7 @@
              06 · APLICACIÓN FÍSICA
         ====================================================== -->
 
-        <section class="section">
+        <section class="section" id="aplicacion-fisica">
 
             <div class="container">
 
@@ -1994,10 +2057,20 @@
 
         const navToggle = document.getElementById("navToggle");
 
+        const nav = document.querySelector(".nav");
+
         navToggle.addEventListener("click", function () {
+            const isOpen = nav.classList.toggle("mobile-open");
+            navToggle.setAttribute("aria-expanded", String(isOpen));
+            navToggle.setAttribute("aria-label", isOpen ? "Cerrar menú" : "Abrir menú");
+        });
 
-            document.querySelector(".nav").classList.toggle("mobile-open");
-
+        nav.querySelectorAll("a").forEach(function (link) {
+            link.addEventListener("click", function () {
+                nav.classList.remove("mobile-open");
+                navToggle.setAttribute("aria-expanded", "false");
+                navToggle.setAttribute("aria-label", "Abrir menú");
+            });
         });
 
     </script>
