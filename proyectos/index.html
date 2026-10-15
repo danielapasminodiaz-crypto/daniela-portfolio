@@ -163,14 +163,16 @@ h1 {
     grid-template-columns: 1fr;
   }
 
-  /* Ajustes exclusivos para las miniaturas en móvil */
+  /* Ajustes exclusivos para las miniaturas en móvil:
+     sin bandas de color detrás de la imagen */
   .thumb {
     height: auto;
     aspect-ratio: 16 / 9;
+    background: transparent;
   }
 
   .thumb img {
-    object-fit: contain;
+    object-fit: cover;
     object-position: center;
   }
 
