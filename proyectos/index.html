@@ -100,12 +100,10 @@ h1 {
 
 .thumb {
   grid-row: 1 / 3;
-
   width: 100%;
-  height: 150px;
-
+  aspect-ratio: 16 / 9;
+  height: auto;
   overflow: hidden;
-
   border-radius: 11px;
   background: #dfe7d7;
 }
@@ -113,12 +111,9 @@ h1 {
 .thumb img {
   width: 100%;
   height: 100%;
-
   display: block;
-
   object-fit: cover;
   object-position: center;
-
   transition: transform .4s ease;
 }
 
@@ -160,6 +155,24 @@ h1 {
 
   .grid {
     grid-template-columns: 1fr;
+  }
+
+  .card {
+    gap: 12px;
+    padding: 14px;
+  }
+
+  .thumb {
+    aspect-ratio: 16 / 9;
+    height: auto;
+  }
+
+  .card strong {
+    font-size: 16px;
+  }
+
+  .card span {
+    font-size: 11px;
   }
 
 }
@@ -394,11 +407,6 @@ h1 {
       </div>
 
       <b>→</b>
-
-    </a>
-
-
-  </div>
 
     </a>
 
